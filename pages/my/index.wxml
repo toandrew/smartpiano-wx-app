@@ -1,0 +1,6 @@
+<!--pages/my/index.wxml-->
+<view>
+  <button bindtap='gotoBluetoothSettings'>
+    蓝牙设置
+  </button>
+</view>

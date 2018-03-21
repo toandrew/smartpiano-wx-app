@@ -1,0 +1,36 @@
+/* pages/bluetooth/index.wxss */
+.devices {
+  color: #666;
+}
+
+.device {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.device.even {
+  background: #f3f3f3;
+}
+
+.device.current {
+  background: #4876ff;
+}
+
+.device .device-info {
+  flex: inline-flex;
+}
+.device .device-name {
+  flex: inline-flex;
+  min-width: 45px;
+}
+
+.device .device-id {
+  flex: inline-flex;
+}
+
+.device .device-rssi {
+  flex: inline-flex;
+}

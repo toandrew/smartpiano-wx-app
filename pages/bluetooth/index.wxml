@@ -1,0 +1,21 @@
+<!--pages/bluetooth/index.wxml-->
+<view>
+  <button bindtap="connectDevice">连接</button>
+  <scroll-view class="devices">
+    <block wx:for="{{devices}}" wx:for-item="device_item" wx:for-index="index">
+      <view class="device {{index % 2 === 1 ? 'even' : 'odd'}} {{ connectedDeviceId === device_item.deviceId ? 'current' : ''}}" bindtap='onDeviceSelected' data-index="{{index}}">
+        <view class="device-info"> 
+          <view class="device-name"> 
+            {{device_item.name}}
+          </view>
+          <view class="device-id">
+            {{device_item.deviceId}}
+          </view>
+        </view>
+        <view class="device-rssi">
+          RSSI: {{device_item.RSSI}}
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
