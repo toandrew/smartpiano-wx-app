@@ -1,4 +1,6 @@
 //index.js
+const api = require('../../utils/api.js');
+
 //获取应用实例
 const app = getApp()
 
@@ -7,7 +9,9 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+
+    banners: []
   },
   //事件处理函数
   bindViewTap: function() {
@@ -42,6 +46,18 @@ Page({
         }
       })
     }
+
+    // get banner data
+    let request = api.getBanner({
+      params: {},
+      success: function(res) {
+        console.log(res);
+      },
+
+      fail: function(err) {
+        console.log(err);
+      }
+    });
   },
   getUserInfo: function(e) {
     console.log(e)

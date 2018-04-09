@@ -14,8 +14,8 @@ Page({
   onLoad: function (options) {
     console.log("splash onLoad");
     setTimeout(function() {
-      wx.switchTab({
-        url: '/pages/index/index',
+      wx.redirectTo({
+        url: '/pages/login/login',
       })
     }, 1000);
   },

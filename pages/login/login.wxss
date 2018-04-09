@@ -1,0 +1,74 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50rpx 0;
+  box-sizing: border-box;
+} 
+
+.reg {
+    font-size: 16px;
+    margin: 9px 8px 0 0;
+    height: 33px;
+    line-height: 29px;
+    color: #888;
+}
+
+.linear {
+    height: 33px;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+}
+
+.label {
+    display: block;
+    margin: 10px 0 10px;
+    color: #696a69;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.input {
+    display: block;
+    width: 266px;
+    height: 30px;
+    margin: 0 auto 16px;
+    padding: 5px 8px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #1c1c1c;
+    border: 1.5px solid #C2C2C2;
+    border-radius: 8px;
+    box-shadow: 1px 1px 2px #E4E4E4 inset;
+}
+
+.submit-btn {
+    display: block;
+    height: 33px;
+    margin: 0 auto 16px;
+    font-size: 16px;
+    cursor: pointer;
+    line-height: 29px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #53BC1B;
+    border-radius: 5px;
+    box-shadow: 0px 0px 0px #6CDA30 inset,1px 1px 2px #B5C7AB;
+    background: -moz-linear-gradient(top, #4AD001, #38A000);
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#4AD001), to(#38A000));
+}
+
+.register-btn {
+    display: block;
+    height: 33px;
+    margin: 9px 8px 0 0;
+    font-size: 16px;
+    cursor: pointer;
+    line-height: 29px;
+    text-align: center;
+    border-radius: 5px;
+}
