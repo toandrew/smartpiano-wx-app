@@ -1,0 +1,9 @@
+/* pages/splash/splash.wxss */
+page {
+  height: 100%;
+}
+
+.splash-image {
+  width: 100%;
+  height: 100%;
+}

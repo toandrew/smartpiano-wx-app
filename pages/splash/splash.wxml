@@ -1,0 +1,5 @@
+<!--pages/splash/splash.wxml-->
+<view class="container">
+  <image class="splash-image" src="{{imageUrl}}">
+  </image>
+</view>

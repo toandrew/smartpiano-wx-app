@@ -1,19 +1,22 @@
 {
-  "pages":[
-    "pages/bluetooth/index",
+  "pages": [
+    "pages/splash/splash",
     "pages/index/index",
     "pages/course/index",
     "pages/my/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/bluetooth/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "智能钢琴",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "list":[
+    "color": "#a6a7ab",
+    "selectedColor": "#6645f0",
+    "list": [
       {
         "text": "首页",
         "pagePath": "pages/index/index",
@@ -22,9 +25,9 @@
       },
       {
         "text": "课程",
-        "pagePath":"pages/course/index",
-        "iconPath": "images/nav/cart-off.png",
-        "selectedIconPath": "images/nav/cart-on.png"
+        "pagePath": "pages/course/index",
+        "iconPath": "images/nav/course-off.png",
+        "selectedIconPath": "images/nav/course-on.png"
       },
       {
         "text": "我的",
