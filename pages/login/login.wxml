@@ -4,11 +4,11 @@
 
 <form bindsubmit="onSubmit">
   <view  class="label">手机：</view>
-  <input class="input" name="phone" placeholder="请输入手机号" bindconfirm="onPhoneFinish" bindblur="onPhoneFinish"/>
+  <input class="input" name="phone" placeholder="请输入手机号" bindinput="onPhoneFinish"/>
   <button class="submit-btn" bindtap="onRequestCode">{{codeMsg}}</button>
 
   <view  class="label">验证码：</view>
-  <input class="input" name="code" placeholder="请输入验证码" bindconfirm="onCodeFinish" bindblur="onCodeFinish"/>
+  <input class="input" name="code" placeholder="请输入验证码" bindinput="onCodeFinish"/>
   <button class="submit-btn" formType="submit">登 录</button>
 
 <view class="linear" hidden>

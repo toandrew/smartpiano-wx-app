@@ -69,8 +69,8 @@ function validatePhone(phoneNum, showToast) {
 }
 
 function validateCode(vcode, showToast) {
-  //6位数字
-  var reg = /^[0-9]{6}$/
+  // 4位数字
+  var reg = /^[0-9]{4}$/
   var flag = reg.test(vcode)
   if (!flag && showToast) {
     wx.showToast({

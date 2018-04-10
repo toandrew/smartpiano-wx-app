@@ -15,10 +15,12 @@ var requestHandler = {
 }
 
 function GET(requestHandler) {
+  requestHandler.contentType = 'application/json';
   return request('GET', requestHandler);
 }
 
 function POST(requestHandler) {
+  requestHandler.contentType = 'application/x-www-form-urlencoded';
   return request('POST', requestHandler);
 }
 
@@ -30,6 +32,9 @@ function request(method, requestHandler) {
     url: API_HOST + url,
     data:params,
     method: method,
+    header: {
+      'content-type': requestHandler.contentType
+    },
     success: function(res) {
       requestHandler.success(res);
     },

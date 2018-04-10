@@ -14,9 +14,19 @@ Page({
   onLoad: function (options) {
     console.log("splash onLoad");
     setTimeout(function() {
-      wx.redirectTo({
-        url: '/pages/login/login',
-      })
+      // 如果已经登录过, 直接调转到首页
+      var token = wx.getStorageSync('token', "");
+      console.log("token:" + token);
+
+      if (token.length != 0) {
+        wx.switchTab({
+          url: '/pages/index/index'
+        });
+      } else {
+        wx.redirectTo({
+          url: '/pages/login/login',
+        })
+      }
     }, 1000);
   },
 
