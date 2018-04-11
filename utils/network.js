@@ -27,13 +27,21 @@ function POST(requestHandler) {
 function request(method, requestHandler) {
   var params = requestHandler.params;
   var url = requestHandler.url;
-
+  var token = wx.getStorageSync('token');
   return wx.request({
     url: API_HOST + url,
     data:params,
     method: method,
     header: {
-      'content-type': requestHandler.contentType
+      'content-type': requestHandler.contentType,
+      'X-VER': '4.0',
+      'X-BUILD': '400',
+      'X-UDID':'',
+      'X-DEVICE': '',
+      'X-PLATFORM': 'Android',
+      'X-PAD': '0',
+      'X-LANGUAGE': 'zh',
+      'TOKEN': token
     },
     success: function(res) {
       requestHandler.success(res);

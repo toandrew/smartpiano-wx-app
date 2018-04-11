@@ -20,6 +20,8 @@ Page({
     })
   },
   onLoad: function () {
+    var self = this;
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -51,7 +53,11 @@ Page({
     let request = api.getBanner({
       params: {},
       success: function(res) {
-        console.log(res);
+        console.log('getBanner', res);
+
+        self.setData({
+          banners: res.data.data
+        });
       },
 
       fail: function(err) {
