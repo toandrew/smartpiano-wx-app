@@ -9,3 +9,29 @@
     </block>
   </swiper>
 </view>
+
+<view>
+  <!--搜索-->
+  <form id="search-form" catchsubmit="onSearch" catchreset="onSearchReset" >
+    <view class="search-pannel">
+      <input value="" id="search-input" name="input" confirm-type="search" class="search-input" placeholder="搜索曲集、艺术家、曲集等" bindconfirm="onSearch" />
+      <button class="search-button" form-type="submit" size="mini" plain="true">
+        <icon type="search" color="#959595" size="16" />
+      </button>
+    </view>
+  </form>
+
+  <!--图标导航-->
+  <view class="top-nav">
+    <block wx:for="{{topNav}}" wx:key="id">
+      <view class="top-item" catchtap="onNavRedirect" data-redirectlink="{{item.redirectlink}}" data-redirecttype="{{item.redirecttype}}" data-appid="{{item.appid}}" id="{{item.id}}">
+        <view>
+          <image src="{{item.image}}"></image>
+        </view>
+        <view>
+          <text>{{item.name}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

@@ -3,3 +3,38 @@
   width: 100%;
   height:300rpx;
 }
+
+.search-pannel {
+  display: flex;
+  flex-direction: row;
+  background-color: #f5f7f7;
+  padding: 24rpx 24rpx;
+}
+
+.search-input {
+  width: 80%;
+  height: 48rpx;
+  padding: 16rpx 0 16rpx 32rpx;
+  font-size: 30rpx;
+  background-color: #fff;
+  border-radius: 4px 0 0 4px;
+  box-shadow: 1px 1px 6px #ecf0f0;
+}
+
+.search-button {
+  width: 20%;
+  margin: 0 !important;
+  color: #296fd0 !important;
+  background-color: #fff !important;
+  border-left: 0 !important;
+  border-top: 1px solid #fff !important;
+  border-right: 1px solid #fff !important;
+  border-bottom: 1px solid #fff !important;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 1px 1px 6px #ecf0f0;
+}
+
+.search-button icon {
+  position: absolute;
+  margin: 24rpx 16rpx;
+}
