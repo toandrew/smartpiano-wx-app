@@ -6,11 +6,20 @@ const SMS_CODE = '/smart-piano/v4/user/send_verification_code';
 // banner
 const BANNER_URL = '/smart-piano/v4/banner';
 
+// recommend
+const RECOMMEND_URL = '/smart-piano/v4/recommend'
+
 const network = require('./network.js');
 
 // banner
 function getBanner(handler) {
   handler.url = BANNER_URL;
+  return network.GET(handler);
+}
+
+// recommend
+function getRecommend(handler) {
+  handler.url = RECOMMEND_URL;
   return network.GET(handler);
 }
 
@@ -64,5 +73,6 @@ module.exports = {
   requestSmsToken: requestSmsToken,
   requestSmsCode: requestSmsCode,
   login: login,
-  getBanner: getBanner
+  getBanner: getBanner,
+  getRecommend: getRecommend
 }

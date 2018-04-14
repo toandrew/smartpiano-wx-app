@@ -1,0 +1,23 @@
+<template name="scoreItemList">
+
+  <view class="score-common-list">
+    <block wx:key="id" wx:for="{{list}}">
+      <view class="score-list-item has-img" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
+        <view class="content-title">
+          <text>{{item.name}}</text>
+        </view>
+        <view class="content-date">
+          <image src="/images/score-item/calendar.png"></image>
+          <text>{{item.artist.name}}</text>
+          <image src="/images/score-item/comments.png"></image>
+            <text class="">{{item.level}}</text>
+            <image src="/images/score-item/pageviews.png"></image>
+            <text class="">{{item.only_support_88}}</text>
+            <image src="/images/score-item/home-like.png"></image>
+            <text class="">{{item.level}}</text>        
+        </view>
+        <image src='/images/cover/ph_album_cover.png' mode="aspectFill" class="cover"></image>
+      </view>
+    </block>
+  </view>  
+</template>

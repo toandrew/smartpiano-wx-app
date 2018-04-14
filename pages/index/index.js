@@ -11,7 +11,14 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
 
-    banners: []
+    banners: [],
+    topNav: [
+      { id: '1', name: '曲谱', image: '/images/home/ic_singles_score_enabled.png', redirectlink: '/pages/shelf/shelf', redirecttype: 'app', appid: '' },
+      { id: '2', name: '游戏', image: '/images/home/ic_singles_kara_enabled.png', redirectlink: '/pages/hot/hot', redirecttype: 'page', appid: '' },
+      { id: '3', name: '速成', image: '/images/home/ic_singles_rush_enabled.png', redirectlink: '/pages/topic/topic', redirecttype: 'page', appid: '' },
+    ],
+
+    recommends: []
   },
   //事件处理函数
   bindViewTap: function() {
@@ -57,6 +64,21 @@ Page({
 
         self.setData({
           banners: res.data.data
+        });
+      },
+
+      fail: function(err) {
+        console.log(err);
+      }
+    });
+
+    let rRequest = api.getRecommend({
+      params: {},
+
+      success: function(res) {
+        console.log(res.data.data);
+        self.setData({
+          recommends: res.data.data
         });
       },
 

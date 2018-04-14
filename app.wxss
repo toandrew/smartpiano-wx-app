@@ -8,3 +8,58 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+
+.score-common-list {
+  margin-bottom: 24rpx;
+}
+
+.score-common-list .score-list-item {
+  position: relative;
+  min-height: 150rpx;
+  padding: 24rpx;
+  border-bottom: 1px solid #eee;
+  overflow: hidden;
+}
+
+.score-common-list .score-list-item.has-img image.cover {
+  position: absolute;
+  left: 0rpx;
+  top: 14rpx;
+  width: 200rpx;
+  height: 150rpx;
+}
+
+.score-common-list .score-list-item.has-img .content-title {
+  height: 80rpx;
+  margin-left: 200rpx;
+  margin-bottom: 20rpx;
+}
+
+.score-common-list .score-list-item.has-img .content-title text {
+  display: -webkit-box;
+  font-size: 30rpx;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #3a4040;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.score-common-list .score-list-item.has-img .content-date {
+  margin-left: 200rpx;
+}
+
+.score-common-list .score-list-item.has-img .content-date image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+  vertical-align: middle;
+}
+
+.score-common-list .score-list-item.has-img .content-date text {
+  color: #959595;
+  margin-right: 32rpx;
+  font-size: 20rpx;
+  font-weight: normal;
+}
