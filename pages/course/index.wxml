@@ -1,2 +1,31 @@
-<!--pages/course/index.wxml-->
-<text>pages/course/index.wxml</text>
+<import src="/templates/score-item-list.wxml" />
+<import src="/templates/album-item-grid.wxml" />
+
+<view class="navbar">
+  <view class="navbar-item" wx:for="{{navbar}}" wx:for-index="idx" data-idx="{{idx}}" bindtap="swichNav">
+    <text class="navbar-text {{currentNavbar==idx ? 'active' : ''}}">{{item}}</text>
+  </view>
+</view>
+
+<!-- 新手入门 -->
+<scroll-view class="hot-item-container {{currentNavbar==0 ? '' : 'hidden'}}" style="height: {{systemInfo.windowHeight}}px;" scroll-y="true" bindscrolltolower="pullUpLoad">
+
+  <block wx:for="{{noviceCourses}}">
+    <view class="hot-item">
+      <view class="image-container" data-row-id="{{item.id}}" bindtap="onItemClick">
+        <image src="{{item.cover_image_url}}" class="hot-image">
+        </image>
+      </view>
+    </view>
+  </block>
+</scroll-view>
+
+<!-- 单曲讲解 -->
+<scroll-view class="latest-item-container {{currentNavbar==1 ? '' : 'hidden'}}" style="height: {{systemInfo.windowHeight}}px;" scroll-y="true" bindscrolltolower="pullUpLoadLatest">
+   <template is="scoreItemList" data="{{...singleCourses}}"/>
+</scroll-view>
+
+<!-- 综合课堂 -->
+<scroll-view class="latest-item-container {{currentNavbar==2 ? '' : 'hidden'}}" style="height: {{systemInfo.windowHeight}}px;" scroll-y="true" bindscrolltolower="pullUpLoadLatest">
+  <template is="albumItemGrid" data="{{...compositeCourses}}"/>
+</scroll-view>

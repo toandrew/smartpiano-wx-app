@@ -63,3 +63,28 @@
   font-size: 20rpx;
   font-weight: normal;
 }
+
+.album-common-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+ .album-common-item {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   margin: 0 10rpx;
+}
+
+.album-common-grid image {
+  width: 356rpx;
+  height: 356rpx;
+}
+
+.album-common-grid text {
+  width: 356rpx;
+  font-size: 24rpx;
+  padding: 0rpx 0rpx 5rpx 0rpx;
+}

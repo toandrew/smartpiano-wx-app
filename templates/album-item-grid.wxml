@@ -1,0 +1,11 @@
+<template name="albumItemGrid">
+
+  <view class="album-common-grid">
+    <block wx:for="{{list}}" wx:key="id">
+      <view class="album-common-item">
+        <image src="{{item.cover_image_url.length != 0 ? item.cover_image_url : '/images/cover/ph_album_cover.png'}}"></image>
+        <text>"{{item.name}}"</text>
+      </view>
+    </block>
+  </view>
+</template>

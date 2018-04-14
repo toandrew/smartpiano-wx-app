@@ -1,3 +1,5 @@
+const network = require('./network.js');
+
 // sms login
 const SMS_LOGIN_URL = '/smart-piano/v4/user/sms_login';
 const SMS_TOKEN = '/smart-piano/v4/user/sms_token';
@@ -9,7 +11,12 @@ const BANNER_URL = '/smart-piano/v4/banner';
 // recommend
 const RECOMMEND_URL = '/smart-piano/v4/recommend'
 
-const network = require('./network.js');
+// newbie
+const NOVICE_COURSE_URL = '/smart-piano/v4/newbie/begin';
+// 
+const SINGLE_COURSE_URL = '/smart-piano/v4/tutorial/single';
+
+const COMPOSITE_COURSE_URL = '/smart-piano/v4/tutorial/multiple';
 
 // banner
 function getBanner(handler) {
@@ -20,6 +27,24 @@ function getBanner(handler) {
 // recommend
 function getRecommend(handler) {
   handler.url = RECOMMEND_URL;
+  return network.GET(handler);
+}
+
+// newbie courses
+function getNoviceCourse(handler) {
+  handler.url = NOVICE_COURSE_URL;
+  return network.GET(handler);
+}
+
+// singles courses
+function getSingleCourse(handler) {
+  handler.url = SINGLE_COURSE_URL;
+  return network.GET(handler);
+}
+
+// composite courses
+function getCompositeCourse(handler) {
+  handler.url = COMPOSITE_COURSE_URL;
   return network.GET(handler);
 }
 
@@ -70,9 +95,18 @@ function checkResponse(res, success, fail) {
 
 module.exports = {
   checkResponse: checkResponse,
+
+  // login
   requestSmsToken: requestSmsToken,
   requestSmsCode: requestSmsCode,
   login: login,
+
+  // home
   getBanner: getBanner,
-  getRecommend: getRecommend
+  getRecommend: getRecommend,
+
+  // courses
+  getNoviceCourse: getNoviceCourse,
+  getSingleCourse: getSingleCourse,
+  getCompositeCourse: getCompositeCourse
 }
