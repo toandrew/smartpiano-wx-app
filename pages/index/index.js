@@ -28,7 +28,7 @@ Page({
   },
   onLoad: function () {
     var self = this;
-
+    console.log(app.globalData.userInfo)
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -47,6 +47,7 @@ Page({
       // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
         success: res => {
+          console.log(res.userInfo);
           app.globalData.userInfo = res.userInfo
           this.setData({
             userInfo: res.userInfo,

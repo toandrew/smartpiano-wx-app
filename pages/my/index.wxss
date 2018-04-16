@@ -1,1 +1,43 @@
 /* pages/my/index.wxss */
+.container{
+	background-color: #f2f2f2;
+	height: 100vh;
+}
+
+.user-info {
+  width: 100%;
+  background-color: #fff;
+  padding-top: 60rpx;
+}
+
+.user-info image {
+  display: block;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  margin: 0 auto 40rpx;
+   box-shadow: 0 0 20rpx rgba(0, 0, 0, .2)
+}
+
+.user-info text {
+  display: block;
+  text-align: center;
+}
+
+.u-btn-login {
+  position: absolute;
+  width: 90%;
+  bottom: 60rpx;
+}
+
+.gray{
+	background-color: #ccc;
+}
+
+.u-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 40rpx;
+}
