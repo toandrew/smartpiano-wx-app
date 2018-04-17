@@ -95,5 +95,11 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+
+  onSearch: function() {
+    wx.navigateTo({
+      url: '/pages/search/search',
+    })
   }
 })

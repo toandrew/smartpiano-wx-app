@@ -6,7 +6,8 @@
     "pages/course/index",
     "pages/my/index",
     "pages/logs/logs",
-    "pages/bluetooth/index"
+    "pages/bluetooth/index",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "light",

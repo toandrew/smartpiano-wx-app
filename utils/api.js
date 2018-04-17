@@ -18,6 +18,9 @@ const SINGLE_COURSE_URL = '/smart-piano/v4/tutorial/single';
 
 const COMPOSITE_COURSE_URL = '/smart-piano/v4/tutorial/multiple';
 
+// hot search
+const HOT_SEARCH_URL = '/smart-piano/v4/hot-search';
+
 // banner
 function getBanner(handler) {
   handler.url = BANNER_URL;
@@ -67,6 +70,13 @@ function requestSmsToken(handler) {
   handler.url = SMS_TOKEN;
 
   return network.POST(handler);
+}
+
+// hot search
+function requesetHotSearch(handler) {
+  handler.url = HOT_SEARCH_URL;
+
+  return network.GET(handler);
 }
 
 function checkResponse(res, success, fail) {
