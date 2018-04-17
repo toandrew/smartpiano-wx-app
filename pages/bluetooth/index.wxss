@@ -1,4 +1,5 @@
 /* pages/bluetooth/index.wxss */
+
 .devices {
   color: #666;
 }
@@ -22,6 +23,7 @@
 .device .device-info {
   flex: inline-flex;
 }
+
 .device .device-name {
   flex: inline-flex;
   min-width: 45px;

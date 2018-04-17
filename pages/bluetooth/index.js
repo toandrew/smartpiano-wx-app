@@ -25,8 +25,6 @@ Page({
    */
   onLoad: function (options) {
     var self = this;
-    var devices = require('./device_mock.js');
-    console.log(devices);
     wx.openBluetoothAdapter({
       success: function(res) {
         console.log("openBluetoothAdapter ok", res);
@@ -83,31 +81,15 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    wx.stopBluetoothDevicesDiscovery({
-      success: function(res) {
-        console.log(res);
-      },
-    });
-
-    if (deviceScanInterval) {
-      clearInterval(deviceScanInterval);
-      deviceScanInterval = null;
-    }
+    this.stopScanDevice();
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    wx.stopBluetoothDevicesDiscovery({
-      success: function(res) {
-        wx.closeBluetoothAdapter({
-          success: function (res) {
-            console.log(res);
-          },
-        });
-      },
-    })
+    console.log("onUnload====");
+    this.stopScanDevice();
   },
 
   /**
@@ -312,5 +294,18 @@ Page({
         console.log('readBLECharacteristicValue failed:', res);
       }
     })
+  },
+
+  stopScanDevice: function() {
+    wx.stopBluetoothDevicesDiscovery({
+      success: function (res) {
+        console.log(res);
+      },
+    });
+
+    if (deviceScanInterval) {
+      clearInterval(deviceScanInterval);
+      deviceScanInterval = null;
+    }
   }
 })

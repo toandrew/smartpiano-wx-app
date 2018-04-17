@@ -57,7 +57,6 @@ Page({
           singleCourses: res.data.data
         });
 
-        console.log('haha');
         console.log(self.singleCourses);
       },
 
