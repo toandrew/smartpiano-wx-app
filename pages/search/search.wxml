@@ -1,16 +1,24 @@
 <!--pages/search/search.wxml-->
+
+<import src="/templates/score-item-list.wxml" />
+
 <view class="g-hd">
   <view class="m-area">
-    <form>
-      <input class="u-txt" placeholder='请输入曲谱、曲集或作曲家等'></input>
-      <button class="u-btn" form-type='submit'>搜索</button>
+    <form bindsubmit='toSearch'>
+      <image class="u-simg" src="/images/search/ic_edittext_delete.png" hidden="{{hideDeleteIcon}}" bindtap='deleteKeyword'></image>
+      <input class="u-txt" name="keyword" value="{{keyword}}" placeholder='请输入曲谱、曲集或作曲家等' bindinput='onSearchKeyInput'></input>
+      <button class="u-btn" formType='submit'>搜索</button>
     </form>
   </view>
 
-  <view class="m-keyword">
+  <view class="m-keyword" hidden="{{showResult}}">
     <view class="u-keytitle">热门搜索</view>
     <view class="u-keyitem" wx:for="{{hotKeyword}}" wx:for-item="hotKeywordItem" wx:key="hotKeywordItem" data-keyword="{{hotKeywordItem}}" bindtap='searchByKeyword'>{{hotKeywordItem}}</view>
     <view class="u-keytitle">搜索历史</view>
     <view class="u-keyitem" wx:for="{{history}}" wx:for-item="historyItem" wx:key="historyItem" data-keyword="{{historyItem}}" bindtap='searchByHistory'>{{historyItem}}</view>
+  </view>
+
+  <view class="m-result" hidden='{{!showResult}}'>
+    <template is="scoreItemList" data="{{...searchResults}}" />
   </view>
 </view>

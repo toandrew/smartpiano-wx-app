@@ -1,28 +1,71 @@
 /* pages/search/search.wxss */
 .g-hd {
-
+  width: 100%;
+  height: 140rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #f8f8f8;
+  font-size: 28rpx;
 }
 
 .m-area {
+  box-sizing: border-box;
+  position: relative;
+  margin: 30rpx;
 
+  border-radius: 10rpx;
+  border: 1px solid #eee;
 }
 
 .u-txt {
-
+  box-sizing: border-box;
+  width: 70%;
+  height: 80rpx;
+  padding-left: 140rpx;
+  padding-right: 20rpx;
 }
 
 .u-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120rpx;
+  height: 80rpx;
+  min-height: 80rpx;
+  font-size: 28rpx;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
 
+.u-btn::after {
+  border-color: #eee;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
 }
 
 .m-keyword {
-
+  padding: 30rpx;
 }
 
 .u-keytitle {
-
+  padding-left: 20rpx;
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+  font-size: 30rpx;
+  border-left: 10rpx solid #8a4aff;
 }
 
 .u-keyitem {
-  
+  display: inline-block;
+  padding: 10rpx;
+}
+
+.u-simg {
+  position: absolute;
+  top: 28rpx;
+  right: 140rpx;
+  width: 30rpx;
+  height: 30rpx;
 }

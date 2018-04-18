@@ -21,6 +21,9 @@ const COMPOSITE_COURSE_URL = '/smart-piano/v4/tutorial/multiple';
 // hot search
 const HOT_SEARCH_URL = '/smart-piano/v4/hot-search';
 
+// search by key
+const SEARCY_BY_KEY_URL = '/smart-piano/v4/search/{keyword}?type=1&&offset=0&&limit=10';
+
 // banner
 function getBanner(handler) {
   handler.url = BANNER_URL;
@@ -73,9 +76,17 @@ function requestSmsToken(handler) {
 }
 
 // hot search
-function requesetHotSearch(handler) {
+function hotSearch(handler) {
   handler.url = HOT_SEARCH_URL;
 
+  return network.GET(handler);
+}
+
+// search by key
+function search(handler) {
+  let keyword = handler.params.keyword;
+  handler.url = SEARCY_BY_KEY_URL.replace(/\{keyword\}/i, keyword);
+  console.log('requestSearch:' + handler.url);
   return network.GET(handler);
 }
 
@@ -118,5 +129,9 @@ module.exports = {
   // courses
   getNoviceCourse: getNoviceCourse,
   getSingleCourse: getSingleCourse,
-  getCompositeCourse: getCompositeCourse
+  getCompositeCourse: getCompositeCourse,
+
+  // search
+  hotSearch: hotSearch,
+  search: search,
 }
