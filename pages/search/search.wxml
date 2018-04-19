@@ -1,6 +1,7 @@
 <!--pages/search/search.wxml-->
 
 <import src="/templates/score-item-list.wxml" />
+<import src="/templates/nulltip/nulltip.wxml" />
 
 <view class="g-hd">
   <view class="m-area">
@@ -11,14 +12,18 @@
     </form>
   </view>
 
-  <view class="m-keyword" hidden="{{showResult}}">
+  <view class="m-keyword" hidden="{{showResult||isNull}}">
     <view class="u-keytitle">热门搜索</view>
     <view class="u-keyitem" wx:for="{{hotKeyword}}" wx:for-item="hotKeywordItem" wx:key="hotKeywordItem" data-keyword="{{hotKeywordItem}}" bindtap='searchByKeyword'>{{hotKeywordItem}}</view>
     <view class="u-keytitle">搜索历史</view>
     <view class="u-keyitem" wx:for="{{history}}" wx:for-item="historyItem" wx:key="historyItem" data-keyword="{{historyItem}}" bindtap='searchByHistory'>{{historyItem}}</view>
   </view>
 
-  <view class="m-result" hidden='{{!showResult}}'>
+  <view class="m-result" hidden='{{!showResult||isNull}}'>
     <template is="scoreItemList" data="{{...searchResults}}" />
+  </view>
+
+  <view hidden='{{!isNull}}'>
+    <template is="nullTip" data="{{nullTip: nullTip}}" />
   </view>
 </view>

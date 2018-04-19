@@ -16,7 +16,13 @@ Page({
     showResult: false,
     hideDeleteIcon: true,
 
-    keyword: ''
+    keyword: '',
+    isNull: false,
+    nullTip: {
+      tipText: 'sorry，没有找到您要的内容，换个关键词试试吧!',
+      actionText: '返回',
+      routeUrl: '/pages/search/search'
+    }
   },
 
   /**
@@ -38,7 +44,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
   },
 
   /**
@@ -112,10 +117,20 @@ Page({
 
       success: (res) => {
         console.log(res);
-        this.setData({
-          searchResults: res.data.data,
-          showResult: true
-        });
+        let list = res.data.data.list;
+        if (list.length == 0) {
+          this.setData({
+            searchResults: res.data.data,
+            showResult: true,
+            isNull: true
+          });
+        } else {
+          this.setData({
+            searchResults: res.data.data,
+            showResult: true,
+            isNull: false
+          });
+        }
       },
 
       fail: (err) => {
@@ -136,11 +151,16 @@ Page({
     this.setData({
       keyword: '',
       showResult: false,
+      isNull: false,
       hideDeleteIcon: true
     })
   },
 
   onInputblur: function(e) {
     console.log('onInputblur!!!');
+  },
+
+  fn: function(e) {
+    console.log(e);
   }
 })
