@@ -7,25 +7,35 @@
   </view>
 </view>
 
-<!-- 新手入门 -->
-<scroll-view class="hot-item-container {{currentNavbar==0 ? '' : 'hidden'}}" style="height: {{systemInfo.windowHeight}}px;" scroll-y="true" bindscrolltolower="pullUpLoad">
+<swiper current="{{currentNavbar}}" bindchange="swiperTab">
 
-  <block wx:for="{{noviceCourses}}" wx:key="id">
-    <view class="hot-item">
-      <view class="image-container" data-row-id="{{item.id}}" bindtap="onItemClick">
-        <image src="{{item.cover_image_url}}" class="hot-image">
-        </image>
-      </view>
-    </view>
-  </block>
-</scroll-view>
+  <!-- 新手入门 -->
+  <swiper-item>
+    <scroll-view class="item-container" scroll-y="true" bindscrolltolower="pullUpLoad">
 
-<!-- 单曲讲解 -->
-<scroll-view class="latest-item-container {{currentNavbar==1 ? '' : 'hidden'}}" style="height: {{systemInfo.windowHeight}}px;" scroll-y="true" bindscrolltolower="pullUpLoadLatest">
-   <template is="scoreItemList" data="{{...singleCourses}}"/>
-</scroll-view>
+      <block wx:for="{{noviceCourses}}" wx:key="id">
+        <view class="hot-item">
+          <view class="image-container" data-row-id="{{item.id}}" bindtap="onItemClick">
+            <image src="{{item.cover_image_url}}" class="hot-image">
+            </image>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </swiper-item>
 
-<!-- 综合课堂 -->
-<scroll-view class="latest-item-container {{currentNavbar==2 ? '' : 'hidden'}}" style="height: {{systemInfo.windowHeight}}px;" scroll-y="true" bindscrolltolower="pullUpLoadLatest">
-  <template is="albumItemGrid" data="{{...compositeCourses}}"/>
-</scroll-view>
+  <!-- 单曲讲解 -->
+  <swiper-item>
+    <scroll-view class="item-container" scroll-y="true" bindscrolltolower="pullUpLoadLatest">
+      <template is="scoreItemList" data="{{...singleCourses}}" />
+    </scroll-view>
+  </swiper-item>
+
+  <!-- 综合课堂 -->
+  <swiper-item>
+    <scroll-view class="item-container" scroll-y="true" bindscrolltolower="pullUpLoadLatest">
+      <template is="albumItemGrid" data="{{...compositeCourses}}" />
+    </scroll-view>
+  </swiper-item>
+
+</swiper>

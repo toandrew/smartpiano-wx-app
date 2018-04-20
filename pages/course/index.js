@@ -15,7 +15,7 @@ Page({
     latest_last_id: 0
   },
 
-  onLoad () {
+  onLoad() {
     this.getAllCourses()
     this.pullUpLoad()
   },
@@ -23,7 +23,7 @@ Page({
   /**
    * Get all courses
    */
-  getAllCourses () {
+  getAllCourses() {
     var self = this;
 
     api.getNoviceCourse({
@@ -31,7 +31,7 @@ Page({
         offset: 0,
         limit: 20
       },
-      success: function(res) {
+      success: function (res) {
         console.log(res);
 
         self.setData({
@@ -39,7 +39,7 @@ Page({
         });
       },
 
-      fail: function(err) {
+      fail: function (err) {
         console.log(err);
       }
     });
@@ -83,12 +83,12 @@ Page({
         console.log(err);
       }
     });
-   },
+  },
 
   /**
    * 点击跳转详情页
    */
-  onItemClick (e) {
+  onItemClick(e) {
     var targetUrl = api.PAGE_WORK
     if (e.currentTarget.dataset.rowId != null)
       targetUrl = targetUrl + '?rowId=' + e.currentTarget.dataset.rowId
@@ -100,7 +100,7 @@ Page({
   /**
    * 切换 navbar
    */
-  swichNav (e) {
+  swichNav(e) {
     this.setData({
       currentNavbar: e.currentTarget.dataset.idx
     });
@@ -114,7 +114,7 @@ Page({
   /**
    * 下拉刷新
    */
-  onPullDownRefresh () {
+  onPullDownRefresh() {
     switch (this.data.currentNavbar) {
       case '0':
         this.setData({
@@ -139,7 +139,7 @@ Page({
   /**
    * [推荐]上拉刷新
    */
-  pullUpLoad () {
+  pullUpLoad() {
     // wx.showNavigationBarLoading()
     // api.get(api.HOST_IOS + api.HOT + '?last_id=' + this.data.hot_last_id)
     //   .then(res => {
@@ -155,7 +155,7 @@ Page({
   /**
    * [最新]上拉刷新
    */
-  pullUpLoadLatest () {
+  pullUpLoadLatest() {
     // wx.showNavigationBarLoading()
     // api.get(api.HOST_IOS + api.LATEST + '?last_id=' + this.data.latest_last_id)
     //   .then(res => {
@@ -166,5 +166,12 @@ Page({
     //     wx.hideNavigationBarLoading()
     //     wx.stopPullDownRefresh()
     //   })
+  },
+
+  swiperTab(e) {
+    console.log("swiperTab");
+    this.setData({
+      currentNavbar: e.detail.current,
+    })
   }
 })
