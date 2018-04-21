@@ -76,25 +76,18 @@ Page({
     app.api.login({
       params: postData,
 
-      success: function(res) {
-        app.api.checkResponse(res,
-          function (res) {
-            console.log("onSubmit success");
+      success: function (res) {
+        console.log("onSubmit success");
 
-            wx.setStorageSync('token', res.data.data.token);
+        wx.setStorageSync('token', res.data.data.token);
 
-            // 跳转到首页
-            wx.switchTab({
-              url: '/pages/index/index'
-            });
-          },
-          function (err) {
-            console.log("login failed");
-          }
-        )
+        // 跳转到首页
+        wx.switchTab({
+          url: '/pages/index/index'
+        });
       },
 
-      fail: function(res) {
+      fail: function (res) {
         console.log('failed: ' + res);
       }
     });
@@ -122,27 +115,27 @@ Page({
 
     var that = this;
     app.api.requestSmsToken({
-      params:{},
-      success: function(res) {
+      params: {},
+      success: function (res) {
         console.log("requestSmsToken ok:" + res);
         var postData = {
-           mobile: that.mobile,
-           access_token: res.data.data.token
+          mobile: that.mobile,
+          access_token: res.data.data.token
         };
         console.log(JSON.stringify(postData));
 
         app.api.requestSmsCode({
           params: postData,
-          success: function(res) {
+          success: function (res) {
             console.log('requestSmsCode ok!' + res);
           },
-          fail: function(err) {
+          fail: function (err) {
             console.log('requestSmsCode failed!' + err);
             that.codeTimeRemain = -1;
           }
         })
       },
-      fail: function(err) {
+      fail: function (err) {
         console.log('requestSmsToken failed!' + err);
         that.codeTimeRemain = -1;
       }

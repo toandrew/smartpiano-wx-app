@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+form {
+  margin-top: 100rpx;
+}
+
 .label {
   display: block;
   margin: 10rpx 0 10rpx;
