@@ -1,6 +1,6 @@
 // pages/search/search.js
 
-const SEARCH_HISTORY = 'search-history';
+const SEARCH_HISTORY = 'history';
 
 const app = getApp();
 
@@ -207,7 +207,7 @@ Page({
       history: []
     });
 
-    wx.clearStorageSync(SEARCH_HISTORY);
+    wx.setStorageSync(SEARCH_HISTORY, "");
   },
 
   deleteHistory: function(e) {
