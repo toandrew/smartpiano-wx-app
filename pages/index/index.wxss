@@ -99,18 +99,19 @@
   color: #959595;
   font-size: 30rpx;
   line-height: 64rpx;
+  padding-right: 20rpx;
 }
 
-.right-arrow {
+/* .right-arrow {
   width: 0;
   height: 0;
   border-top: 6px solid transparent;
   border-bottom: 6px solid transparent;
-  border-left: 6px solid #8a4aff;
+  border-left: 6px solid #959595;
   margin-top: 20rpx;
   margin-left: 5rpx;
   padding-right: 15rpx;
-}
+} */
 
 .album-score-collection {
   width: 100%;

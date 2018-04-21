@@ -1,17 +1,73 @@
 <!--pages/my/index.wxml-->
 <view class="container">
-  <view class="info">
+    <image class="u-bg" src="/images/my/bg_mine_header.png"></image>
     <view class="user-info">
       <block wx:if="{{userInfo.avatarUrl != ''}}">
         <image src="{{userInfo.avatarUrl}}"></image>
       </block>
-      <text>{{userInfo.nickName}}</text>
+      <view class="user-info-name">
+        <text>{{userInfo.nickName}}</text>
+        <view class="right-arrow"></view>
+      </view>
     </view>
 
-    <view class="u-item" bindtap='gotoBluetoothSettings'>
-      <text>蓝牙设置</text>
-      <view>></view>
+  <scroll-view>
+    <view class="u-container" bindtap='gotoBluetoothSettings'>
+      <image class="icon" src="/images/my/ic_my_like.png"></image>
+      <view class="u-item">
+        <text>我的收藏</text>
+        <view class="right-arrow"></view>
+      </view>
     </view>
-  </view>
-  <button class="u-btn-login" hover-class="gray" type="{{bType}}" bindtap="onLogin">{{actionText}}</button>
+
+    <view class="u-container" bindtap='gotoBluetoothSettings'>
+      <image class="icon" src="/images/my/ic_my_lab.png"></image>
+      <view class="u-item">
+        <text>实验室</text>
+        <view class="right-arrow"></view>
+      </view>
+    </view>
+
+    <view class="u-container" bindtap='gotoBluetoothSettings'>
+      <image class="icon" src="/images/my/ic_my_recording.png"></image>
+      <view class="u-item">
+        <text>我的录音</text>
+        <view class="right-arrow"></view>
+      </view>
+    </view>
+
+    <view class="u-container" bindtap='gotoBluetoothSettings'>
+      <image class="icon" src="/images/my/ic_my_bluetooth.png"></image>
+      <view class="u-item">
+        <text>蓝牙设置</text>
+        <view class="right-arrow"></view>
+      </view>
+    </view>
+
+    <view class="u-container" bindtap='gotoBluetoothSettings'>
+      <image class="icon" src="/images/my/ic_tone_setting.png"></image>
+      <view class="u-item">
+        <text>音色设置</text>
+        <view class="right-arrow"></view>
+      </view>
+    </view>
+
+    <view class="u-spliter"></view>
+
+    <view class="u-container" bindtap='gotoBluetoothSettings'>
+      <image class="icon" src="/images/my/ic_feedback.png"></image>
+      <view class="u-item">
+        <text>反馈</text>
+        <view class="right-arrow"></view>
+      </view>
+    </view>
+
+    <view class="u-container" bindtap='gotoBluetoothSettings'>
+      <image class="icon" src="/images/my/ic_about.png"></image>
+      <view class="u-item">
+        <text>关于The ONE</text>
+        <view class="right-arrow"></view>
+      </view>
+    </view>
+  </scroll-view>
 </view>

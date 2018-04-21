@@ -1,10 +1,10 @@
 {
   "pages": [
     "pages/splash/splash",
+    "pages/my/index",
     "pages/login/login",
     "pages/index/index",
     "pages/course/index",
-    "pages/my/index",
     "pages/logs/logs",
     "pages/bluetooth/index",
     "pages/search/search"

@@ -3,20 +3,24 @@
 .container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   align-items: flex-start;
   background-color: #f2f2f2;
+  font-size: 36rpx;
 }
 
-.info {
+.u-bg {
+  position: absolute;
   width: 100%;
-  flex: 1;
+  height: 256rpx;
+  top: 0;
+  left: 0;
 }
 
 .user-info {
+  display: flex;
+  flex-direction: row;
   width: 100%;
-  background-color: #fff;
-  padding-top: 60rpx;
+  padding-top: 0rpx;
 }
 
 .user-info image {
@@ -24,19 +28,25 @@
   width: 180rpx;
   height: 180rpx;
   border-radius: 50%;
-  margin: 0 auto 40rpx;
+  margin: 40rpx;
   box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.2);
 }
 
-.user-info text {
-  display: block;
-  text-align: center;
-  padding: 30rpx 0;
-  margin-bottom: 30rpx;
+.user-info-name {
+  display: flex;
+  width: 50%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rpx;
+  margin-left: 0rpx;
 }
 
-.gray {
-  background-color: #ccc;
+.u-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
 }
 
 .u-item {
@@ -44,11 +54,18 @@
   align-items: center;
   justify-content: space-between;
   background-color: #fff;
-  padding: 40rpx;
-  margin-top: 30rpx;
+  padding: 30rpx 40rpx 30rpx 0;
+  flex: 1;
+  border-bottom: 1rpx solid #eee;
 }
 
-.u-btn-login {
-  width: 90%;
-  bottom: 20rpx;
+.icon {
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  margin: 30rpx;
+}
+
+.u-spliter {
+  margin: 20rpx;
 }
