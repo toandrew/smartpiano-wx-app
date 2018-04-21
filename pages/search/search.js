@@ -1,5 +1,7 @@
 // pages/search/search.js
 
+const SEARCH_HISTORY = 'search-history';
+
 const app = getApp();
 
 const api = require('../../utils/api.js');
@@ -22,7 +24,7 @@ Page({
       tipText: 'sorry，没有找到您要的内容，换个关键词试试吧!',
       actionText: '返回',
       routeUrl: '/pages/search/search'
-    }
+    },
   },
 
   /**
@@ -98,13 +100,58 @@ Page({
   },
 
   loadSearchHistory: function() {
-
+    var history = wx.getStorageSync(SEARCH_HISTORY);
+    if (history) {
+      this.setData({
+        history: history
+      });
+    }
   },
 
   toSearch: function(e) {
     console.log('search....' + e.detail.value.keyword);
 
-    if (e.detail.value.keyword == 0) {
+    this.search(e.detail.value.keyword);
+  },
+
+  onSearchKeyInput: function(e) {
+    if (e.detail.value.length > 0) {
+      this.setData({
+        hideDeleteIcon: false
+      })
+    };
+  },
+
+  deleteKeyword: function(e) {
+    this.setData({
+      keyword: '',
+      showResult: false,
+      isNull: false,
+      hideDeleteIcon: true
+    })
+  },
+
+  onInputblur: function(e) {
+    console.log('onInputblur!!!');
+  },
+
+  fn: function(e) {
+    console.log(e.detail.target.dataset.keyword);
+  },
+
+  searchByKeyword: function(e) {
+    console.log(e.target.dataset.keyword);
+
+    this.setData({
+      keyword: e.target.dataset.keyword,
+      hideDeleteIcon: false
+    });
+
+    this.search(e.target.dataset.keyword);
+  },
+
+  search: function(keyword) {
+    if (keyword.length == 0) {
       wx.showToast({
         title: '请输入搜索内容',
       });
@@ -112,8 +159,22 @@ Page({
       return;
     }
 
+    let history = this.data.history.slice(0);
+
+    let index = history.indexOf(keyword);
+    if (index < 0) {
+      if (history.length >= 10) {
+        history.pop();
+      } else {
+        history.unshift(keyword);
+      }
+      this.setData({
+        history: history
+      });
+    }
+
     api.search({
-      params: { keyword: e.detail.value.keyword},
+      params: { keyword: keyword },
 
       success: (res) => {
         console.log(res);
@@ -139,28 +200,28 @@ Page({
     });
   },
 
-  onSearchKeyInput: function(e) {
-    if (e.detail.value.length > 0) {
-      this.setData({
-        hideDeleteIcon: false
-      })
-    };
-  },
+  clearHistory: function(e) {
+    console.log('clearHistory!');
 
-  deleteKeyword: function(e) {
     this.setData({
-      keyword: '',
-      showResult: false,
-      isNull: false,
-      hideDeleteIcon: true
-    })
+      history: []
+    });
+
+    wx.clearStorageSync(SEARCH_HISTORY);
   },
 
-  onInputblur: function(e) {
-    console.log('onInputblur!!!');
-  },
+  deleteHistory: function(e) {
+    let history = this.data.history;
+    let index = history.indexOf(e.target.dataset.keyword);
+    if (index < 0) {
+      return;
+    }
 
-  fn: function(e) {
-    console.log(e);
+    history.splice(index, 1);
+
+    wx.setStorageSync(SEARCH_HISTORY, history);
+    this.setData({
+      history: history
+    });
   }
 })

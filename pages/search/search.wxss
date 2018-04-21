@@ -62,7 +62,7 @@
 
 .u-keyitem {
   display: inline-block;
-  padding: 10rpx;
+  padding: 20rpx;
   border: 1px solid #ccc;
   border-radius: 15rpx;
   background-color: #fbfbfb;
@@ -76,4 +76,43 @@
   right: 140rpx;
   width: 40rpx;
   height: 40rpx;
+}
+
+.m-history {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.u-clear {
+  align-self: flex-end;
+  font-size: 30rpx;
+  color: #8a4aff;
+  padding-left: 20rpx;
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+}
+
+.m-hitem {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+}
+
+.u-hname {
+  display: inline-block;
+  flex: 1;
+  padding: 20rpx;
+  margin: 0 10rpx 10rpx 0;
+  color: #555;
+  font-size: 30rpx;
+}
+
+.u-hdel {
+  padding: 25rpx;
+  width: 35rpx;
+  height: 35rpx;
 }

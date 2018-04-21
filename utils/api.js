@@ -90,32 +90,8 @@ function search(handler) {
   return network.GET(handler);
 }
 
-function checkResponse(res, success, fail) {
-  var errMsg = "";
-  if (res.statusCode != 200) {
-    errMsg = res.statusCode + ": 网络问题";
-  } else {
-    var code = res.data.meta.code;
-    if (code != 200) {
-      errMsg = code + ":" + res.data.meta.message;
-    }
-  }
-
-  if (errMsg.length > 0) {
-    wx.showToast({
-      title: errMsg,
-      icon: "success",
-      duration: 2000
-    })
-    res.errMsg = errMsg
-    fail && fail(res)
-  } else {
-    success && success(res)
-  }
-}
-
 module.exports = {
-  checkResponse: checkResponse,
+  // checkResponse: network.checkResponse,
 
   // login
   requestSmsToken: requestSmsToken,

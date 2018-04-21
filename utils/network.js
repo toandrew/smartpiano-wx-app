@@ -4,6 +4,31 @@ const API_PRODUCT_HOST = 'https://smart-v4-api.1tai.com';
 
 var API_HOST = API_DEV_HOST;
 
+
+function checkResponse(res, success, fail) {
+  var errMsg = "";
+  if (res.statusCode != 200) {
+    errMsg = res.statusCode + ": 网络问题";
+  } else {
+    var code = res.data.meta.code;
+    if (code != 200) {
+      errMsg = code + ":" + res.data.meta.message;
+    }
+  }
+
+  if (errMsg.length > 0) {
+    wx.showToast({
+      title: errMsg,
+      icon: "success",
+      duration: 2000
+    })
+    res.errMsg = errMsg
+    fail && fail(res)
+  } else {
+    success && success(res)
+  }
+}
+
 var requestHandler = {
   url: '',
   params: {},
@@ -44,7 +69,8 @@ function request(method, requestHandler) {
       'TOKEN': token
     },
     success: function(res) {
-      requestHandler.success(res);
+      checkResponse(res, requestHandler.success, requestHandler.fail);
+      // requestHandler.success(res);
     },
 
     fail: function (err) {

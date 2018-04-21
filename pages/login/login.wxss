@@ -7,68 +7,80 @@
   justify-content: space-between;
   padding: 50rpx 0;
   box-sizing: border-box;
-} 
-
-.reg {
-    font-size: 16px;
-    margin: 9px 8px 0 0;
-    height: 33px;
-    line-height: 29px;
-    color: #888;
-}
-
-.linear {
-    height: 33px;
-    display: flex;
-    flex-direction: row;
-    justify-content:flex-end;
 }
 
 .label {
-    display: block;
-    margin: 10px 0 10px;
-    color: #696a69;
-    font-weight: bold;
-    font-size: 17px;
+  display: block;
+  margin: 10rpx 0 10rpx;
+  padding: 0 20rpx;
+  color: #696a69;
+  font-weight: bold;
+  font-size: 38rpx;
 }
 
 .input {
-    display: block;
-    width: 266px;
-    height: 30px;
-    margin: 0 auto 16px;
-    padding: 5px 8px;
-    font-size: 16px;
-    line-height: 24px;
-    color: #1c1c1c;
-    border: 1.5px solid #C2C2C2;
-    border-radius: 8px;
-    box-shadow: 1px 1px 2px #E4E4E4 inset;
+  display: block;
+  width: 85vw;
+  height: 30px;
+  margin: 0 auto 16px;
+  padding: 5px 8px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1c1c1c;
+  border: 1.5px solid #c2c2c2;
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px #e4e4e4 inset;
 }
 
 .submit-btn {
-    display: block;
-    height: 33px;
-    margin: 0 auto 16px;
-    font-size: 16px;
-    cursor: pointer;
-    line-height: 29px;
-    color: #fff;
-    text-align: center;
-    border: 1px solid #53BC1B;
-    border-radius: 5px;
-    box-shadow: 0px 0px 0px #6CDA30 inset,1px 1px 2px #B5C7AB;
-    background: -moz-linear-gradient(top, #4AD001, #38A000);
-    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#4AD001), to(#38A000));
+  display: block;
+  height: 33px;
+  width: 91vw;
+  margin: 0 auto 16px;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 29px;
+  color: #fff;
+  text-align: center;
+  border: 1px solid #53bc1b;
+  border-radius: 5px;
+  box-shadow: 0px 0px 0px #6cda30 inset, 1px 1px 2px #b5c7ab;
+  background: -moz-linear-gradient(top, #4ad001, #38a000);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#4ad001), to(#38a000));
 }
 
-.register-btn {
-    display: block;
-    height: 33px;
-    margin: 9px 8px 0 0;
-    font-size: 16px;
-    cursor: pointer;
-    line-height: 29px;
-    text-align: center;
-    border-radius: 5px;
+.m-code {
+  display: flex;
+  flex-direction: row;
+  margin: 0rpx;
+  padding-bottom: 60rpx;
+}
+
+.u-code {
+  width: 50vw;
+  height: 28px;
+  margin: 0rpx 10rpx 0rpx 0;
+  padding: 5px 8px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1c1c1c;
+  border: 1.5px solid #c2c2c2;
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px #e4e4e4 inset;
+}
+
+.u-cbtn {
+  height: 90rpx;
+  flex: 1;
+  margin: 5rpx auto 16rpx;
+  font-size: 34rpx;
+  cursor: pointer;
+  line-height: 80rpx;
+  color: #fff;
+  text-align: center;
+  border: 1px solid #53bc1b;
+  border-radius: 5px;
+  box-shadow: 0px 0px 0px #6cda30 inset, 1px 1px 2px #b5c7ab;
+  background: -moz-linear-gradient(top, #4ad001, #38a000);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#4ad001), to(#38a000));
 }

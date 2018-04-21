@@ -1,22 +1,16 @@
 <!--index.wxml-->
 <view class="container" style="display:{{visible}}">
-  <view  class="label">账号登录</view>
+  <view class="label">账号登录</view>
 
-<form bindsubmit="onSubmit">
-  <view  class="label">手机：</view>
-  <input class="input" name="phone" placeholder="请输入手机号" bindinput="onPhoneFinish"/>
-  <button class="submit-btn" bindtap="onRequestCode">{{codeMsg}}</button>
-
-  <view  class="label">验证码：</view>
-  <input class="input" name="code" placeholder="请输入验证码" bindinput="onCodeFinish"/>
-  <button class="submit-btn" formType="submit">登 录</button>
-
-<view class="linear" hidden>
-  <view class="reg">还没注册？</view>
-  <button class="register-btn" bindtap="onRegister">注 册</button>
-</view>
-
-</form>
+  <form bindsubmit="onSubmit">
+    <view class="label">手机：</view>
+    <view class="m-code">
+      <input class="u-code" name="phone" placeholder="请输入手机号" bindinput="onPhoneFinish" />
+      <button class="u-cbtn" bindtap="onRequestCode">{{codeMsg}}</button>
+    </view>
+    <view class="label">验证码：</view>
+    <input class="input" name="code" placeholder="请输入验证码" bindinput="onCodeFinish" />
+    <button class="submit-btn" formType="submit">登 录</button>
+  </form>
 
 </view>
-
