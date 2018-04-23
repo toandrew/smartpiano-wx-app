@@ -15,7 +15,7 @@
   <!--搜索-->
   <form id="search-form" catchsubmit="onSearch" catchreset="onSearchReset">
     <view class="search-pannel">
-      <input value="" id="search-input" name="input" confirm-type="search" class="search-input" placeholder="搜索曲集、艺术家、曲集等" bindconfirm="onSearch" />
+      <input value="" id="search-input" name="input" confirm-type="search" class="search-input" placeholder="搜索曲谱、艺术家、曲集等" bindconfirm="onSearch" />
       <button class="search-button" form-type="submit" size="mini" plain="true">
         <icon type="search" color="#959595" size="16" />
       </button>
@@ -40,7 +40,7 @@
     <block wx:for="{{recommends}}" wx:key="id">
       <view class="album-score-title">
         <view class="recommend-title">{{item.name}}</view>
-        <view class="recommend-title-more">
+        <view class="recommend-title-more" data-rtype="{{item.type}}" bindtap="onMore">
           <view>更多</view>
           <view class="right-arrow"></view>
         </view>

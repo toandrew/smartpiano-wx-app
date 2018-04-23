@@ -101,5 +101,12 @@ Page({
     wx.navigateTo({
       url: '/pages/search/search',
     })
+  },
+
+  onMore: function(e) {
+    console.log(e.currentTarget.dataset);
+    wx.navigateTo({
+      url: '/pages/scorelib/scorelib',
+    });
   }
 })
