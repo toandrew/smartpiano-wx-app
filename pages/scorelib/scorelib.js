@@ -1,4 +1,8 @@
 // pages/scorelib/scorelib.js
+const api = require('../../utils/api.js');
+
+const app = getApp();
+
 Page({
 
   /**
@@ -12,7 +16,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('loadTags!');
+    // this.loadTags();
 
+    console.log('loadScores!');
+    this.loadScores();
+
+    console.log('loadAlbums!');
+    this.loadAlbums();
   },
 
   /**
@@ -62,5 +73,48 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  loadTags: function() {
+    api.getScoreLibTag({
+      params: {},
+
+      success: (res) => {
+        console.log(res);
+      },
+
+      fail: (err) => {
+        console.log(err);
+      }
+    });
+  },
+
+  loadScores: function() {
+    api.getScoresByTag({
+      params: {},
+
+      success: (res) => {
+        console.log(res);
+      },
+
+      fail: (err) => {
+        console.log(err);
+      }
+    })
+  },
+
+  loadAlbums: function() {
+    api.getAlbumsByTag({
+      params: {},
+
+      success: (res) => {
+        console.log(res);
+      },
+
+      fail: (err) => {
+        console.log(err);
+      }
+    })
   }
+
 })

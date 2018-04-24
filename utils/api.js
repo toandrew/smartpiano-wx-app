@@ -24,6 +24,13 @@ const HOT_SEARCH_URL = '/smart-piano/v4/hot-search';
 // search by key
 const SEARCY_BY_KEY_URL = '/smart-piano/v4/search/{keyword}?type=1&&offset=0&&limit=10';
 
+// score lib's tag
+const SCORE_LIB_TAG_URL = '/smart-piano/v4/tag';
+
+const SCORE_LIB_SCORES_URL = '/smart-piano/v4/classify?type=1&&ids=&&sort_type="hot"&&offset=0&&limit=10';
+
+const SCORE_LIB_ALBUM_URL = '/smart-piano/v4/classify?type=2&&ids=&&sort_type="hot"&&offset=0&&limit=10';
+
 // banner
 function getBanner(handler) {
   handler.url = BANNER_URL;
@@ -90,6 +97,27 @@ function search(handler) {
   return network.GET(handler);
 }
 
+// get score lib's tag
+function getScoreLibTag(handler) {
+  handler.url = SCORE_LIB_TAG_URL;
+
+  return network.GET(handler);
+}
+
+// get scores
+function getScoresByTag(handler) {
+  handler.url = SCORE_LIB_SCORES_URL;
+
+  return network.GET(handler);
+}
+
+// get albums
+function getAlbumsByTag(handler) {
+  handler.url = SCORE_LIB_ALBUM_URL;
+
+  return network.GET(handler);
+}
+
 module.exports = {
   // checkResponse: network.checkResponse,
 
@@ -110,4 +138,13 @@ module.exports = {
   // search
   hotSearch: hotSearch,
   search: search,
+
+  // score lib's tag
+  getScoreLibTag: getScoreLibTag,
+
+  // scores
+  getScoresByTag: getScoresByTag,
+
+  // albums
+  getAlbumsByTag: getAlbumsByTag,
 }
