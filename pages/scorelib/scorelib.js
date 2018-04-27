@@ -9,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentType: 2,
+    currentType: 1,
 
     firstTags: [],
     levelTags: [],
@@ -26,6 +26,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let type = options.type;
+    if (type) {
+      this.setData({
+        currentType: type
+      });
+    }
+
+
     console.log('loadTags!');
     this.loadTags();
 

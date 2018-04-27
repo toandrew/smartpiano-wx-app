@@ -106,7 +106,7 @@ Page({
   onMore: function(e) {
     console.log(e.currentTarget.dataset);
     wx.navigateTo({
-      url: '/pages/scorelib/scorelib',
+      url: '/pages/scorelib/scorelib?type=' + e.currentTarget.dataset.rtype
     });
   }
 })
