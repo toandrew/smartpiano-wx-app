@@ -1,2 +1,58 @@
-<!--pages/scorelib/scorelib.wxml-->
-<text>pages/scorelib/scorelib.wxml</text>
+<import src="/templates/album-item-grid.wxml" />
+<import src="/templates/score-item-list.wxml" />
+
+<view class="g-container">
+  <view class="m-header">
+    <view class="u-empty" hidden="{{tagShown}}">
+    </view>
+    <block wx:if="{{!tagShown}}">
+      <scroll-view class="m-ftags" scroll-x="true">
+        <block wx:for="{{firstTags}}" wx:key="id">
+          <view class="u-first {{currentFirstTag === item.name ? 'active' : ''}}">{{item.name}}</view>
+        </block>
+      </scroll-view>
+    </block>
+    <view class="u-btn">打开</view>
+  </view>
+
+  <block wx:if="{{tagShown}}">
+    <view class="m-tags">
+      <block wx:for="{{firstTags}}" wx:key="id" wx:for-item="firstItem">
+        <view>{{firstItem.name}}</view>
+        <block wx:for="{{firstItem.secondary}}" wx:key="id" wx:for-item="subItem">
+          <block wx:for="{{subItem.list}}" wx:key="id">
+            <view class="u-subtags">{{item.name}}</view>
+          </block>
+        </block>
+      </block>
+
+      <block wx:for="{{levelTags}}" wx:key="id">
+        <view>
+        </view>
+      </block>
+    </view>
+  </block>
+
+  <view class="u-switch">
+    <view>
+      <view>曲谱</view>
+      <view>曲集</view>
+    </view>
+
+    <view>
+      <view>最新</view>
+      <view>最热</view>
+    </view>
+  </view>
+
+  <block wx:if="{{currentType == 1}}">
+    <scroll-view class="u-icontainer" scroll-y="true" bindscrolltolower="onMoreScore">
+      <template is="scoreItemList" data="{{...scores}}" />
+    </scroll-view>
+  </block>
+  <block wx:else>
+    <scroll-view class="u-icontainer" scroll-y="true" bindscrolltolower="onMoreAlbums">
+      <template is="albumItemGrid" data="{{...albums}}" />
+    </scroll-view>
+  </block>
+</view>

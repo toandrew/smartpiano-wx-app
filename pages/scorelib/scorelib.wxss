@@ -1,1 +1,52 @@
-/* pages/scorelib/scorelib.wxss */
+.g-container {
+  /* margin: 0;
+  padding: 0; */
+}
+
+.m-header {
+  display: flex;
+  justify-content: row;
+  width: 100%;
+}
+
+.m-tags {
+
+}
+
+.u-switch {
+
+}
+
+.u-empty {
+
+}
+
+.m-ftags {
+  display: flex;
+  width: 80vw;
+  justify-content: row;
+  white-space: nowrap
+}
+
+.u-first {
+  display: inline-flex;
+  padding: 20rpx;
+  border: 1px solid #ccc;
+  border-radius: 15rpx;
+  background-color: #fbfbfb;
+  margin: 0 10rpx 10rpx 0;
+  color: #555;
+}
+
+.u-first.active {
+    background: blue;
+    padding: 20rpx;
+}
+
+.u-btn {
+  display: inline-flex;
+  width: 15vw;
+  height: 50rpx;
+  background: red;
+  margin: 20rpx;
+}

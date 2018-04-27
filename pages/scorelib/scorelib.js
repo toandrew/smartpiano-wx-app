@@ -9,7 +9,17 @@ Page({
    * 页面的初始数据
    */
   data: {
+    currentType: 2,
 
+    firstTags: [],
+    levelTags: [],
+
+    scores: {},
+    albums: {},
+
+    tagShown: false,
+
+    currentFirstTag: "推荐",
   },
 
   /**
@@ -17,7 +27,7 @@ Page({
    */
   onLoad: function (options) {
     console.log('loadTags!');
-    // this.loadTags();
+    this.loadTags();
 
     console.log('loadScores!');
     this.loadScores();
@@ -80,7 +90,12 @@ Page({
       params: {},
 
       success: (res) => {
-        console.log(res);
+        console.log(res.data.data.first);
+
+        this.setData({
+          firstTags: res.data.data.first,
+          levelTags: res.data.data.level
+        });
       },
 
       fail: (err) => {
@@ -95,6 +110,10 @@ Page({
 
       success: (res) => {
         console.log(res);
+
+        this.setData({
+          scores: res.data.data
+        });
       },
 
       fail: (err) => {
@@ -109,6 +128,10 @@ Page({
 
       success: (res) => {
         console.log(res);
+
+        this.setData({
+          albums: res.data.data
+        });
       },
 
       fail: (err) => {
