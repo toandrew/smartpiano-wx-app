@@ -10,6 +10,7 @@ Page({
    */
   data: {
     currentType: 1,
+    currentFilter: 'latest',
 
     firstTags: [],
     levelTags: [],
@@ -20,6 +21,7 @@ Page({
     tagShown: false,
 
     currentFirstTag: "推荐",
+    moreImg: '/images/score-lib/ic_category_open.png',
   },
 
   /**

@@ -1,6 +1,7 @@
 /**app.wxss**/
 .score-common-list {
   margin-bottom: 24rpx;
+  background: #fff;
 }
 
 .score-common-list .score-list-item {
@@ -59,6 +60,7 @@
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+  background: #fff;
 }
 
  .album-common-item {

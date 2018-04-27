@@ -1,52 +1,122 @@
+page {
+  overflow-y: none;
+  height: 100%;
+}
+
 .g-container {
-  /* margin: 0;
-  padding: 0; */
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  align-items: flex-end;
+  background-color: #f2f2f2;
+}
+
+.m-filter {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 17vh;
+  z-index: 999;
+  background-color: #f2f2f2;
 }
 
 .m-header {
   display: flex;
-  justify-content: row;
-  width: 100%;
+  /* height: 100rpx; */
+  background-color: #fff;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #eee;
+  border-top: 1rpx solid #eee;
 }
 
-.m-tags {
-
-}
-
-.u-switch {
-
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
 }
 
 .u-empty {
-
+  height: 100rpx;
+  width: 82vw;
+  padding: 30rpx 0rpx 15rpx 20rpx;
+  font-size: 36rpx;
+  color: #959595;
 }
 
 .m-ftags {
   display: flex;
-  width: 80vw;
-  justify-content: row;
-  white-space: nowrap
+  width: 82vw;
+  justify-content: center;
+  white-space: nowrap;
+  padding: 15rpx 0rpx 15rpx 20rpx;
 }
 
 .u-first {
   display: inline-flex;
-  padding: 20rpx;
-  border: 1px solid #ccc;
-  border-radius: 15rpx;
-  background-color: #fbfbfb;
-  margin: 0 10rpx 10rpx 0;
-  color: #555;
+  padding: 10rpx 25rpx;
+  color: #959595;
 }
 
 .u-first.active {
-    background: blue;
-    padding: 20rpx;
+  background: #8a4aff;
+  border-radius: 50rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  color: #fff;
 }
 
 .u-btn {
   display: inline-flex;
-  width: 15vw;
-  height: 50rpx;
-  background: red;
-  margin: 20rpx;
+  height: 100rpx;
+}
+
+.m-tags {
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+}
+
+.u-switch {
+  display: flex;
+  justify-content: space-between;
+  margin: 15rpx 0rpx 0rpx 0rpx;
+  padding: 15rpx 25rpx;
+  background-color: #fff;
+  border-top: 1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
+}
+
+.u-category {
+  display: inline-flex;
+}
+
+.u-citem {
+  padding: 0rpx 20rpx;
+  color: #959595;
+}
+
+.u-citem.active {
+  color: #8a4aff;
+}
+
+.u-filter {
+  display: inline-flex;
+}
+
+.u-fitem {
+  padding: 0rpx 20rpx;
+  color: #959595;
+}
+
+.u-fitem.active {
+  padding: 0rpx 20rpx;
+  color: #000;
+}
+
+.m-items {
+  position: relative;
+  left: 0;
+  top: 0;
+  height: 83vh;
+  width: 100%;
 }

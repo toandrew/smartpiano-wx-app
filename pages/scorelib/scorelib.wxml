@@ -1,58 +1,61 @@
 <import src="/templates/album-item-grid.wxml" />
 <import src="/templates/score-item-list.wxml" />
 
-<view class="g-container">
-  <view class="m-header">
-    <view class="u-empty" hidden="{{tagShown}}">
+ <view class="g-container">
+  <view class="m-filter">
+    <view class="m-header">
+      <view class="u-empty" hidden="{{!tagShown}}">请选择分类</view>
+      <block wx:if="{{!tagShown}}">
+        <scroll-view class="m-ftags" scroll-x="true">
+          <block wx:for="{{firstTags}}" wx:key="id">
+            <view class="u-first {{currentFirstTag === item.name ? 'active' : ''}}">{{item.name}}</view>
+          </block>
+        </scroll-view>
+      </block>
+      <image class="u-btn" src="{{moreImg}}"></image>
     </view>
-    <block wx:if="{{!tagShown}}">
-      <scroll-view class="m-ftags" scroll-x="true">
-        <block wx:for="{{firstTags}}" wx:key="id">
-          <view class="u-first {{currentFirstTag === item.name ? 'active' : ''}}">{{item.name}}</view>
-        </block>
-      </scroll-view>
-    </block>
-    <view class="u-btn">打开</view>
-  </view>
 
-  <block wx:if="{{tagShown}}">
-    <view class="m-tags">
-      <block wx:for="{{firstTags}}" wx:key="id" wx:for-item="firstItem">
-        <view>{{firstItem.name}}</view>
-        <block wx:for="{{firstItem.secondary}}" wx:key="id" wx:for-item="subItem">
-          <block wx:for="{{subItem.list}}" wx:key="id">
-            <view class="u-subtags">{{item.name}}</view>
+    <block wx:if="{{tagShown}}">
+      <view class="m-tags">
+        <block wx:for="{{firstTags}}" wx:key="id" wx:for-item="firstItem">
+          <view>{{firstItem.name}}</view>
+          <block wx:for="{{firstItem.secondary}}" wx:key="id" wx:for-item="subItem">
+            <block wx:for="{{subItem.list}}" wx:key="id">
+              <view class="u-subtags">{{item.name}}</view>
+            </block>
           </block>
         </block>
-      </block>
 
-      <block wx:for="{{levelTags}}" wx:key="id">
-        <view>
-        </view>
-      </block>
-    </view>
-  </block>
+        <block wx:for="{{levelTags}}" wx:key="id">
+          <view>
+          </view>
+        </block>
+      </view>
+    </block>
 
-  <view class="u-switch">
-    <view>
-      <view>曲谱</view>
-      <view>曲集</view>
-    </view>
+    <view class="u-switch">
+      <view class="u-category">
+        <view class="u-citem {{currentType == '1' ? 'active': ''}}">曲谱</view>
+        <view class="u-citem {{currentType == '2' ? 'active': ''}}">曲集</view>
+      </view>
 
-    <view>
-      <view>最新</view>
-      <view>最热</view>
+      <view class="u-filter">
+        <view class="u-fitem {{currentFilter == 'hot' ? 'active': ''}}">最新</view>
+        <view class="u-fitem {{currentFilter == 'latest' ? 'active': ''}}">最热</view>
+      </view>
     </view>
   </view>
 
-  <block wx:if="{{currentType == 1}}">
-    <scroll-view class="u-icontainer" scroll-y="true" bindscrolltolower="onMoreScore">
-      <template is="scoreItemList" data="{{...scores}}" />
-    </scroll-view>
-  </block>
-  <block wx:else>
-    <scroll-view class="u-icontainer" scroll-y="true" bindscrolltolower="onMoreAlbums">
-      <template is="albumItemGrid" data="{{...albums}}" />
-    </scroll-view>
-  </block>
-</view>
+  <view class="m-items">
+    <block wx:if="{{currentType == 1}}">
+      <scroll-view class="u-icontainer" scroll-y="true" bindscrolltolower="onMoreScore">
+        <template is="scoreItemList" data="{{...scores}}" />
+      </scroll-view>
+    </block>
+    <block wx:else>
+      <scroll-view class="u-icontainer" scroll-y="true" bindscrolltolower="onMoreAlbums">
+        <template is="albumItemGrid" data="{{...albums}}" />
+      </scroll-view>
+    </block>
+  </view>
+ </view> 
