@@ -31,6 +31,8 @@ const SCORE_LIB_SCORES_URL = '/smart-piano/v4/classify?type=1&&ids=&&sort_type="
 
 const SCORE_LIB_ALBUM_URL = '/smart-piano/v4/classify?type=2&&ids=&&sort_type="hot"&&offset=0&&limit=10';
 
+const SCORE_LIB_FILTER_URL = '/smart-piano/v4/classify';
+
 // banner
 function getBanner(handler) {
   handler.url = BANNER_URL;
@@ -118,9 +120,21 @@ function getAlbumsByTag(handler) {
   return network.GET(handler);
 }
 
-module.exports = {
-  // checkResponse: network.checkResponse,
+// do filter in score lib
+function scoreLibFilter(handler) {
+  let rtype = handler.params.type;
+  let ids = handler.params.ids;
+  let sortType = handler.params.sort_type;
+  let offset = handler.params.offset;
+  let limit = handler.params.limit;
 
+  handler.url = SCORE_LIB_FILTER_URL + '?type=' + rtype + "&&ids=" + ids + "&&sort_type=" + sortType + "&&offset=" + offset + "&&limit=" + limit;
+  console.log(handler.url);
+
+  return network.GET(handler);
+}
+
+module.exports = {
   // login
   requestSmsToken: requestSmsToken,
   requestSmsCode: requestSmsCode,
@@ -147,4 +161,7 @@ module.exports = {
 
   // albums
   getAlbumsByTag: getAlbumsByTag,
+
+  // score lib filter
+  scoreLibFilter: scoreLibFilter,
 }

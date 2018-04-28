@@ -1,6 +1,9 @@
 // pages/scorelib/scorelib.js
 const api = require('../../utils/api.js');
 
+const TAG_OPEN_IMG_URL = '/images/score-lib/ic_category_open.png';
+const TAG_PACKUP_IMG_URL = '/images/score-lib/ic_category_packup.png';
+
 const app = getApp();
 
 Page({
@@ -20,8 +23,21 @@ Page({
 
     tagShown: false,
 
-    currentFirstTag: "推荐",
-    moreImg: '/images/score-lib/ic_category_open.png',
+    currentLevel: -1,
+
+    subTags: [-1],
+    currentFirstTagId: -1,
+
+    moreImg: TAG_OPEN_IMG_URL,
+
+    isNull: false,
+    nullTip: {
+      tipText: 'sorry，没有找到您要的内容，换个条件试试吧!',
+      actionText: '返回',
+      routeUrl: '/pages/scorelib/scorelib'
+    },
+
+    pressedTag: ''
   },
 
   /**
@@ -100,11 +116,10 @@ Page({
       params: {},
 
       success: (res) => {
-        console.log(res.data.data.first);
-
+        console.log(res);
         this.setData({
           firstTags: res.data.data.first,
-          levelTags: res.data.data.level
+          levelTags: res.data.data.level,
         });
       },
 
@@ -148,6 +163,110 @@ Page({
         console.log(err);
       }
     })
-  }
+  },
 
+  onMoreClicked: function(e) {
+    let tagShown = !this.data.tagShown;
+    this.setData({
+      tagShown: tagShown,
+      moreImg: !tagShown ? TAG_OPEN_IMG_URL : TAG_PACKUP_IMG_URL
+    });
+  },
+
+  onFirstTagClicked: function(e) {
+    this.setData({
+      currentFirstTagId: e.currentTarget.dataset.item.id,
+
+      subTags: [-1],
+      currentLevel: -1,
+
+      pressedTag: e.currentTarget.dataset.item.id,
+    });
+
+    this.doFilter();
+  },
+
+  onSubTagClicked: function(e) {
+    this.setData({
+      subTags: [e.currentTarget.dataset.item.id]
+    });
+
+    console.log(this.data.subTags);
+
+    this.doFilter();
+  },
+
+  onLevelClicked: function(e) {
+    this.setData({
+      currentLevel: e.currentTarget.dataset.item.id
+    });
+
+    this.doFilter();
+  },
+
+  doFilter: function() {
+    let rtype = this.data.currentType;
+    let sortType = this.data.currentFilter;
+
+    let ids = [this.data.currentFirstTagId];
+
+    ids = ids.concat(this.data.subTags);
+
+    ids.push(this.data.currentLevel);
+
+    console.log(ids);
+
+    api.scoreLibFilter({
+      params: {
+        type: rtype,
+        ids: ids.join(','),
+        sort_type: sortType,
+        offset: 0,
+        limit: 30
+      },
+
+      success: (res) => {
+        console.log(res);
+        if (res.data.data.list && res.data.data.list.length == 0) {
+          this.setData({
+            isNull: true
+          });
+
+          return;
+        }
+
+        if (rtype == 1) {
+          this.setData({
+            isNull: false,
+            scores: res.data.data
+          });
+        } else {
+          this.setData({
+            isNull: false,
+            albums: res.data.data
+          });
+        }
+      },
+
+      fail: (err) => {
+        console.log(err);
+      }
+    });
+  },
+
+  onCategoryClicked: function(e) {
+    this.setData({
+      currentType: e.currentTarget.dataset.type
+    });
+
+    this.doFilter();
+  },
+
+  onFilterClicked: function(e) {
+    this.setData({
+      currentFilter: e.currentTarget.dataset.filter
+    });
+
+    this.doFilter();
+  }
 })

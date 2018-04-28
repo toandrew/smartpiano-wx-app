@@ -1,3 +1,5 @@
+@import "/templates/nulltip/nulltip.wxss";
+
 page {
   overflow-y: none;
   height: 100%;
@@ -22,7 +24,7 @@ page {
 
 .m-header {
   display: flex;
-  /* height: 100rpx; */
+  height: 100rpx;
   background-color: #fff;
   justify-content: space-between;
   border-bottom: 1rpx solid #eee;
@@ -60,26 +62,26 @@ page {
 .u-first.active {
   background: #8a4aff;
   border-radius: 50rpx;
-  padding-left: 30rpx;
-  padding-right: 30rpx;
   color: #fff;
 }
 
 .u-btn {
   display: inline-flex;
   height: 100rpx;
+  flex: 1;
 }
 
 .m-tags {
   display: flex;
   flex-flow: wrap;
   flex-direction: row;
+  background-color: #fff;
 }
 
 .u-switch {
   display: flex;
   justify-content: space-between;
-  margin: 15rpx 0rpx 0rpx 0rpx;
+  /* margin: 15rpx 0rpx 0rpx 0rpx; */
   padding: 15rpx 25rpx;
   background-color: #fff;
   border-top: 1rpx solid #eee;
@@ -119,4 +121,65 @@ page {
   top: 0;
   height: 83vh;
   width: 100%;
+}
+
+.u-ftag {
+  display: inline-flex;
+  padding: 10rpx 25rpx;
+  color: #959595;
+  margin: 10rpx;
+}
+
+.u-ftag.active {
+  background: #8a4aff;
+  border-radius: 50rpx;
+  color: #fff;
+}
+
+.u-subtags {
+  display: inline-flex;
+  padding: 10rpx 20rpx;
+  color: #959595;
+}
+
+.u-subtags.active {
+  background: #8a4aff;
+  border-radius: 50rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  color: #fff;
+}
+
+.m-level {
+  display: flex;
+  /* justify-content: center; */
+  white-space: nowrap;
+  padding: 15rpx 20rpx 25rpx 10rpx;
+}
+
+.u-level {
+  display: inline-flex;
+  padding: 10rpx 20rpx;
+  color: #959595;
+}
+
+.u-level.active {
+  background: #8a4aff;
+  border-radius: 50rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  color: #fff;
+}
+
+.u-stag {
+  width: 96vw;
+  white-space: nowrap;
+  margin-left: 10rpx;
+}
+
+.m-empty {
+  width: 100vw;
+  height: 90%;
+  font-size: 35rpx;
+  white-space: nowrap;
 }
