@@ -102,7 +102,7 @@ Page({
     console.log(e);
 
     wx.navigateTo({
-      url: '/pages/search/search?keyword=' + e.detail.value.keyword,
+      url: '/pages/search/search?keyword=' + (e.detail.value.keyword === undefined ? e.detail.value : e.detail.value.keyword),
     });
 
     this.setData({
