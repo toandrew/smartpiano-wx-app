@@ -2,7 +2,7 @@
 
   <view class="score-common-list">
     <block wx:key="id" wx:for="{{list}}">
-      <view class="score-list-item has-img" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
+      <view class="score-list-item has-img" index="{{index}}" id="{{item.id}}" bindtap="onScoreClicked">
         <view class="content-title">
           <text>{{item.name}}</text>
         </view>

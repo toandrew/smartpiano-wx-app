@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/splash/splash",
+    "pages/album/album",
     "pages/scorelib/scorelib",
     "pages/my/index",
     "pages/login/login",

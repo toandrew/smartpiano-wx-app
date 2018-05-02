@@ -33,6 +33,9 @@ const SCORE_LIB_ALBUM_URL = '/smart-piano/v4/classify?type=2&&ids=&&sort_type="h
 
 const SCORE_LIB_FILTER_URL = '/smart-piano/v4/classify';
 
+// album's detail
+const ALBUM_DETAIL_URL = '/smart-piano/v4/album/{album_id}';
+
 // banner
 function getBanner(handler) {
   handler.url = BANNER_URL;
@@ -134,6 +137,14 @@ function scoreLibFilter(handler) {
   return network.GET(handler);
 }
 
+// get album detail
+function getAlbumDetail(handler) {
+  let albumId = handler.params.albumId;
+
+  handler.url = ALBUM_DETAIL_URL.replace(/\{album_id\}/i, albumId);
+  return network.GET(handler);
+}
+
 module.exports = {
   // login
   requestSmsToken: requestSmsToken,
@@ -164,4 +175,7 @@ module.exports = {
 
   // score lib filter
   scoreLibFilter: scoreLibFilter,
+
+  // get album's detail
+  getAlbumDetail: getAlbumDetail,
 }

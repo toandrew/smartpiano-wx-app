@@ -173,5 +173,16 @@ Page({
     this.setData({
       currentNavbar: e.detail.current,
     })
+  },
+
+  onAlbumClicked: function (e) {
+    console.log(e);
+
+    wx: wx.navigateTo({
+      url: '/pages/album/album',
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
   }
 })

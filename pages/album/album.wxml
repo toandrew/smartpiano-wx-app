@@ -1,0 +1,18 @@
+<!--pages/album/album.wxml-->
+<import src="/templates/score-item-list.wxml"/>
+
+<view class="g-container">
+  <view class="m-header">
+    <view class="m-logo">
+      <image src="{{logoUrl}}"></image>
+      <text>曲目数量: {{scoreNum}}</text>
+    </view>
+    <view class="m-desc">
+      <text>{{albumTitle}}</text> 
+      <text>{{albumDesc}}</text>
+    </view>
+  </view>
+  <view class="m-items">
+    <template is="scoreItemList" data="{{...scores}}"/>
+  </view>
+</view>

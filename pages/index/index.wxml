@@ -50,7 +50,7 @@
         <block wx:if="{{item.type == 2}}">
           <view class="album-grid">
             <block wx:for="{{item.list}}" wx:key="id">
-              <view class="albums">
+              <view class="albums" data-album-id="{{item.id}}" bindtap='onAlbumClicked'>
                 <image src="{{item.cover_image_url.length != 0 ? item.cover_image_url : '/images/cover/ph_album_cover.png'}}"></image>
                 <text>"{{item.name}}"</text>
               </view>

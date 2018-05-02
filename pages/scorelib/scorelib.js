@@ -268,5 +268,16 @@ Page({
     });
 
     this.doFilter();
+  },
+
+  onAlbumClicked: function(e) {
+    console.log(e);
+
+    wx:wx.navigateTo({
+      url: '/pages/album/album?albumId=' + e.currentTarget.dataset.albumId,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
   }
 })
