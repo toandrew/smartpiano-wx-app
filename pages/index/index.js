@@ -18,7 +18,8 @@ Page({
       { id: '3', name: '速成', image: '/images/home/ic_singles_rush_enabled.png', redirectlink: '/pages/topic/topic', redirecttype: 'page', appid: '' },
     ],
 
-    recommends: []
+    recommends: [],
+    keyword: '',
   },
   //事件处理函数
   bindViewTap: function() {
@@ -97,10 +98,16 @@ Page({
     })
   },
 
-  onSearch: function() {
+  onSearch: function(e) {
+    console.log(e);
+
     wx.navigateTo({
-      url: '/pages/search/search',
-    })
+      url: '/pages/search/search?keyword=' + e.detail.value.keyword,
+    });
+
+    this.setData({
+      keyword: ''
+    });
   },
 
   onMore: function(e) {

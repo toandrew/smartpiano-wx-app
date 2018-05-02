@@ -13,7 +13,7 @@ Page({
    */
   data: {
     currentType: 1,
-    currentFilter: 'latest',
+    currentFilter: 'hot',
 
     firstTags: [],
     levelTags: [],
@@ -51,15 +51,9 @@ Page({
       });
     }
 
-
-    console.log('loadTags!');
     this.loadTags();
 
-    console.log('loadScores!');
-    this.loadScores();
-
-    console.log('loadAlbums!');
-    this.loadAlbums();
+    this.doFilter();
   },
 
   /**
@@ -127,42 +121,6 @@ Page({
         console.log(err);
       }
     });
-  },
-
-  loadScores: function() {
-    api.getScoresByTag({
-      params: {},
-
-      success: (res) => {
-        console.log(res);
-
-        this.setData({
-          scores: res.data.data
-        });
-      },
-
-      fail: (err) => {
-        console.log(err);
-      }
-    })
-  },
-
-  loadAlbums: function() {
-    api.getAlbumsByTag({
-      params: {},
-
-      success: (res) => {
-        console.log(res);
-
-        this.setData({
-          albums: res.data.data
-        });
-      },
-
-      fail: (err) => {
-        console.log(err);
-      }
-    })
   },
 
   onMoreClicked: function(e) {
@@ -278,6 +236,6 @@ Page({
       success: function(res) {},
       fail: function(res) {},
       complete: function(res) {},
-    })
+    });
   }
 })

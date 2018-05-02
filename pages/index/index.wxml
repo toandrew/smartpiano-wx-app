@@ -15,7 +15,7 @@
   <!--搜索-->
   <form id="search-form" catchsubmit="onSearch" catchreset="onSearchReset">
     <view class="search-pannel">
-      <input value="" id="search-input" name="input" confirm-type="search" class="search-input" placeholder="搜索曲谱、艺术家、曲集等" bindconfirm="onSearch" />
+      <input value="" id="search-input" name="keyword" value="{{keyword}}" confirm-type="search" class="search-input" placeholder="搜索曲谱、艺术家、曲集等" bindconfirm="onSearch" />
       <button class="search-button" form-type="submit" size="mini" plain="true">
         <icon type="search" color="#959595" size="16" />
       </button>

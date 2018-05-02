@@ -31,6 +31,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options.keyword);
+    if (options.keyword && options.keyword.trim()) {
+      console.log("search:" + options.keyword);
+      this.search(options.keyword);
+
+      this.setData({
+        keyword: options.keyword,
+        hideDeleteIcon: false
+      });
+    }
+
     this.loadHotSearch();
     this.loadSearchHistory();
   },

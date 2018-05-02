@@ -50,8 +50,8 @@
       </view>
 
       <view class="u-filter">
-        <view class="u-fitem {{currentFilter == 'hot' ? 'active': ''}}" data-filter="hot" bindtap='onFilterClicked'>最新</view>
-        <view class="u-fitem {{currentFilter == 'latest' ? 'active': ''}}" data-filter="latest" bindtap='onFilterClicked'>最热</view>
+        <view class="u-fitem {{currentFilter == 'latest' ? 'active': ''}}" data-filter="latest" bindtap='onFilterClicked'>最新</view>
+        <view class="u-fitem {{currentFilter == 'hot' ? 'active': ''}}" data-filter="hot" bindtap='onFilterClicked'>最热</view>
       </view>
     </view>
   </view>

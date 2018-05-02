@@ -2,7 +2,7 @@ const API_DEV_HOST = 'https://smart-v4-api-dev.1tai.com';
 const API_PRE_HOST = 'https://smart-v4-api-pre.1tai.com';
 const API_PRODUCT_HOST = 'https://smart-v4-api.1tai.com';
 
-var API_HOST = API_DEV_HOST;
+var API_HOST = API_PRODUCT_HOST;
 
 
 function checkResponse(res, success, fail) {
