@@ -3,6 +3,7 @@
 
 <view class="g-container">
   <view class="m-header">
+    <image class="u-bg" src="{{logoUrl}}"></image>
     <view class="m-logo">
       <image src="{{logoUrl}}"></image>
       <text>曲目数量: {{scoreNum}}</text>

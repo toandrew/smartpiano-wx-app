@@ -1,15 +1,17 @@
 <!--pages/my/index.wxml-->
 <view class="container">
-    <image class="u-bg" src="/images/my/bg_mine_header.png"></image>
-    <view class="user-info">
-      <block wx:if="{{userInfo.avatarUrl != ''}}">
-        <image src="{{userInfo.avatarUrl}}"></image>
-      </block>
-      <view class="user-info-name">
-        <text>{{userInfo.nickName}}</text>
-        <view class="right-arrow"></view>
+  <image class="u-bg" src="/images/my/bg_mine_header.png"></image>
+  <view class="user-info">
+    <view class="user-logo">
+         <open-data class="user-avatar" type="userAvatarUrl"></open-data>
+        <text>{{userInfo.mobile}}</text>
       </view>
+
+    <view class="user-info-name">
+      <open-data type="userNickName" lang="zh_CN"></open-data>
+      <view class="right-arrow"></view>
     </view>
+  </view>
 
   <scroll-view>
     <view class="u-container" bindtap='gotoBluetoothSettings'>

@@ -5,7 +5,8 @@ var utils = require("../../utils/util.js");
 Page({
   data: {
     codeMsg: "获取验证码",
-    visible: "none"
+    visible: "none",
+    mobile: ''
   },
 
   onLoad: function () {
@@ -80,6 +81,7 @@ Page({
         console.log("onSubmit success");
 
         wx.setStorageSync('token', res.data.data.token);
+        wx.setStorageSync('mobile', that.data.mobile);
 
         // 跳转到首页
         wx.switchTab({
@@ -97,6 +99,10 @@ Page({
       icon: 'loading',
       mask: true,
       duration: 10000
+    });
+
+    this.setData({
+      mobile: this.mobile
     });
   },
 

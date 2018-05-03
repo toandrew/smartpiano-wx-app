@@ -103,5 +103,9 @@ Page({
         console.log(err);
       }
     });
+  },
+
+  onScoreClicked: function(e) {
+    console.log(e);
   }
 })
