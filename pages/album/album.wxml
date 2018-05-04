@@ -1,5 +1,5 @@
 <!--pages/album/album.wxml-->
-<import src="/templates/score-item-list.wxml"/>
+<import src="/templates/score/score-item-list.wxml"/>
 
 <view class="g-container">
   <view class="m-header">

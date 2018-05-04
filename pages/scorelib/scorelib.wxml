@@ -1,5 +1,5 @@
-<import src="/templates/album-item-grid.wxml" />
-<import src="/templates/score-item-list.wxml" />
+<import src="/templates/album/album-item-grid.wxml" />
+<import src="/templates/score/score-item-list.wxml" />
 
 <import src="/templates/nulltip/nulltip.wxml" />
 

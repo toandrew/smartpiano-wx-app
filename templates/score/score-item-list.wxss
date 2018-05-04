@@ -1,0 +1,78 @@
+.m-score-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30rpx;
+  background: #fff;
+}
+
+.m-score-list .u-allitem {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #eee;
+  padding: 10rpx 0rpx;
+}
+
+.m-score-list .u-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70vw;
+}
+
+.m-score-list .u-item .u-item-name {
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+}
+
+.m-score-list .u-item .u-item-name text:nth-of-type(1) {
+  color: #000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap; 
+  max-width: 60vw;
+}
+
+.m-score-list .u-item .u-item-name text.u-roundrect {
+  color: #7a5df3;
+  border-radius: 20rpx;
+  border: 1rpx solid #7a5df3;
+  padding: 0rpx 10rpx;
+  white-space:nowrap; 
+  font-size: 25rpx;
+  margin-left: 10rpx;
+}
+
+.m-score-list .u-item .u-item-name text:nth-of-type(3) {
+  color: #959595;
+  border: 1rpx solid #959595;
+}
+
+.m-score-list .u-item .u-item-artist {
+  display: flex;
+  flex-direction: column;
+  font-size: 25rpx;
+  color: #959595;
+  padding-top: 5rpx;
+}
+
+.m-score-list .u-item-btn {
+  display: flex;
+  flex-direction: row;
+  width: 20vw;
+  justify-content: flex-end;
+}
+
+.m-score-list .u-item-btn image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.m-score-list .u-item-btn .u-item-btn-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 23rpx;
+  color: #7a5df3;
+  padding-left: 10rpx;
+}

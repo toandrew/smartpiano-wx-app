@@ -1,0 +1,29 @@
+<template name="scoreItemList">
+  <view class="m-score-list">
+    <block wx:for="{{list}}" wx:key="id">
+      <view class="u-allitem">
+      <view class="u-item">
+        <view class="u-item-name">
+          <text>{{item.name}}</text>
+          <text class="u-roundrect" hidden='{{item.level === undefined || item.level.length === 0}}'>{{item.level == 1 ? "新手" : item.level == 2 ? "初级" : item.level == 3 ? "中级" : item.level == 4 ? "高级" : item.level == 5 ? "挑战" : ""}}</text>
+          <text class="u-roundrect" hidden="{{item.only_support_88 == 1 ? false:true}}">{{item.only_support_88 == 1 ? "88":""}}</text>
+        </view>
+        <view class="u-item-artist">
+          {{item.artist.name}}
+        </view>
+      </view>
+
+      <view class="u-item-btn">
+        <view class="u-item-btn-item">
+          <image src="/images/score-item/ic_singles_video_enabled.png" hidden='{{item.video.list === undefined}}'></image>
+          <text hidden='{{item.video.list === undefined}}'>视频</text>
+        </view>
+        <view class="u-item-btn-item">
+          <image src="/images/score-item/ic_singles_score_enabled.png"></image>
+          <text>曲谱</text>
+        </view>
+      </view>
+      </view>
+    </block>
+  </view>
+</template>

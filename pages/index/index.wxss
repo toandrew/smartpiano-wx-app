@@ -1,4 +1,6 @@
 /**index.wxss**/
+@import "/templates/score/score-item-list.wxss";
+
 .banner-image {
   width: 100%;
   height:300rpx;

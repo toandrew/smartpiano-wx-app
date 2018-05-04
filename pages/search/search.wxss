@@ -1,6 +1,7 @@
 /* pages/search/search.wxss */
 
 @import "/templates/nulltip/nulltip.wxss";
+@import "/templates/score/score-item-list.wxss";
 
 .g-hd {
   width: 100%;

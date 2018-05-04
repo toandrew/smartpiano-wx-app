@@ -1,4 +1,5 @@
 /**index.wxss**/
+@import "/templates/score/score-item-list.wxss";
 
 swiper {
   overflow-y: scroll;

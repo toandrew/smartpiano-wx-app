@@ -1,4 +1,5 @@
 @import "/templates/nulltip/nulltip.wxss";
+@import "/templates/score/score-item-list.wxss";
 
 page {
   overflow-y: none;

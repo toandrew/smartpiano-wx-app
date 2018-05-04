@@ -1,6 +1,6 @@
 <!--pages/search/search.wxml-->
 
-<import src="/templates/score-item-list.wxml" />
+<import src="/templates/score/score-item-list.wxml" />
 <import src="/templates/nulltip/nulltip.wxml" />
 
 <view class="g-hd">

@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<import src="/templates/score-item-list.wxml"/>
+<import src="/templates/score/score-item-list.wxml"/>
 
 <view class="header">
   <swiper class="swiper" indicator-dots='true' interval='10000' autoplay='true' indicator-color='rgba(255, 255, 255, .2)' indicator-active-color='rgba(255, 255, 255, .8)'>
