@@ -83,7 +83,7 @@ page {
   display: flex;
   justify-content: space-between;
   /* margin: 15rpx 0rpx 0rpx 0rpx; */
-  padding: 15rpx 25rpx;
+  padding: 22rpx 25rpx;
   background-color: #fff;
   border-top: 1rpx solid #eee;
   border-bottom: 1rpx solid #eee;
