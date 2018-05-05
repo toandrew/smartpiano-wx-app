@@ -14,9 +14,9 @@ const RECOMMEND_URL = '/smart-piano/v4/recommend'
 // newbie
 const NOVICE_COURSE_URL = '/smart-piano/v4/newbie/begin';
 // 
-const SINGLE_COURSE_URL = '/smart-piano/v4/tutorial/single';
+const SINGLE_COURSE_URL = '/smart-piano/v4/tutorial/single?offset={offset}&&limit={limit}&&level={level}';
 
-const COMPOSITE_COURSE_URL = '/smart-piano/v4/tutorial/multiple';
+const COMPOSITE_COURSE_URL = '/smart-piano/v4/tutorial/multiple?offset={offset}&&limit={limit}&&level={level}';
 
 // hot search
 const HOT_SEARCH_URL = '/smart-piano/v4/hot-search';
@@ -54,15 +54,25 @@ function getNoviceCourse(handler) {
   return network.GET(handler);
 }
 
-// singles courses
+// get single for tutorial course
 function getSingleCourse(handler) {
-  handler.url = SINGLE_COURSE_URL;
+  let offset = handler.params.offset;;
+  let limit = handler.params.limit;;
+  let level = handler.params.level;
+
+  handler.url = SINGLE_COURSE_URL.replace(/\{offset\}/i, offset).replace(/\{limit\}/i, limit).replace(/\{level\}/i, level);
+
   return network.GET(handler);
 }
 
-// composite courses
+// get multiple for tutorial course
 function getCompositeCourse(handler) {
-  handler.url = COMPOSITE_COURSE_URL;
+  let offset = handler.params.offset;;
+  let limit = handler.params.limit;;
+  let level = handler.params.level;
+
+  handler.url = COMPOSITE_COURSE_URL.replace(/\{offset\}/i, offset).replace(/\{limit\}/i, limit).replace(/\{level\}/i, level);
+
   return network.GET(handler);
 }
 

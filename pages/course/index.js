@@ -16,7 +16,17 @@ Page({
 
     levelTags: ['全部', '新手', '初级', '中级', '高级', '挑战'],
     currentSingleLevel: '全部',
-    currentMultiLevel: '全部',
+    currentCompositeLevel: '全部',
+
+    isNebieNull: false,
+    isSingleNull: false,
+    isCompositeNull: false,
+
+    nullTip: {
+      tipText: 'sorry，没有找到您要的内容，换个条件试试吧!',
+      actionText: '确定',
+      routeUrl: ''
+    },
   },
 
   onLoad() {
@@ -28,65 +38,11 @@ Page({
    * Get all courses
    */
   getAllCourses() {
-    var self = this;
+    this.loadNovieCourse();
 
-    api.getNoviceCourse({
-      params: {
-        offset: 0,
-        limit: 20
-      },
-      success: function (res) {
-        console.log(res);
+    this.loadSingleCourse();
 
-        self.setData({
-          noviceCourses: res.data.data.list
-        });
-      },
-
-      fail: function (err) {
-        console.log(err);
-      }
-    });
-
-    api.getSingleCourse({
-      params: {
-        offset: 0,
-        limit: 20,
-        level: 1
-      },
-      success: function (res) {
-        console.log(res);
-
-        self.setData({
-          singleCourses: res.data.data
-        });
-
-        console.log(self.singleCourses);
-      },
-
-      fail: function (err) {
-        console.log(err);
-      }
-    });
-
-    api.getCompositeCourse({
-      params: {
-        offset: 0,
-        limit: 20,
-        level: 1
-      },
-      success: function (res) {
-        console.log(res);
-
-        self.setData({
-          compositeCourses: res.data.data
-        });
-      },
-
-      fail: function (err) {
-        console.log(err);
-      }
-    });
+    this.loadCompositeCourse();
   },
 
   /**
@@ -196,14 +152,92 @@ Page({
         this.setData({
           currentSingleLevel: e.currentTarget.dataset.item
         });
+
+        this.loadSingleCourse();
         break;
       case 2:
         this.setData({
-          currentMultiLevel: e.currentTarget.dataset.item
+          currentCompositeLevel: e.currentTarget.dataset.item
         });
+
+        this.loadCompositeCourse();
         break;
       default:
         break;
     }
+  },
+
+  loadSingleCourse: function() {
+    let offset = 0;
+    let limit = 30;
+    let level = this.data.levelTags.indexOf(this.data.currentSingleLevel);
+
+    api.getSingleCourse({
+      params: {
+        offset: offset,
+        limit: limit,
+        level: level == 0 ? -1 : level
+      },
+
+      success: (res) => {
+        console.log(res);
+        this.setData({
+          singleCourses: res.data.data,
+          isSingleNull: res.data.data.list.length == 0 ? true : false
+        });
+      },
+
+      fail: (err) => {
+        console.log(err);
+      }
+    });
+  },
+
+  loadCompositeCourse: function() {
+    let offset = 0;
+    let limit = 30;
+    let level = this.data.levelTags.indexOf(this.data.currentCompositeLevel);
+
+    api.getCompositeCourse({
+      params: {
+        offset: offset,
+        limit: limit,
+        level: level == 0 ? -1 : level
+      },
+
+      success: (res) => {
+        console.log(res);
+        this.setData({
+          compositeCourses: res.data.data,
+          isCompositeNull: res.data.data.list.length == 0 ? true : false
+        });
+      },
+
+      fail: (err) => {
+        console.log(err);
+      }
+    });
+  },
+
+  loadNovieCourse: function() {
+    api.getNoviceCourse({
+      params: {
+        offset: 0,
+        limit: 30
+      },
+      success: (res) => {
+        console.log(res);
+
+        this.setData({
+          noviceCourses: res.data.data.list,
+
+          isNebieNull: res.data.data.list.length == 0 ? true : false
+        });
+      },
+
+      fail: function (err) {
+        console.log(err);
+      }
+    });
   }
 })

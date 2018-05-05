@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: row;
   border-bottom: 1rpx solid #eee;
-  padding: 10rpx 0rpx;
+  padding: 20rpx 0rpx;
 }
 
 .m-score-list .u-item {
@@ -53,7 +53,7 @@
   flex-direction: column;
   font-size: 25rpx;
   color: #959595;
-  padding-top: 5rpx;
+  padding-top: 10rpx;
 }
 
 .m-score-list .u-item-btn {
@@ -72,7 +72,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   font-size: 23rpx;
   color: #7a5df3;
-  padding-left: 10rpx;
+  padding-left: 15rpx;
 }

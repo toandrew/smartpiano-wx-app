@@ -2,6 +2,8 @@
 <import src="/templates/album/album-item-grid.wxml" />
 <import src="/templates/level/level.wxml" />
 
+<import src="/templates/nulltip/nulltip.wxml" />
+
 <view class="navbar">
   <view class="navbar-item" wx:for="{{navbar}}" wx:for-index="idx" wx:key="id" data-idx="{{idx}}" bindtap="swichNav">
     <text class="navbar-text {{currentNavbar==idx ? 'active' : ''}}">{{item}}</text>
@@ -12,7 +14,7 @@
 
   <!-- 新手入门 -->
   <swiper-item>
-    <scroll-view class="item-container" scroll-y="true" bindscrolltolower="pullUpLoad">
+    <scroll-view class="item-container" scroll-y="true" bindscrolltolower="pullUpLoad" hidden='{{isNebieNull}}'>
 
       <block wx:for="{{noviceCourses}}" wx:key="id">
         <view class="newbie-item">
@@ -28,23 +30,35 @@
         </view>
       </block>
     </scroll-view>
+
+  <view class="m-empty" hidden='{{!isNebieNull}}'>
+    <template is="nullTip" data="{{nullTip: nullTip}}" />
+  </view>
   </swiper-item>
 
   <!-- 单曲讲解 -->
   <swiper-item>
     <template is="level" data="{{levelTags : levelTags, currentLevel : currentSingleLevel}}"></template>
 
-    <scroll-view class="item-container" scroll-y="true" bindscrolltolower="pullUpLoadLatest">
+    <scroll-view class="item-container" scroll-y="true" bindscrolltolower="pullUpLoadLatest" hidden='{{isSingleNull}}'>
       <template is="scoreItemList" data="{{...singleCourses}}" />
     </scroll-view>
+
+  <view class="m-empty" hidden='{{!isSingleNull}}'>
+    <template is="nullTip" data="{{nullTip: nullTip}}" />
+  </view>
   </swiper-item>
 
   <!-- 综合课堂 -->
   <swiper-item>
-      <template is="level" data="{{levelTags : levelTags, currentLevel : currentMultiLevel}}"></template>
-    <scroll-view class="item-container" scroll-y="true" bindscrolltolower="pullUpLoadLatest">
+      <template is="level" data="{{levelTags : levelTags, currentLevel : currentCompositeLevel}}"></template>
+    <scroll-view class="item-container" scroll-y="true" bindscrolltolower="pullUpLoadLatest" hidden='{{isCompositeNull}}'>
       <template is="albumItemGrid" data="{{...compositeCourses}}" />
     </scroll-view>
+
+  <view class="m-empty" hidden='{{!isCompositeNull}}'>
+    <template is="nullTip" data="{{nullTip: nullTip}}" />
+  </view>
   </swiper-item>
 
 </swiper>
