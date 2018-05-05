@@ -160,7 +160,7 @@ page {
 
 .u-level {
   display: inline-flex;
-  padding: 10rpx 20rpx;
+  padding: 10rpx 30rpx;
   color: #959595;
 }
 

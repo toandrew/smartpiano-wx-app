@@ -1,5 +1,6 @@
 <import src="/templates/score/score-item-list.wxml" />
 <import src="/templates/album/album-item-grid.wxml" />
+<import src="/templates/level/level.wxml" />
 
 <view class="navbar">
   <view class="navbar-item" wx:for="{{navbar}}" wx:for-index="idx" wx:key="id" data-idx="{{idx}}" bindtap="swichNav">
@@ -31,6 +32,8 @@
 
   <!-- 单曲讲解 -->
   <swiper-item>
+    <template is="level" data="{{levelTags : levelTags, currentLevel : currentSingleLevel}}"></template>
+
     <scroll-view class="item-container" scroll-y="true" bindscrolltolower="pullUpLoadLatest">
       <template is="scoreItemList" data="{{...singleCourses}}" />
     </scroll-view>
@@ -38,6 +41,7 @@
 
   <!-- 综合课堂 -->
   <swiper-item>
+      <template is="level" data="{{levelTags : levelTags, currentLevel : currentMultiLevel}}"></template>
     <scroll-view class="item-container" scroll-y="true" bindscrolltolower="pullUpLoadLatest">
       <template is="albumItemGrid" data="{{...compositeCourses}}" />
     </scroll-view>

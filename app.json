@@ -1,12 +1,12 @@
 {
   "pages": [
     "pages/splash/splash",
+    "pages/course/index",
     "pages/album/album",
     "pages/scorelib/scorelib",
     "pages/my/index",
     "pages/login/login",
     "pages/index/index",
-    "pages/course/index",
     "pages/logs/logs",
     "pages/bluetooth/index",
     "pages/search/search"

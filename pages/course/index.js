@@ -12,7 +12,11 @@ Page({
     singleCourses: {},
     compositeCourses: {},
     latest_list: [],
-    latest_last_id: 0
+    latest_last_id: 0,
+
+    levelTags: ['全部', '新手', '初级', '中级', '高级', '挑战'],
+    currentSingleLevel: '全部',
+    currentMultiLevel: '全部',
   },
 
   onLoad() {
@@ -116,21 +120,21 @@ Page({
    */
   onPullDownRefresh() {
     switch (this.data.currentNavbar) {
-      case '0':
+      case 0:
         this.setData({
           list: [],
           hot_last_id: 0
         })
         this.pullUpLoad()
         break
-      case '1':
+      case 1:
         this.setData({
           latest_list: [],
           latest_list_id: 0
         })
         this.pullUpLoadLatest()
         break
-      case '2':
+      case 2:
         wx.stopPullDownRefresh()
         break
     }
@@ -184,5 +188,22 @@ Page({
       fail: function (res) { },
       complete: function (res) { },
     })
+  },
+
+  onLevelClicked: function (e) {
+    switch (this.data.currentNavbar) {
+      case 1:
+        this.setData({
+          currentSingleLevel: e.currentTarget.dataset.item
+        });
+        break;
+      case 2:
+        this.setData({
+          currentMultiLevel: e.currentTarget.dataset.item
+        });
+        break;
+      default:
+        break;
+    }
   }
 })
