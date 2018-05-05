@@ -14,10 +14,15 @@
     <scroll-view class="item-container" scroll-y="true" bindscrolltolower="pullUpLoad">
 
       <block wx:for="{{noviceCourses}}" wx:key="id">
-        <view class="hot-item">
+        <view class="newbie-item">
           <view class="image-container" data-row-id="{{item.id}}" bindtap="onItemClick">
-            <image src="{{item.cover_image_url}}" class="hot-image">
-            </image>
+            <image mode="widthFix" src="{{item.cover_image_url}}">aaa</image>
+            <view class="newbie-item-desc">
+              <view class="newbie-item-desc-1">
+                <text>{{item.name}}</text>
+                <text>{{item.description}}</text>
+              </view>
+            </view>
           </view>
         </view>
       </block>
