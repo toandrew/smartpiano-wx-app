@@ -15,7 +15,7 @@ Page({
     logoUrl: null,
 
     albumId: -1,
-    scoreNum: 1,
+    scoreNum: '.',
 
     albumTitle: '',
     albumDesc: '',
