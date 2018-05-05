@@ -11,12 +11,18 @@ const BANNER_URL = '/smart-piano/v4/banner';
 // recommend
 const RECOMMEND_URL = '/smart-piano/v4/recommend'
 
+// courses related
 // newbie
 const NOVICE_COURSE_URL = '/smart-piano/v4/newbie/begin';
-// 
+
+// single
 const SINGLE_COURSE_URL = '/smart-piano/v4/tutorial/single?offset={offset}&&limit={limit}&&level={level}';
 
+// composite
 const COMPOSITE_COURSE_URL = '/smart-piano/v4/tutorial/multiple?offset={offset}&&limit={limit}&&level={level}';
+
+// composite course
+const COMPOSITE_COURSE_DETAIL_URL = '/smart-piano/v4/tutorial/multiple/{id}'
 
 // hot search
 const HOT_SEARCH_URL = '/smart-piano/v4/hot-search';
@@ -155,6 +161,14 @@ function getAlbumDetail(handler) {
   return network.GET(handler);
 }
 
+// get composite course detail
+function getCourseDetail(handler) {
+  let albumId = handler.params.albumId;
+
+  handler.url = COMPOSITE_COURSE_DETAIL_URL.replace(/\{id\}/i, albumId);
+  return network.GET(handler);
+}
+
 module.exports = {
   // login
   requestSmsToken: requestSmsToken,
@@ -188,4 +202,7 @@ module.exports = {
 
   // get album's detail
   getAlbumDetail: getAlbumDetail,
+
+  // get course's detail
+  getCourseDetail: getCourseDetail
 }

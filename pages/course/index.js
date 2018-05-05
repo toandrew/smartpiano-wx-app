@@ -139,7 +139,7 @@ Page({
     console.log(e);
 
     wx: wx.navigateTo({
-      url: '/pages/album/album',
+      url: '/pages/album/album?albumId=' + e.currentTarget.dataset.albumId + '&&iscourse=true',
       success: function (res) { },
       fail: function (res) { },
       complete: function (res) { },

@@ -6,7 +6,7 @@
     <image class="u-bg" mode='widthfix' src="{{logoUrl}}"></image>
     <view class="m-logo">
       <image src="{{logoUrl}}"></image>
-      <text>曲目数量: {{scoreNum}}</text>
+      <text hidden="{{scoreNum === 0}}">曲目数量: {{scoreNum}}</text>
     </view>
     <view class="m-desc">
       <text>{{albumTitle}}</text>

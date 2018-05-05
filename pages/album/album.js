@@ -15,10 +15,12 @@ Page({
     logoUrl: null,
 
     albumId: -1,
-    scoreNum: '.',
+    scoreNum: 0,
 
     albumTitle: '',
     albumDesc: '',
+
+    isCourse: false,
   },
 
   /**
@@ -26,10 +28,16 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      albumId: options.albumId ? options.albumId: 26
+      albumId: options.albumId,
+
+      isCourse: options.iscourse
     })
 
-    this.loadAlbumDetail();
+    if (options.iscourse) {
+      this.loadCourseDetail();
+    } else {
+      this.loadAlbumDetail();
+    }
   },
 
   /**
@@ -83,6 +91,30 @@ Page({
 
   loadAlbumDetail: function() {
     api.getAlbumDetail({
+      params: {
+        albumId: this.data.albumId
+      },
+
+      success: (res) => {
+        console.log(res);
+
+        this.setData({
+          logoUrl: res.data.data.cover_image_url,
+          albumTitle: res.data.data.name,
+          albumDesc: res.data.data.description,
+          scoreNum: res.data.data.list.length,
+          scores: res.data.data
+        })
+      },
+
+      fail: (err) => {
+        console.log(err);
+      }
+    });
+  },
+
+  loadCourseDetail: function() {
+    api.getCourseDetail({
       params: {
         albumId: this.data.albumId
       },
