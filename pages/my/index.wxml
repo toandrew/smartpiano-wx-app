@@ -14,7 +14,7 @@
   </view>
 
   <scroll-view>
-    <view class="u-container" bindtap='gotoBluetoothSettings'>
+    <view class="u-container" bindtap='gotoFavorite'>
       <image class="icon" src="/images/my/ic_my_like.png"></image>
       <view class="u-item">
         <text>我的收藏</text>
@@ -22,7 +22,7 @@
       </view>
     </view>
 
-    <view class="u-container" bindtap='gotoBluetoothSettings'>
+    <view class="u-container" bindtap='gotoLab'>
       <image class="icon" src="/images/my/ic_my_lab.png"></image>
       <view class="u-item">
         <text>实验室</text>
@@ -30,7 +30,7 @@
       </view>
     </view>
 
-    <view class="u-container" bindtap='gotoBluetoothSettings'>
+    <view class="u-container" bindtap='gotoMyRecords'>
       <image class="icon" src="/images/my/ic_my_recording.png"></image>
       <view class="u-item">
         <text>我的录音</text>
@@ -46,7 +46,7 @@
       </view>
     </view>
 
-    <view class="u-container" bindtap='gotoBluetoothSettings'>
+    <view class="u-container" bindtap='gotoSoundSettings'>
       <image class="icon" src="/images/my/ic_tone_setting.png"></image>
       <view class="u-item">
         <text>音色设置</text>
@@ -56,7 +56,7 @@
 
     <view class="u-spliter"></view>
 
-    <view class="u-container" bindtap='gotoBluetoothSettings'>
+    <view class="u-container" bindtap='gotoFeedback'>
       <image class="icon" src="/images/my/ic_feedback.png"></image>
       <view class="u-item">
         <text>反馈</text>
@@ -64,7 +64,7 @@
       </view>
     </view>
 
-    <view class="u-container" bindtap='gotoBluetoothSettings'>
+    <view class="u-container" bindtap='gotoAbout'>
       <image class="icon" src="/images/my/ic_about.png"></image>
       <view class="u-item">
         <text>关于The ONE</text>

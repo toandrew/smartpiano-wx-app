@@ -9,7 +9,13 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/bluetooth/index",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/favorite/favorite",
+    "pages/lab/lab",
+    "pages/myrecords/myrecords",
+    "pages/soundsettings/soundsettings",
+    "pages/about/about",
+    "pages/feedback/feedback"
   ],
   "window": {
     "backgroundTextStyle": "light",

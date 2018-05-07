@@ -24,26 +24,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var self = this;
+    let self = this;
     wx.openBluetoothAdapter({
-      success: function(res) {
+      success: function (res) {
         console.log("openBluetoothAdapter ok", res);
         wx.startBluetoothDevicesDiscovery({
           services: [THEONE_SERVICE_UUID],
-          success: function(res) {
+          success: function (res) {
             console.log(res);
           },
         })
       },
-      fail: function() {
-        console.error("openBluetoothAdapter failed");
+      fail: function (err) {
+        console.error("openBluetoothAdapter failed", err);
+        wx.showToast({
+          title: '打开蓝牙失败！',
+          icon: 'none',
+          duration: 1000
+        })
       },
-      complete: function() {
+      complete: function () {
         console.log("openBluetoothAdapter complete");
       }
     });
 
-    wx.onBLEConnectionStateChange(function(res){
+    wx.onBLEConnectionStateChange(function (res) {
       console.log(res);
     });
   },
@@ -52,7 +57,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
@@ -67,12 +72,12 @@ Page({
 
     wx.startBluetoothDevicesDiscovery({
       services: [THEONE_SERVICE_UUID],
-      success: function(res) {
+      success: function (res) {
         console.log(res);
       },
     });
 
-    deviceScanInterval = setInterval(function(){
+    deviceScanInterval = setInterval(function () {
       self.scanDevice();
     }, SCANNING_TIME);
   },
@@ -96,21 +101,21 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   },
 
   onDeviceSelected: function (e) {
@@ -122,7 +127,7 @@ Page({
     console.log("onDeviceSelected:" + e.currentTarget.dataset.index + ' deviceId:' + deviceId);
     wx.createBLEConnection({
       deviceId: deviceId,
-      success: function(res) {
+      success: function (res) {
         console.log(res);
         wx.showToast({
           title: '连接成功',
@@ -130,18 +135,18 @@ Page({
 
         wx.getBLEDeviceServices({
           deviceId: deviceId,
-          success: function(res) {
+          success: function (res) {
             console.log(res);
 
             for (let service of res.services) {
               console.log('serviceUUID: ' + service.uuid);
             }
 
-            setTimeout(function() {
+            setTimeout(function () {
               wx.getBLEDeviceCharacteristics({
                 deviceId: deviceId,
                 serviceId: THEONE_SERVICE_UUID,
-                success: function(res) {
+                success: function (res) {
                   console.log(res);
 
                   var theOneReadChar = null;
@@ -160,7 +165,7 @@ Page({
                     }
                   }
 
-                  wx.onBLECharacteristicValueChange(function (characteristic){
+                  wx.onBLECharacteristicValueChange(function (characteristic) {
                     console.log('characteristic value com:', characteristic);
                   });
 
@@ -172,10 +177,10 @@ Page({
                       characteristicId: theOneReadChar.uuid,
 
                       success: function (res) {
-                        console.log("notify ok!" , res);
+                        console.log("notify ok!", res);
                       },
 
-                      fail: function(res) {
+                      fail: function (res) {
                         console.log("notify failed:", res);
                       }
                     });
@@ -212,7 +217,7 @@ Page({
         })
       },
 
-      fail: function(res) {
+      fail: function (res) {
         console.error(res);
 
         wx.showToast({
@@ -220,7 +225,7 @@ Page({
         });
       },
 
-      complete: function(res) {
+      complete: function (res) {
         console.log(res);
       }
     })
@@ -230,10 +235,10 @@ Page({
     var self = this;
     console.log("scanDevice");
     wx.getBluetoothDevices({
-      success: function(res) {
+      success: function (res) {
         console.log(res);
         console.log(res.devices);
-        
+
         self.setData({
           devices: res.devices
         });
@@ -255,13 +260,13 @@ Page({
     })
   },
 
-  connectDevice: function() {
+  connectDevice: function () {
     var self = this;
 
-    wx.onBLECharacteristicValueChange(function (characteristic){
+    wx.onBLECharacteristicValueChange(function (characteristic) {
       console.log('characteristic value come:', characteristic);
     });
-                  ``
+    ``
     // send connect command
     var hex = 'F000202B6900005579F7';
     var typedArray = new Uint8Array(hex.match(/[\da-f]{2}/gi).map(function (h) {
@@ -290,13 +295,13 @@ Page({
       success: function (res) {
         console.log('readBLECharacteristicValue ok:', res);
       },
-      fail: function(res) {
+      fail: function (res) {
         console.log('readBLECharacteristicValue failed:', res);
       }
     })
   },
 
-  stopScanDevice: function() {
+  stopScanDevice: function () {
     wx.stopBluetoothDevicesDiscovery({
       success: function (res) {
         console.log(res);

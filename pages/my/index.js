@@ -100,6 +100,42 @@ Page({
   gotoBluetoothSettings: function () {
     wx.navigateTo({
       url: '/pages/bluetooth/index',
-    })
+    });
+  },
+
+  gotoFavorite: function() {
+    wx.navigateTo({
+      url: '/pages/favorite/favorite',
+    });
+  },
+
+  gotoLab: function() {
+    wx.navigateTo({
+      url: '/pages/lab/lab',
+    });
+  },
+
+  gotoMyRecords: function() {
+    wx.navigateTo({
+      url: '/pages/myrecords/myrecords',
+    });
+  },
+
+  gotoSoundSettings: function() {
+    wx.navigateTo({
+      url: '/pages/soundsettings/soundsettings',
+    });
+  },
+
+  gotoFeedback: function() {
+    wx.navigateTo({
+      url: '/pages/feedback/feedback',
+    });
+  },
+
+  gotoAbout: function() {
+    wx.navigateTo({
+      url: '/pages/about/about',
+    });
   }
 })
