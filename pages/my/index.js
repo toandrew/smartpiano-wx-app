@@ -110,9 +110,15 @@ Page({
   },
 
   gotoLab: function() {
-    wx.navigateTo({
-      url: '/pages/lab/lab',
+    wx.showToast({
+      title: '暂不支持',
+      icon: 'none',
+      duration: 1000
     });
+
+    // wx.navigateTo({
+    //   url: '/pages/lab/lab',
+    // });
   },
 
   gotoMyRecords: function() {
@@ -122,15 +128,26 @@ Page({
   },
 
   gotoSoundSettings: function() {
-    wx.navigateTo({
-      url: '/pages/soundsettings/soundsettings',
+    wx.showToast({
+      title: '暂不支持',
+      icon: 'none',
+      duration: 1000
     });
+
+    // wx.navigateTo({
+    //   url: '/pages/soundsettings/soundsettings',
+    // });
   },
 
   gotoFeedback: function() {
-    wx.navigateTo({
-      url: '/pages/feedback/feedback',
+    wx.showToast({
+      title: '暂不支持',
+      icon: 'none',
+      duration: 1000
     });
+    // wx.navigateTo({
+    //   url: '/pages/feedback/feedback',
+    // });
   },
 
   gotoAbout: function() {

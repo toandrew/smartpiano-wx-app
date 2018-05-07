@@ -1,2 +1,4 @@
-<!--pages/myrecords/myrecords.wxml-->
-<text>pages/myrecords/myrecords.wxml</text>
+<view class="g-container">
+  <image mode='widthFix' src="/images/favorite/ic_no_recording.png"></image>
+  <text>暂无录音</text>
+</view>

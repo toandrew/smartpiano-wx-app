@@ -1,2 +1,5 @@
 <!--pages/favorite/favorite.wxml-->
-<text>pages/favorite/favorite.wxml</text>
+<view class="g-container">
+  <image mode='widthFix' src="/images/favorite/ic_no_favorite.png"></image>
+  <text>暂无收藏</text>
+</view>

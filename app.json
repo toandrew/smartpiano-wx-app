@@ -11,11 +11,11 @@
     "pages/logs/logs",
     "pages/bluetooth/index",
     "pages/search/search",
-    "pages/favorite/favorite",
     "pages/lab/lab",
-    "pages/myrecords/myrecords",
     "pages/soundsettings/soundsettings",
-    "pages/feedback/feedback"
+    "pages/feedback/feedback",
+    "pages/myrecords/myrecords",
+    "pages/favorite/favorite"
   ],
   "window": {
     "backgroundTextStyle": "light",
