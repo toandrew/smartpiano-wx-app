@@ -1,8 +1,8 @@
 /* pages/about/about.wxss */
 
 .g-container {
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -10,12 +10,15 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  color: #aaaaaa;
-
-  padding: 200rpx 0;
+  color: #aaa;
+  padding: 300rpx 0;
 }
 
 .g-container .m-welcome text:nth-of-type(2) {
   color: #00f;
-  padding: 100rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 100rpx;
 }
