@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/splash/splash",
     "pages/about/about",
+    "pages/splash/splash",
+
     "pages/course/index",
     "pages/album/album",
     "pages/scorelib/scorelib",
