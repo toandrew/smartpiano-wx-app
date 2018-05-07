@@ -64,5 +64,5 @@
 .m-items {
   padding: 0 10rpx;
   background: #fff;
-  height: 100vh;
+  height: 60vh;
 }
