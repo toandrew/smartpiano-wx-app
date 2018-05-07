@@ -129,7 +129,7 @@ Page({
 
   gotoSoundSettings: function() {
     wx.showToast({
-      title: '暂不支持',
+      title: '需要连接The ONE智能乐器!',
       icon: 'none',
       duration: 1000
     });

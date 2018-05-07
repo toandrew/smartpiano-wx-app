@@ -14,8 +14,8 @@
     "pages/lab/lab",
     "pages/soundsettings/soundsettings",
     "pages/feedback/feedback",
-    "pages/myrecords/myrecords",
-    "pages/favorite/favorite"
+    "pages/favorite/favorite",
+    "pages/myrecords/myrecords"
   ],
   "window": {
     "backgroundTextStyle": "light",

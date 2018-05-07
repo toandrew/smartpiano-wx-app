@@ -9,6 +9,11 @@
   align-items: center;
 }
 
+.g-container image {
+  width: 350rpx;
+  height: 350rpx;
+}
+
 .g-container text {
   color: #aaa;
 }
