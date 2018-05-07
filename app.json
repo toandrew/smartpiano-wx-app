@@ -15,7 +15,8 @@
     "pages/soundsettings/soundsettings",
     "pages/feedback/feedback",
     "pages/favorite/favorite",
-    "pages/myrecords/myrecords"
+    "pages/myrecords/myrecords",
+    "pages/newbie/newbie"
   ],
   "window": {
     "backgroundTextStyle": "light",

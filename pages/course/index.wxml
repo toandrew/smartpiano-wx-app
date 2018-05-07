@@ -18,8 +18,8 @@
 
       <block wx:for="{{noviceCourses}}" wx:key="id">
         <view class="newbie-item">
-          <view class="image-container" data-row-id="{{item.id}}" bindtap="onItemClick">
-            <image mode="widthFix" src="{{item.cover_image_url}}">aaa</image>
+          <view class="image-container" data-novice-id="{{item.id}}" bindtap="onNewbieItemClick">
+            <image mode="widthFix" src="{{item.cover_image_url}}"></image>
             <view class="newbie-item-desc">
               <view class="newbie-item-desc-1">
                 <text>{{item.name}}</text>

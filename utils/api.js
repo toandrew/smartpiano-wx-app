@@ -42,6 +42,9 @@ const SCORE_LIB_FILTER_URL = '/smart-piano/v4/classify';
 // album's detail
 const ALBUM_DETAIL_URL = '/smart-piano/v4/album/{album_id}';
 
+// newbie's detail
+const NEWBIE_DETAIL_URL = '/smart-piano/v4/newbie/begin/{novice_id}';
+
 // banner
 function getBanner(handler) {
   handler.url = BANNER_URL;
@@ -169,6 +172,15 @@ function getCourseDetail(handler) {
   return network.GET(handler);
 }
 
+// get newbie's detail
+function getNewbieDetail(handler) {
+  let noviceId = handler.params.noviceId;
+
+  handler.url = NEWBIE_DETAIL_URL.replace(/\{novice_id\}/i, noviceId);
+
+  return network.GET(handler);
+}
+
 module.exports = {
   // login
   requestSmsToken: requestSmsToken,
@@ -204,5 +216,8 @@ module.exports = {
   getAlbumDetail: getAlbumDetail,
 
   // get course's detail
-  getCourseDetail: getCourseDetail
+  getCourseDetail: getCourseDetail,
+
+  // get newbie's detail
+  getNewbieDetail: getNewbieDetail,
 }

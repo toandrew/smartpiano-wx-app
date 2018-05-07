@@ -46,15 +46,14 @@ Page({
   },
 
   /**
-   * 点击跳转详情页
+   * 点击新手详情页
    */
-  onItemClick(e) {
-    var targetUrl = api.PAGE_WORK
-    if (e.currentTarget.dataset.rowId != null)
-      targetUrl = targetUrl + '?rowId=' + e.currentTarget.dataset.rowId
+  onNewbieItemClick(e) {
+    let noviceId = e.currentTarget.dataset.noviceId;
+
     wx.navigateTo({
-      url: targetUrl
-    })
+      url: '/pages/newbie/newbie?noviceId=' + noviceId,
+    });
   },
 
   /**

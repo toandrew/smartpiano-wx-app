@@ -29,7 +29,7 @@
   color: #000;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space:nowrap; 
+  white-space: nowrap;
   max-width: 60vw;
 }
 
@@ -38,7 +38,7 @@
   border-radius: 20rpx;
   border: 1rpx solid #7a5df3;
   padding: 0rpx 10rpx;
-  white-space:nowrap; 
+  white-space: nowrap;
   font-size: 25rpx;
   margin-left: 10rpx;
 }

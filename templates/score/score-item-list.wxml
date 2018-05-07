@@ -14,13 +14,17 @@
         </view>
 
         <view class="u-item-btn">
-          <view class="u-item-btn-item">
-            <image src="/images/score-item/ic_singles_video_enabled.png" hidden='{{item.video.list === undefined}}'></image>
-            <text hidden='{{item.video.list === undefined}}'>视频</text>
+          <view class="u-item-btn-item" style="display:{{item.video === undefined || item.video.list === undefined ? 'none' : 'flex'}};">
+            <image src="/images/score-item/ic_singles_video_enabled.png"></image>
+            <text>视频</text>
           </view>
-          <view class="u-item-btn-item">
-            <image src="/images/score-item/ic_singles_score_enabled.png"></image>
+          <view class="u-item-btn-item" style="display:{{item.score ===undefined ? 'none' : 'flex'}};">
+            <image src="/images/score-item/ic_singles_score_enabled.png" hidden='{{item.score ===undefined}}'></image>
             <text>曲谱</text>
+          </view>
+          <view class="u-item-btn-item" style="display:{{item.kara === undefined || item.kara.url.length == 0 ? 'none' : 'flex'}};">
+            <image src="/images/score-item/ic_singles_kara_enabled.png"></image>
+            <text>游戏</text>
           </view>
         </view>
       </view>
