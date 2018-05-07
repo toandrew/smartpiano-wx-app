@@ -1,2 +1,10 @@
 <!--pages/about/about.wxml-->
-<text>pages/about/about.wxml</text>
+<view class="g-container">
+  <image mode="widthFix" src="/images/about/logo_about.png"></image>
+
+  <view class="m-welcome">
+    <text>欢迎使用 The ONE 智能钢琴,弹钢琴从未如此简单、有趣</text>
+
+    <text>访问官网</text>
+  </view>
+</view>

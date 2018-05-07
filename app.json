@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/splash/splash",
+    "pages/about/about",
     "pages/course/index",
     "pages/album/album",
     "pages/scorelib/scorelib",
@@ -14,7 +15,6 @@
     "pages/lab/lab",
     "pages/myrecords/myrecords",
     "pages/soundsettings/soundsettings",
-    "pages/about/about",
     "pages/feedback/feedback"
   ],
   "window": {
