@@ -1,0 +1,11 @@
+<template name="gridItem">
+
+  <view class="grid-common">
+    <block wx:for="{{list}}" wx:key="id">
+      <view class="grid-common-item" data-album-id="{{item.id}}" catchtap='onGridClicked'>
+        <image src="{{item.image_url.length != 0 ? item.image_url : '/images/cover/ph_album_cover.png'}}"></image>
+        <text>"{{item.name}}"</text>
+      </view>
+    </block>
+  </view>
+</template>

@@ -1,0 +1,26 @@
+.grid-common {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: #fff;
+  padding: 0rpx 10rpx;
+}
+
+.grid-common-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.grid-common-item image {
+  width: 350rpx;
+  height: 350rpx;
+}
+
+.grid-common-item text {
+  width: 350rpx;
+  font-size: 24rpx;
+  padding: 0rpx 0rpx 10rpx 0rpx;
+  text-align: center;
+}

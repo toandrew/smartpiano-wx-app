@@ -1,0 +1,15 @@
+<!--pages/kara/kara.wxml-->
+<import src="/templates/grid/grid-item.wxml" />
+<import src="/templates/level/level.wxml" />
+<import src="/templates/nulltip/nulltip.wxml" />
+
+<view class="g-container">
+  <template is="level" data="{{levelTags : levelTags, currentLevel : currentRushLevel}}"></template>
+  <scroll-view class="item-container" scroll-y="true" bindscrolltolower="pullUpLoadLatest" hidden='{{isRushNull}}'>
+    <template is="gridItem" data="{{...rush}}" />
+  </scroll-view>
+
+  <view class="m-empty" hidden='{{!isRushNull}}'>
+    <template is="nullTip" data="{{nullTip: nullTip}}" />
+  </view>
+</view>

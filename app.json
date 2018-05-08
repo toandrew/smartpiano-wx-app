@@ -16,7 +16,9 @@
     "pages/feedback/feedback",
     "pages/favorite/favorite",
     "pages/myrecords/myrecords",
-    "pages/newbie/newbie"
+    "pages/newbie/newbie",
+    "pages/kara/kara",
+    "pages/rush/rush"
   ],
   "window": {
     "backgroundTextStyle": "light",

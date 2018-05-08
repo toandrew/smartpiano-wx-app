@@ -14,8 +14,8 @@ Page({
     banners: [],
     topNav: [
       { id: '1', name: '曲谱', image: '/images/score-item/ic_singles_score_enabled.png', redirectlink: '/pages/scorelib/scorelib?type=1', redirecttype: 'app', appid: '' },
-      { id: '2', name: '游戏', image: '/images/score-item/ic_singles_kara_enabled.png', redirectlink: '/pages/hot/hot', redirecttype: 'page', appid: '' },
-      { id: '3', name: '速成', image: '/images/score-item/ic_singles_rush_enabled.png', redirectlink: '/pages/topic/topic', redirecttype: 'page', appid: '' },
+      { id: '2', name: '游戏', image: '/images/score-item/ic_singles_kara_enabled.png', redirectlink: '/pages/kara/kara', redirecttype: 'page', appid: '' },
+      { id: '3', name: '速成', image: '/images/score-item/ic_singles_rush_enabled.png', redirectlink: '/pages/rush/rush', redirecttype: 'page', appid: '' },
     ],
 
     recommends: [],

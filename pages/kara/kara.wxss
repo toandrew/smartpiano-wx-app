@@ -1,0 +1,8 @@
+/* pages/kara/kara.wxss */
+@import "/templates/level/level.wxss";
+@import "/templates/nulltip/nulltip.wxss";
+@import "/templates/grid/grid-item.wxss";
+
+.g-container {
+  width: 100%;
+}

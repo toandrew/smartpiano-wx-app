@@ -45,6 +45,12 @@ const ALBUM_DETAIL_URL = '/smart-piano/v4/album/{album_id}';
 // newbie's detail
 const NEWBIE_DETAIL_URL = '/smart-piano/v4/newbie/begin/{novice_id}';
 
+// kara list
+const KARA_URL = '/smart-piano/v4/kara?offset={offset}&&limit={limit}&&level={level}';
+
+// rush list
+const RUSH_URL = '/smart-piano/v4/rush?offset={offset}&&limit={limit}&&level={level}';
+
 // banner
 function getBanner(handler) {
   handler.url = BANNER_URL;
@@ -181,6 +187,28 @@ function getNewbieDetail(handler) {
   return network.GET(handler);
 }
 
+// get kara list
+function getKaraList(handler) {
+  let offset = handler.params.offset;;
+  let limit = handler.params.limit;;
+  let level = handler.params.level;
+
+  handler.url = KARA_URL.replace(/\{offset\}/i, offset).replace(/\{limit\}/i, limit).replace(/\{level\}/i, level);
+
+  return network.GET(handler);
+}
+
+// get rush list
+function getRushList(handler) {
+  let offset = handler.params.offset;;
+  let limit = handler.params.limit;;
+  let level = handler.params.level;
+
+  handler.url = RUSH_URL.replace(/\{offset\}/i, offset).replace(/\{limit\}/i, limit).replace(/\{level\}/i, level);
+
+  return network.GET(handler);
+}
+
 module.exports = {
   // login
   requestSmsToken: requestSmsToken,
@@ -220,4 +248,10 @@ module.exports = {
 
   // get newbie's detail
   getNewbieDetail: getNewbieDetail,
+
+  // get kara list
+  getKaraList: getKaraList,
+
+  // get rush list
+  getRushList: getRushList
 }
