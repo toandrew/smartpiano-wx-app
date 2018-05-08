@@ -25,6 +25,9 @@ Page({
       actionText: '返回',
       routeUrl: '/pages/search/search'
     },
+
+    hiddenVideo: true,
+    courseVideoUrl: ''
   },
 
   /**
