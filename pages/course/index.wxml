@@ -41,7 +41,7 @@
     <template is="level" data="{{levelTags : levelTags, currentLevel : currentSingleLevel}}"></template>
 
     <scroll-view class="item-container" scroll-y="true" bindscrolltolower="pullUpLoadLatest" hidden='{{isSingleNull}}'>
-      <template is="scoreItemList" data="{{...singleCourses}}" />
+      <template is="scoreItemList" data="{{...singleCourses, hiddenVideo: hiddenVideo, courseVideoUrl: courseVideoUrl}}" />
     </scroll-view>
 
   <view class="m-empty" hidden='{{!isSingleNull}}'>

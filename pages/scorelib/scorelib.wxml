@@ -59,7 +59,7 @@
   <view class="m-items" hidden='{{isNull}}'>
     <block wx:if="{{currentType == 1}}">
       <scroll-view class="u-icontainer" scroll-y="true" bindscrolltolower="onMoreScore">
-        <template is="scoreItemList" data="{{...scores}}" />
+        <template is="scoreItemList" data="{{...scores, hiddenVideo: hiddenVideo, courseVideoUrl: courseVideoUrl}}" />
       </scroll-view>
     </block>
     <block wx:else>

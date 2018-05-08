@@ -59,7 +59,7 @@
         </block>
 
         <block wx:elif="{{item.type == 1}}">
-          <template is="scoreItemList" data="{{...item}}"/>
+          <template is="scoreItemList" data="{{...item, hiddenVideo: hiddenVideo, courseVideoUrl: courseVideoUrl}}"/>
         </block>
       </view>
 

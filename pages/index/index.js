@@ -20,6 +20,9 @@ Page({
 
     recommends: [],
     keyword: '',
+
+    hiddenVideo: true,
+    courseVideoUrl: '',
   },
   //事件处理函数
   bindViewTap: function() {
@@ -134,5 +137,17 @@ Page({
     wx.navigateTo({
       url: e.currentTarget.dataset.redirectlink
     });
+  },
+
+  onVideoClicked: function (e) {
+    console.log("onVideoClicked", e);
+  },
+
+  onScoreClicked: function (e) {
+    console.log("onScoreClicked", e);
+  },
+
+  onKaraClicked: function (e) {
+    console.log("onKaraClicked", e);
   }
 })

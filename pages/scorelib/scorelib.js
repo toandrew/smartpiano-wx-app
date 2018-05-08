@@ -37,7 +37,10 @@ Page({
       routeUrl: '/pages/scorelib/scorelib'
     },
 
-    pressedTag: ''
+    pressedTag: '',
+
+    hiddenVideo: true,
+    courseVideoUrl: '',
   },
 
   /**
@@ -105,7 +108,7 @@ Page({
 
   },
 
-  loadTags: function() {
+  loadTags: function () {
     api.getScoreLibTag({
       params: {},
 
@@ -123,7 +126,7 @@ Page({
     });
   },
 
-  onMoreClicked: function(e) {
+  onMoreClicked: function (e) {
     let tagShown = !this.data.tagShown;
     this.setData({
       tagShown: tagShown,
@@ -131,7 +134,7 @@ Page({
     });
   },
 
-  onFirstTagClicked: function(e) {
+  onFirstTagClicked: function (e) {
     this.setData({
       currentFirstTagId: e.currentTarget.dataset.item.id,
 
@@ -144,7 +147,7 @@ Page({
     this.doFilter();
   },
 
-  onSubTagClicked: function(e) {
+  onSubTagClicked: function (e) {
     this.setData({
       subTags: [e.currentTarget.dataset.item.id]
     });
@@ -154,7 +157,7 @@ Page({
     this.doFilter();
   },
 
-  onLevelClicked: function(e) {
+  onLevelClicked: function (e) {
     this.setData({
       currentLevel: e.currentTarget.dataset.item.id
     });
@@ -162,7 +165,7 @@ Page({
     this.doFilter();
   },
 
-  doFilter: function() {
+  doFilter: function () {
     let rtype = this.data.currentType;
     let sortType = this.data.currentFilter;
 
@@ -212,7 +215,7 @@ Page({
     });
   },
 
-  onCategoryClicked: function(e) {
+  onCategoryClicked: function (e) {
     this.setData({
       currentType: e.currentTarget.dataset.type
     });
@@ -220,7 +223,7 @@ Page({
     this.doFilter();
   },
 
-  onFilterClicked: function(e) {
+  onFilterClicked: function (e) {
     this.setData({
       currentFilter: e.currentTarget.dataset.filter
     });
@@ -228,14 +231,26 @@ Page({
     this.doFilter();
   },
 
-  onAlbumClicked: function(e) {
+  onAlbumClicked: function (e) {
     console.log(e);
 
-    wx:wx.navigateTo({
+    wx: wx.navigateTo({
       url: '/pages/album/album?albumId=' + e.currentTarget.dataset.albumId,
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     });
+  },
+
+  onVideoClicked: function (e) {
+    console.log("onVideoClicked", e);
+  },
+
+  onScoreClicked: function (e) {
+    console.log("onScoreClicked", e);
+  },
+
+  onKaraClicked: function (e) {
+    console.log("onKaraClicked", e);
   }
 })

@@ -19,6 +19,9 @@ Page({
     courseDesc: '',
 
     isCourse: false,
+
+    hiddenVideo: true,
+    courseVideoUrl: '',
   },
 
   /**
@@ -99,5 +102,31 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  onVideoClicked: function (e) {
+    console.log("onVideoClicked", e);
+    let url = e.currentTarget.dataset.url;
+    if (url) {
+      this.setData({
+        hiddenVideo: false,
+        courseVideoUrl: url
+      });
+    }
+  },
+
+  onScoreClicked: function (e) {
+    console.log("onScoreClicked", e);
+  },
+
+  onKaraClicked: function (e) {
+    console.log("onKaraClicked", e);
+  },
+
+  closeVideo: function (e) {
+    this.setData({
+      hiddenVideo: true,
+      courseVideoUrl: ''
+    });
   }
 })
