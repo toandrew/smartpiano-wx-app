@@ -33,8 +33,10 @@ Page({
   },
 
   onLoad() {
-    this.getAllCourses()
-    this.pullUpLoad()
+    this.getAllCourses();
+    this.pullUpLoad();
+
+    this.videoContext = wx.createVideoContext('courseVideo');
   },
 
   /**
@@ -267,5 +269,7 @@ Page({
       hiddenVideo: true,
       courseVideoUrl: ''
     });
+
+    this.videoContext.stop();
   }
 })

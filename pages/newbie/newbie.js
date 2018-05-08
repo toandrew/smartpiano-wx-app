@@ -50,9 +50,9 @@ Page({
       fail: (err) => {
         console.log(err);
       }
-
     })
 
+    this.videoContext = wx.createVideoContext('courseVideo');
   },
 
   /**
@@ -128,5 +128,7 @@ Page({
       hiddenVideo: true,
       courseVideoUrl: ''
     });
+
+    this.videoContext.stop();
   }
 })

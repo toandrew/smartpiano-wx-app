@@ -41,6 +41,8 @@ Page({
     } else {
       this.loadAlbumDetail();
     }
+
+    this.videoContext = wx.createVideoContext('courseVideo');
   },
 
   /**
@@ -150,6 +152,7 @@ Page({
       });
     }
   },
+
   onScoreClicked: function (e) {
     console.log("onScoreClicked", e);
   },
@@ -163,5 +166,7 @@ Page({
       hiddenVideo: true,
       courseVideoUrl: ''
     });
+
+    this.videoContext.stop();
   }
 })
