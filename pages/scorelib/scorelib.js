@@ -252,5 +252,14 @@ Page({
 
   onKaraClicked: function (e) {
     console.log("onKaraClicked", e);
+  },
+
+  onEmptyClicked: function(e) {
+    if (this.data.tagShown) {
+      this.setData({
+        tagShown: false,
+        moreImg: TAG_OPEN_IMG_URL
+      });
+    }
   }
 })

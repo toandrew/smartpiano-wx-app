@@ -57,6 +57,7 @@
   </view>
 
   <view class="m-items" hidden='{{isNull}}'>
+    <view class="m-mask" hidden="{{!tagShown}}" bindtap='onEmptyClicked'></view>
     <block wx:if="{{currentType == 1}}">
       <scroll-view class="u-icontainer" scroll-y="true" bindscrolltolower="onMoreScore">
         <template is="scoreItemList" data="{{...scores, hiddenVideo: hiddenVideo, courseVideoUrl: courseVideoUrl}}" />
@@ -67,6 +68,7 @@
         <template is="albumItemGrid" data="{{...albums}}" />
       </scroll-view>
     </block>
+
   </view>
 
   <view class="m-empty" hidden='{{!isNull}}'>
