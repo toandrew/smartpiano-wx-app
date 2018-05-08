@@ -26,6 +26,10 @@
             <image src="/images/score-item/ic_singles_kara_enabled.png"></image>
             <text>游戏</text>
           </view>
+          <view class="u-item-btn-item" style="display:{{item.rush === undefined || item.rush.url.length == 0 ? 'none' : 'flex'}};" bindtap='onRushClicked'>
+            <image src="/images/score-item/ic_singles_rush_enabled.png"></image>
+            <text>速成</text>
+          </view>
         </view>
       </view>
     </block>
