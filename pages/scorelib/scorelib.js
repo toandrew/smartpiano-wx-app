@@ -265,6 +265,8 @@ Page({
         tagShown: false,
         moreImg: TAG_OPEN_IMG_URL
       });
+
+      this.resetScrollToTag();
     }
   },
 
