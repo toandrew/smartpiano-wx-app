@@ -8,9 +8,9 @@
     <view class="m-header">
       <view class="u-empty" hidden="{{!tagShown}}">请选择分类</view>
       <block wx:if="{{!tagShown}}">
-        <scroll-view class="m-ftags" scroll-x="true" scroll-into-view="list-{{pressedTag}}">
-          <block wx:for="{{firstTags}}" wx:key="id">
-            <view id="list-{{item.id}}" class="u-first {{currentFirstTagId == item.id ? 'active' : ''}}" data-item="{{item}}" bindtap='onFirstTagClicked'>{{item.name}}</view>
+        <scroll-view class="m-ftags" scroll-x="true" scroll-into-view="list-{{scrollToTagIndex}}">
+          <block wx:for="{{firstTags}}" wx:key="id" wx:for-index="index">
+            <view id="list-{{index}}" class="u-first {{currentFirstTagId == item.id ? 'active' : ''}}" data-item="{{item}}" data-index="{{index}}" bindtap='onFirstTagClicked'>{{item.name}}</view>
           </block>
         </scroll-view>
       </block>
@@ -19,8 +19,8 @@
 
     <block wx:if="{{tagShown}}">
       <view class="m-tags">
-        <block wx:for="{{firstTags}}" wx:key="id" wx:for-item="firstItem">
-          <view class="u-ftag {{currentFirstTagId == firstItem.id ? 'active' : ''}}" data-item="{{firstItem}}" bindtap='onFirstTagClicked'>{{firstItem.name}}</view>
+        <block wx:for="{{firstTags}}" wx:key="id" wx:for-item="firstItem" wx:for-index="index">
+          <view class="u-ftag {{currentFirstTagId == firstItem.id ? 'active' : ''}}" data-item="{{firstItem}}" data-index="{{index}}" bindtap='onFirstTagClicked'>{{firstItem.name}}</view>
         </block>
 
         <block wx:for="{{firstTags}}" wx:key="id" wx:for-item="firstItem">

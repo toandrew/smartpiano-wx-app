@@ -37,7 +37,8 @@ Page({
       routeUrl: '/pages/scorelib/scorelib'
     },
 
-    pressedTag: '',
+    scrollToTagIndex: '',
+    pressedTagIndex: '',
 
     hiddenVideo: true,
     courseVideoUrl: '',
@@ -132,6 +133,10 @@ Page({
       tagShown: tagShown,
       moreImg: !tagShown ? TAG_OPEN_IMG_URL : TAG_PACKUP_IMG_URL
     });
+
+    if (!tagShown) {
+      this.resetScrollToTag();
+    }
   },
 
   onFirstTagClicked: function (e) {
@@ -141,7 +146,7 @@ Page({
       subTags: [-1],
       currentLevel: -1,
 
-      pressedTag: e.currentTarget.dataset.item.id,
+      pressedTagIndex: e.currentTarget.dataset.index,
     });
 
     this.doFilter();
@@ -261,5 +266,11 @@ Page({
         moreImg: TAG_OPEN_IMG_URL
       });
     }
+  },
+
+  resetScrollToTag: function() {
+    this.setData({
+      scrollToTagIndex: this.data.pressedTagIndex > 0 ? this.data.pressedTagIndex - 1 : this.data.pressedTagIndex
+    });
   }
 })
