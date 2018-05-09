@@ -1,90 +1,69 @@
-.container {
-  height: 100%;
-  width: 100%;
+.g-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 50rpx 0;
-  box-sizing: border-box;
+  width: 100%;
+  font-size: 36rpx;
+}
+
+.g-container image:nth-of-type(1) {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  z-index: -1;
+}
+
+.g-container image:nth-of-type(2) {
+  width: 350rpx;
+  height: 350rpx;
 }
 
 form {
-  margin-top: 100rpx;
-}
-
-.label {
-  display: block;
-  margin: 10rpx 0 10rpx;
-  padding: 0 20rpx;
-  color: #696a69;
-  font-weight: bold;
-  font-size: 38rpx;
-}
-
-.input {
-  display: block;
-  width: 85vw;
-  height: 30px;
-  margin: 0 auto 16px;
-  padding: 5px 8px;
-  font-size: 16px;
-  line-height: 24px;
-  color: #1c1c1c;
-  border: 1.5px solid #c2c2c2;
-  border-radius: 8px;
-  box-shadow: 1px 1px 2px #e4e4e4 inset;
-}
-
-.submit-btn {
-  display: block;
-  height: 33px;
-  width: 91vw;
-  margin: 0 auto 16px;
-  font-size: 16px;
-  cursor: pointer;
-  line-height: 29px;
-  color: #fff;
-  text-align: center;
-  border: 1px solid #53bc1b;
-  border-radius: 5px;
-  box-shadow: 0px 0px 0px #6cda30 inset, 1px 1px 2px #b5c7ab;
-  background: -moz-linear-gradient(top, #4ad001, #38a000);
-  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#4ad001), to(#38a000));
+  width: 100%;
 }
 
 .m-code {
   display: flex;
   flex-direction: row;
-  margin: 0rpx;
-  padding-bottom: 60rpx;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20rpx 40rpx;
+  border-bottom: 1rpx solid #555;
 }
 
-.u-code {
-  width: 50vw;
-  height: 28px;
-  margin: 0rpx 10rpx 0rpx 0;
-  padding: 5px 8px;
-  font-size: 16px;
-  line-height: 24px;
-  color: #1c1c1c;
-  border: 1.5px solid #c2c2c2;
-  border-radius: 8px;
-  box-shadow: 1px 1px 2px #e4e4e4 inset;
+input {
+  font-size: 30rpx;
+}
+
+.code {
+  margin: 20rpx 40rpx;
+  border-bottom: 1rpx solid #555;
 }
 
 .u-cbtn {
-  height: 90rpx;
-  flex: 1;
-  margin: 5rpx auto 16rpx;
-  font-size: 34rpx;
-  cursor: pointer;
-  line-height: 80rpx;
+  margin: 5rpx 0 16rpx;
+  font-size: 28rpx;
   color: #fff;
   text-align: center;
-  border: 1px solid #53bc1b;
+  border: 1px solid #eee;
   border-radius: 5px;
-  box-shadow: 0px 0px 0px #6cda30 inset, 1px 1px 2px #b5c7ab;
-  background: -moz-linear-gradient(top, #4ad001, #38a000);
-  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#4ad001), to(#38a000));
+  background: rgba(0, 0, 0, 0);
+}
+
+.submit-btn {
+  display: block;
+  width: 91vw;
+  margin: 0 auto 16px;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 29px;
+  padding: 10rpx;
+  color: #fff;
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0);
 }
