@@ -9,6 +9,7 @@
     </view>
     <input class="code" name="code" placeholder="请输入验证码" bindinput="onCodeFinish" />
     <button class="submit-btn" formType="submit">登 录</button>
+    <button class="guest-btn" bindtap='onGuestEnter'>游客进入 >></button>
   </form>
 
 </view>

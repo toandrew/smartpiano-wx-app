@@ -1,3 +1,4 @@
+
 .g-container {
   display: flex;
   flex-direction: column;
@@ -36,6 +37,7 @@ form {
 
 input {
   font-size: 30rpx;
+  color: #fff;
 }
 
 .code {
@@ -66,4 +68,12 @@ input {
   border: 1px solid #eee;
   border-radius: 5px;
   background: rgba(0, 0, 0, 0);
+}
+
+form .guest-btn {
+  text-align: right;
+  font-size: 16px;
+  color: #cdcdcd;
+  background: rgba(0, 0, 0, 0);
+  padding-right: 5vw;
 }

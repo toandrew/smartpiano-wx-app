@@ -2,6 +2,8 @@
 var app = getApp();
 var utils = require("../../utils/util.js");
 
+const GUEST_TOKEN = 'amUD6NIj0jvAinWyweBRgUz9Ib0=';
+
 Page({
   data: {
     codeMsg: "获取验证码",
@@ -158,5 +160,14 @@ Page({
 
   onCodeFinish: function (e) {
     this.vcode = e.detail.value.trim();
+  },
+
+  onGuestEnter: function (e) {
+    wx.setStorageSync('token', GUEST_TOKEN);
+    wx.setStorageSync('mobile', "");
+
+    wx.switchTab({
+      url: '/pages/index/index'
+    });
   }
 })
