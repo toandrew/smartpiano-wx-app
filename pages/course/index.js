@@ -99,6 +99,13 @@ Page({
         break
     }
   },
+  
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
 
   /**
    * [推荐]上拉刷新

@@ -25,7 +25,7 @@ Page({
     courseVideoUrl: '',
   },
   //事件处理函数
-  bindViewTap: function() {
+  bindViewTap: function () {
     wx.navigateTo({
       url: '../logs/logs'
     })
@@ -65,7 +65,7 @@ Page({
     // get banner data
     let request = api.getBanner({
       params: {},
-      success: function(res) {
+      success: function (res) {
         console.log('getBanner', res);
 
         self.setData({
@@ -73,7 +73,7 @@ Page({
         });
       },
 
-      fail: function(err) {
+      fail: function (err) {
         console.log(err);
       }
     });
@@ -81,19 +81,19 @@ Page({
     let rRequest = api.getRecommend({
       params: {},
 
-      success: function(res) {
+      success: function (res) {
         console.log(res.data.data);
         self.setData({
           recommends: res.data.data
         });
       },
 
-      fail: function(err) {
+      fail: function (err) {
         console.log(err);
       }
     });
   },
-  getUserInfo: function(e) {
+  getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
@@ -102,7 +102,7 @@ Page({
     })
   },
 
-  onSearch: function(e) {
+  onSearch: function (e) {
     console.log(e);
 
     wx.navigateTo({
@@ -114,7 +114,7 @@ Page({
     });
   },
 
-  onMore: function(e) {
+  onMore: function (e) {
     console.log(e.currentTarget.dataset);
     wx.navigateTo({
       url: '/pages/scorelib/scorelib?type=' + e.currentTarget.dataset.rtype
@@ -132,7 +132,7 @@ Page({
     })
   },
 
-  onNavRedirect: function(e) {
+  onNavRedirect: function (e) {
     console.log(e);
     wx.navigateTo({
       url: e.currentTarget.dataset.redirectlink
@@ -149,5 +149,12 @@ Page({
 
   onKaraClicked: function (e) {
     console.log("onKaraClicked", e);
-  }
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
 })

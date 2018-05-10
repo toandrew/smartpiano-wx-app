@@ -47,6 +47,13 @@ Page({
     });
     console.log("login page  show");
   },
+  
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
 
   setCodeTimer: function () {
     var that = this;
