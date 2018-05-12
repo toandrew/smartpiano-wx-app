@@ -1,15 +1,13 @@
 <!--index.wxml-->
 <view class="g-container" style="display:{{visible}}">
-  <image mode='widthFix' src="/images/login/bg_login.png"></image>
-  <image mode="aspectFit" src="/images/login/ic_logo_login.png"></image>
+  <image mode="aspectFit" src="/images/about/logo_about.png"></image>
   <form bindsubmit="onSubmit">
-    <view class="m-code">
-      <input name="phone" placeholder="请输入手机号" bindinput="onPhoneFinish" />
-      <button class="u-cbtn" bindtap="onRequestCode">{{codeMsg}}</button>
+    <view class="m-phone">
+      <input name="phone" placeholder="请输入手机号" bindinput="onPhoneFinish" type="number" />
+      <button type="primary" class="u-codebtn" bindtap="onRequestCode">{{codeMsg}}</button>
     </view>
-    <input class="code" name="code" placeholder="请输入验证码" bindinput="onCodeFinish" />
-    <button class="submit-btn" formType="submit">登 录</button>
-    <button class="guest-btn" bindtap='onGuestEnter'>游客进入 >></button>
+    <input class="u-code" name="code" placeholder="请输入验证码" bindinput="onCodeFinish" type="number" />
+    <button type="primary" class="submit-btn" formType="submit">登 录</button>
+    <button class="guest-btn" bindtap='onGuestEnter' hover-class="btn-hover">游客进入 >></button>
   </form>
-
 </view>

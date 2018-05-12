@@ -62,7 +62,7 @@ function validatePhone(phoneNum, showToast) {
   if (!flag && showToast) {
     wx.showToast({
       title: '手机号不合法',
-      duration: 2000
+      duration: 1000
     })
   }
   return flag
@@ -75,42 +75,10 @@ function validateCode(vcode, showToast) {
   if (!flag && showToast) {
     wx.showToast({
       title: '验证码不正确',
-      duration: 2000
+      duration: 1000
     })
   }
   return flag
-}
-
-function validateSchoolCode(schoolCode, showToast) {
-  //只包含大写字母和数字
-  var reg = /^[A-Z0-9]+$/
-  var flag = reg.test(schoolCode)
-  if (!flag && showToast) {
-    wx.showToast({
-      title: '机构代码不正确',
-      duration: 2000
-    })
-  }
-  return flag
-}
-
-function validateSchool(school, showToast) {
-  var length = school.length
-  var errMsg = ""
-  if (length == 0) {
-    errMsg = "学校不能为空"
-  } else if (length > 64) {
-    errMsg = "学校的名字也太长了"
-  }
-
-  if (errMsg.length > 0 && showToast) {
-    wx.showToast({
-      title: errMsg,
-      duration: 2000
-    })
-  }
-
-  return errMsg.length > 0 ? false : true
 }
 
 function validateName(name, showToast) {
@@ -162,8 +130,6 @@ module.exports = {
   checkRemainTime: checkRemainTime,
   validatePhone: validatePhone,
   validateCode: validateCode,
-  validateSchoolCode: validateSchoolCode,
-  validateSchool: validateSchool,
   validateName: validateName,
   validateBirthday: validateBirthday,
   formatBirthday: formatBirthday

@@ -1,4 +1,3 @@
-
 .g-container {
   display: flex;
   flex-direction: column;
@@ -7,73 +6,55 @@
   font-size: 36rpx;
 }
 
-.g-container image:nth-of-type(1) {
-  width: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  padding: 0;
-  margin: 0;
-  z-index: -1;
-}
-
-.g-container image:nth-of-type(2) {
-  width: 350rpx;
-  height: 350rpx;
+.g-container image {
+  height: 300rpx;
 }
 
 form {
   width: 100%;
 }
 
-.m-code {
+.m-phone {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin: 20rpx 40rpx;
-  border-bottom: 1rpx solid #555;
+  border-bottom: 1rpx solid #eee;
 }
 
 input {
   font-size: 30rpx;
-  color: #fff;
 }
 
-.code {
-  margin: 20rpx 40rpx;
-  border-bottom: 1rpx solid #555;
+.u-code {
+  margin: 40rpx 40rpx;
+  border-bottom: 1rpx solid #eee;
 }
 
-.u-cbtn {
+.u-codebtn {
   margin: 5rpx 0 16rpx;
   font-size: 28rpx;
-  color: #fff;
-  text-align: center;
-  border: 1px solid #eee;
-  border-radius: 5px;
-  background: rgba(0, 0, 0, 0);
 }
 
 .submit-btn {
-  display: block;
   width: 91vw;
-  margin: 0 auto 16px;
-  font-size: 16px;
-  cursor: pointer;
-  line-height: 29px;
-  padding: 10rpx;
-  color: #fff;
-  text-align: center;
-  border: 1px solid #eee;
-  border-radius: 5px;
-  background: rgba(0, 0, 0, 0);
 }
 
 form .guest-btn {
+  width: 100%;
   text-align: right;
   font-size: 16px;
-  color: #cdcdcd;
+  color: #959595;
   background: rgba(0, 0, 0, 0);
   padding-right: 5vw;
+  margin-top: 20rpx;
+}
+
+button[class="guest-btn"]::after {
+  border: none;
+}
+
+.btn-hover {
+  opacity: 0;
 }
