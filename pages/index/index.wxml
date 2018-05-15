@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<import src="/templates/score/score-item-list.wxml"/>
+<import src="/templates/score/score-item-list.wxml" />
 
 <view class="header">
   <swiper class="swiper" indicator-dots='true' interval='10000' autoplay='true' indicator-color='rgba(255, 255, 255, .2)' indicator-active-color='rgba(255, 255, 255, .8)'>
@@ -40,7 +40,7 @@
     <block wx:for="{{recommends}}" wx:key="id">
       <view class="album-score-title" data-rtype="{{item.type}}" bindtap="onMore">
         <view class="recommend-title">{{item.name}}</view>
-        <view class="recommend-title-more" >
+        <view class="recommend-title-more">
           <view>更多</view>
           <view class="right-arrow"></view>
         </view>
@@ -59,7 +59,7 @@
         </block>
 
         <block wx:elif="{{item.type == 1}}">
-          <template is="scoreItemList" data="{{...item, hiddenVideo: hiddenVideo, courseVideoUrl: courseVideoUrl}}"/>
+          <template is="scoreItemList" data="{{...item, hiddenVideo: hiddenVideo, courseVideoUrl: courseVideoUrl}}" />
         </block>
       </view>
 

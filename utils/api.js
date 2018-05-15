@@ -33,11 +33,7 @@ const SEARCY_BY_KEY_URL = '/smart-piano/v4/search/{keyword}?type=1&&offset=0&&li
 // score lib's tag
 const SCORE_LIB_TAG_URL = '/smart-piano/v4/tag';
 
-const SCORE_LIB_SCORES_URL = '/smart-piano/v4/classify?type=1&&ids=&&sort_type="hot"&&offset=0&&limit=10';
-
-const SCORE_LIB_ALBUM_URL = '/smart-piano/v4/classify?type=2&&ids=&&sort_type="hot"&&offset=0&&limit=10';
-
-const SCORE_LIB_FILTER_URL = '/smart-piano/v4/classify';
+const SCORE_LIB_FILTER_URL = '/smart-piano/v4/classify?type={type}&&ids={ids}&&sort_type={sort_type}&&offset={offset}&&limit={limit}';
 
 // album's detail
 const ALBUM_DETAIL_URL = '/smart-piano/v4/album/{album_id}';
@@ -134,20 +130,6 @@ function getScoreLibTag(handler) {
   return network.GET(handler);
 }
 
-// get scores
-function getScoresByTag(handler) {
-  handler.url = SCORE_LIB_SCORES_URL;
-
-  return network.GET(handler);
-}
-
-// get albums
-function getAlbumsByTag(handler) {
-  handler.url = SCORE_LIB_ALBUM_URL;
-
-  return network.GET(handler);
-}
-
 // do filter in score lib
 function scoreLibFilter(handler) {
   let rtype = handler.params.type;
@@ -156,7 +138,7 @@ function scoreLibFilter(handler) {
   let offset = handler.params.offset;
   let limit = handler.params.limit;
 
-  handler.url = SCORE_LIB_FILTER_URL + '?type=' + rtype + "&&ids=" + ids + "&&sort_type=" + sortType + "&&offset=" + offset + "&&limit=" + limit;
+  handler.url = SCORE_LIB_FILTER_URL.replace(/\{type\}/i, rtype).replace(/\{ids\}/i, ids).replace(/\{sort_type\}/i, sortType).replace(/\{offset\}/i, offset).replace(/\{limit\}/i, limit);
   console.log(handler.url);
 
   return network.GET(handler);
@@ -230,12 +212,6 @@ module.exports = {
 
   // score lib's tag
   getScoreLibTag: getScoreLibTag,
-
-  // scores
-  getScoresByTag: getScoresByTag,
-
-  // albums
-  getAlbumsByTag: getAlbumsByTag,
 
   // score lib filter
   scoreLibFilter: scoreLibFilter,
