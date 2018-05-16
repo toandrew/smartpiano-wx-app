@@ -60,12 +60,12 @@
     <view class="m-mask" hidden="{{!tagShown}}" bindtap='onEmptyClicked'></view>
     <block wx:if="{{currentType == 1}}">
       <scroll-view class="u-icontainer" scroll-y="true" bindscrolltolower="onMoreScore">
-        <template is="scoreItemList" data="{{...scores, hiddenVideo: hiddenVideo, courseVideoUrl: courseVideoUrl}}" />
+        <template is="scoreItemList" data="{{list: scores, hiddenVideo: hiddenVideo, courseVideoUrl: courseVideoUrl}}" />
       </scroll-view>
     </block>
     <block wx:else>
       <scroll-view class="u-icontainer" scroll-y="true" bindscrolltolower="onMoreAlbums">
-        <template is="albumItemGrid" data="{{...albums}}" />
+        <template is="albumItemGrid" data="{{list: albums}}" />
       </scroll-view>
     </block>
 

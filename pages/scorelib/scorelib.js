@@ -18,8 +18,8 @@ Page({
     firstTags: [],
     levelTags: [],
 
-    scores: {},
-    albums: {},
+    scores: [],
+    albums: [],
 
     tagShown: false,
 
@@ -54,6 +54,8 @@ Page({
         currentType: type
       });
     }
+
+    this.resetPages();
 
     this.loadTags();
 
@@ -93,6 +95,10 @@ Page({
    */
   onPullDownRefresh: function () {
     console.log("onPullDownRefresh");
+
+    this.resetPages();
+
+    this.doFilter();
   },
 
   /**
@@ -100,6 +106,9 @@ Page({
    */
   onReachBottom: function () {
     console.log("onReachBottom");
+
+    this.currentPage += 1;
+    this.doFilter();
   },
 
   /**
@@ -149,6 +158,7 @@ Page({
       pressedTagIndex: e.currentTarget.dataset.index,
     });
 
+    this.resetPages();
     this.doFilter();
   },
 
@@ -159,6 +169,8 @@ Page({
 
     console.log(this.data.subTags);
 
+    this.resetPages();
+
     this.doFilter();
   },
 
@@ -166,6 +178,8 @@ Page({
     this.setData({
       currentLevel: e.currentTarget.dataset.item.id
     });
+
+    this.resetPages();
 
     this.doFilter();
   },
@@ -187,8 +201,8 @@ Page({
         type: rtype,
         ids: ids.join(','),
         sort_type: sortType,
-        offset: 0,
-        limit: 30
+        offset: (this.offset + api.PAGESIZE * (this.currentPage - 1)),
+        limit: api.PAGESIZE
       },
 
       success: (res) => {
@@ -204,12 +218,12 @@ Page({
         if (rtype == 1) {
           this.setData({
             isNull: false,
-            scores: res.data.data
+            scores: this.data.scores.concat(res.data.data.list)
           });
         } else {
           this.setData({
             isNull: false,
-            albums: res.data.data
+            albums: this.data.albums.concat(res.data.data.list)
           });
         }
       },
@@ -259,7 +273,7 @@ Page({
     console.log("onKaraClicked", e);
   },
 
-  onEmptyClicked: function(e) {
+  onEmptyClicked: function (e) {
     if (this.data.tagShown) {
       this.setData({
         tagShown: false,
@@ -270,9 +284,18 @@ Page({
     }
   },
 
-  resetScrollToTag: function() {
+  resetScrollToTag: function () {
     this.setData({
       scrollToTagIndex: this.data.pressedTagIndex > 0 ? this.data.pressedTagIndex - 1 : this.data.pressedTagIndex
+    });
+  },
+
+  resetPages: function () {
+    this.offset = 0;
+    this.currentPage = 1;
+    this.setData({
+      scores: [],
+      albums: []
     });
   }
 })

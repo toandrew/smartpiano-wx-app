@@ -229,5 +229,7 @@ module.exports = {
   getKaraList: getKaraList,
 
   // get rush list
-  getRushList: getRushList
+  getRushList: getRushList,
+
+  PAGESIZE: 30
 }
