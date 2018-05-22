@@ -208,11 +208,14 @@ Page({
       success: (res) => {
         console.log(res);
         if (res.data.data.list && res.data.data.list.length == 0) {
-          this.setData({
-            isNull: true
-          });
 
-          return;
+          if ((rtype == 1 && this.data.scores.length == 0) || (rtype == 2 && this.data.albums.length == 0)) {
+            this.setData({
+              isNull: true
+            });
+
+            return;
+          }
         }
 
         if (rtype == 1) {
@@ -239,6 +242,8 @@ Page({
       currentType: e.currentTarget.dataset.type
     });
 
+    this.resetPages();
+
     this.doFilter();
   },
 
@@ -246,6 +251,8 @@ Page({
     this.setData({
       currentFilter: e.currentTarget.dataset.filter
     });
+
+    this.resetPages();
 
     this.doFilter();
   },

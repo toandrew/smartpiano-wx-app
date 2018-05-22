@@ -6,7 +6,7 @@
 <view class="g-container">
   <template is="level" data="{{levelTags : levelTags, currentLevel : currentKaraLevel}}"></template>
   <scroll-view class="item-container" scroll-y="true" bindscrolltolower="pullUpLoadLatest" hidden='{{isKaraNull}}'>
-    <template is="gridItem" data="{{...karas}}" />
+    <template is="gridItem" data="{{list: karas}}" />
   </scroll-view>
 
   <view class="m-empty" hidden='{{!isKaraNull}}'>
