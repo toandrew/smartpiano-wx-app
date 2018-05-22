@@ -39,6 +39,7 @@ input {
 
 .submit-btn {
   width: 91vw;
+  font-size: 36rpx;
 }
 
 form .guest-btn {
