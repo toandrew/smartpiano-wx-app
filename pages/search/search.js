@@ -34,6 +34,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.loadHotSearch();
+    this.loadSearchHistory();
+
     console.log(options.keyword);
     if (options.keyword && options.keyword.trim()) {
       console.log("search:" + options.keyword);
@@ -44,9 +47,6 @@ Page({
         hideDeleteIcon: false
       });
     }
-
-    this.loadHotSearch();
-    this.loadSearchHistory();
   },
 
   /**
@@ -174,7 +174,6 @@ Page({
     }
 
     let history = this.data.history.slice(0);
-
     let index = history.indexOf(keyword);
     if (index < 0) {
       if (history.length >= 10) {
@@ -185,6 +184,8 @@ Page({
       this.setData({
         history: history
       });
+
+      wx.setStorageSync(SEARCH_HISTORY, history);
     }
 
     api.search({

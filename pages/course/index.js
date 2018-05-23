@@ -34,7 +34,6 @@ Page({
 
   onLoad() {
     this.getAllCourses();
-    this.pullUpLoad();
 
     this.videoContext = wx.createVideoContext('courseVideo');
   },
@@ -68,9 +67,6 @@ Page({
     this.setData({
       currentNavbar: e.currentTarget.dataset.idx
     });
-    // if (e.currentTarget.dataset.idx == 1 && this.data.latest_list.length == 0) {
-    //   this.pullUpLoadLatest()
-    // }
 
     console.log(e.currentTarget.dataset.idx);
   },
@@ -79,64 +75,13 @@ Page({
    * 下拉刷新
    */
   onPullDownRefresh() {
-    switch (this.data.currentNavbar) {
-      case 0:
-        this.setData({
-          list: [],
-          hot_last_id: 0
-        })
-        this.pullUpLoad()
-        break
-      case 1:
-        this.setData({
-          latest_list: [],
-          latest_list_id: 0
-        })
-        this.pullUpLoadLatest()
-        break
-      case 2:
-        wx.stopPullDownRefresh()
-        break
-    }
   },
-  
+
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
 
-  },
-
-  /**
-   * [推荐]上拉刷新
-   */
-  pullUpLoad() {
-    // wx.showNavigationBarLoading()
-    // api.get(api.HOST_IOS + api.HOT + '?last_id=' + this.data.hot_last_id)
-    //   .then(res => {
-    //     this.setData({
-    //       list: this.data.list.concat(res.data.list),
-    //       hot_last_id: res.data.last_id
-    //     })
-    //     wx.hideNavigationBarLoading()
-    //     wx.stopPullDownRefresh()
-    //   })
-  },
-
-  /**
-   * [最新]上拉刷新
-   */
-  pullUpLoadLatest() {
-    // wx.showNavigationBarLoading()
-    // api.get(api.HOST_IOS + api.LATEST + '?last_id=' + this.data.latest_last_id)
-    //   .then(res => {
-    //     this.setData({
-    //       latest_list: this.data.latest_list.concat(res.data.list),
-    //       latest_last_id: res.data.last_id
-    //     })
-    //     wx.hideNavigationBarLoading()
-    //     wx.stopPullDownRefresh()
-    //   })
   },
 
   swiperTab(e) {
@@ -178,9 +123,9 @@ Page({
     }
   },
 
-  loadSingleCourse: function() {
+  loadSingleCourse: function () {
     let offset = 0;
-    let limit = 30;
+    let limit = 100;
     let level = this.data.levelTags.indexOf(this.data.currentSingleLevel);
 
     api.getSingleCourse({
@@ -204,7 +149,7 @@ Page({
     });
   },
 
-  loadCompositeCourse: function() {
+  loadCompositeCourse: function () {
     let offset = 0;
     let limit = 30;
     let level = this.data.levelTags.indexOf(this.data.currentCompositeLevel);
@@ -230,7 +175,7 @@ Page({
     });
   },
 
-  loadNovieCourse: function() {
+  loadNovieCourse: function () {
     api.getNoviceCourse({
       params: {
         offset: 0,
@@ -263,11 +208,11 @@ Page({
     }
   },
 
-  onScoreClicked: function(e) {
+  onScoreClicked: function (e) {
     console.log("onScoreClicked", e);
   },
 
-  onKaraClicked: function(e) {
+  onKaraClicked: function (e) {
     console.log("onKaraClicked", e);
   },
 

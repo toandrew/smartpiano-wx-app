@@ -51,6 +51,11 @@ swiper {
   height: 100%;
 }
 
+.single-item-container {
+  width: 100%;
+  height: 90%;
+}
+
 .image-container {
   display: block;
   width: 100vw;

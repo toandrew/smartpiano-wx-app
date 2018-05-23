@@ -14,7 +14,7 @@
 
   <!-- 新手入门 -->
   <swiper-item>
-    <scroll-view class="item-container" scroll-y="true" bindscrolltolower="pullUpLoad" hidden='{{isNebieNull}}'>
+    <scroll-view class="item-container" scroll-y="true" hidden='{{isNebieNull}}'>
 
       <block wx:for="{{noviceCourses}}" wx:key="id">
         <view class="newbie-item">
@@ -31,34 +31,34 @@
       </block>
     </scroll-view>
 
-  <view class="m-empty" hidden='{{!isNebieNull}}'>
-    <template is="nullTip" data="{{nullTip: nullTip}}" />
-  </view>
+    <view class="m-empty" hidden='{{!isNebieNull}}'>
+      <template is="nullTip" data="{{nullTip: nullTip}}" />
+    </view>
   </swiper-item>
 
   <!-- 单曲讲解 -->
   <swiper-item>
     <template is="level" data="{{levelTags : levelTags, currentLevel : currentSingleLevel}}"></template>
 
-    <scroll-view class="item-container" scroll-y="true" bindscrolltolower="pullUpLoadLatest" hidden='{{isSingleNull}}'>
+    <scroll-view class="single-item-container" scroll-y="true" hidden='{{isSingleNull}}'>
       <template is="scoreItemList" data="{{...singleCourses, hiddenVideo: hiddenVideo, courseVideoUrl: courseVideoUrl}}" />
     </scroll-view>
 
-  <view class="m-empty" hidden='{{!isSingleNull}}'>
-    <template is="nullTip" data="{{nullTip: nullTip}}" />
-  </view>
+    <view class="m-empty" hidden='{{!isSingleNull}}'>
+      <template is="nullTip" data="{{nullTip: nullTip}}" />
+    </view>
   </swiper-item>
 
   <!-- 综合课堂 -->
   <swiper-item>
-      <template is="level" data="{{levelTags : levelTags, currentLevel : currentCompositeLevel}}"></template>
-    <scroll-view class="item-container" scroll-y="true" bindscrolltolower="pullUpLoadLatest" hidden='{{isCompositeNull}}'>
+    <template is="level" data="{{levelTags : levelTags, currentLevel : currentCompositeLevel}}"></template>
+    <scroll-view class="item-container" scroll-y="true" hidden='{{isCompositeNull}}'>
       <template is="albumItemGrid" data="{{...compositeCourses}}" />
     </scroll-view>
 
-  <view class="m-empty" hidden='{{!isCompositeNull}}'>
-    <template is="nullTip" data="{{nullTip: nullTip}}" />
-  </view>
+    <view class="m-empty" hidden='{{!isCompositeNull}}'>
+      <template is="nullTip" data="{{nullTip: nullTip}}" />
+    </view>
   </swiper-item>
 
 </swiper>
