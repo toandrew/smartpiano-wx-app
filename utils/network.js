@@ -70,7 +70,6 @@ function request(method, requestHandler) {
     },
     success: function(res) {
       checkResponse(res, requestHandler.success, requestHandler.fail);
-      // requestHandler.success(res);
     },
 
     fail: function (err) {
@@ -78,6 +77,7 @@ function request(method, requestHandler) {
     },
 
     complete: function() {
+      wx.stopPullDownRefresh();
     }
   })
 }
