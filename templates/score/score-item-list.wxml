@@ -18,7 +18,7 @@
             <image src="/images/score-item/ic_singles_video_enabled.png"></image>
             <text>视频</text>
           </view>
-          <view class="u-item-btn-item" style="display:{{item.score === undefined ? 'none' : 'flex'}};" bindtap='onScoreClicked'>
+          <view class="u-item-btn-item" style="display:{{item.score === undefined ? 'none' : 'flex'}};" data-score-id="{{item.id}}" bindtap='onScoreClicked'>
             <image src="/images/score-item/ic_singles_score_enabled.png"></image>
             <text>曲谱</text>
           </view>

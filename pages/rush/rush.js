@@ -134,5 +134,13 @@ Page({
     this.setData({
       rush: [],
     });
+  },
+
+  onGridClicked: function(e) {
+    console.log("onGridClicked");
+
+    wx.navigateTo({
+      url: '/pages/score/score?scoreId=' + e.currentTarget.dataset.scoreId,
+    });
   }
 })

@@ -1,0 +1,5 @@
+<!--pages/score/score.wxml-->
+<view class="g-container">
+  <image mode='widthFix' src="{{scoreUrl}}">
+  </image>
+</view>
