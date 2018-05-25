@@ -238,5 +238,13 @@ Page({
     this.setData({
       history: history
     });
-  }
+  },
+
+  onScoreClicked: function (e) {
+    console.log("onScoreClicked", e);
+
+    wx.navigateTo({
+      url: '/pages/score/score?scoreId=' + e.currentTarget.dataset.scoreId,
+    });
+  },
 })
