@@ -8,13 +8,15 @@ const THEONE_CHAR_UUID = '7772e5db-3868-4112-a1a9-f2669d106bf3';
 
 var deviceScanInterval = null;
 
+const app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    devices: [], // 蓝牙设备
+    foundDevices: [], // 蓝牙设备
     connectedDeviceId: "",
     readServiceId: '',
     writeServiceId: '',
@@ -25,6 +27,7 @@ Page({
    */
   onLoad: function (options) {
     let self = this;
+
     wx.openBluetoothAdapter({
       success: function (res) {
         console.log("openBluetoothAdapter ok", res);
@@ -51,6 +54,55 @@ Page({
     wx.onBLEConnectionStateChange(function (res) {
       console.log(res);
     });
+
+    this.bleDevices = [];
+
+    // wx.onBluetoothDeviceFound(function (devices) {
+    //   console.log("devices:", devices);
+    //   let isnotExist = true
+    //   if (devices.deviceId) {
+    //     for (var i = 0; i < self.bleDevices.length; i++) {
+    //       if (devices.deviceId == self.bleDevices[i].deviceId) {
+    //         isnotExist = false
+    //       }
+    //     }
+    //     if (isnotExist) {
+    //       self.bleDevices.push(devices);
+
+    //       self.setData({
+    //         foundDevices: self.bleDevices
+    //       })
+    //     }
+    //   }
+    //   else if (devices.devices) {
+    //     for (var i = 0; i < self.bleDevices.length; i++) {
+    //       if (devices.devices[0].deviceId == self.bleDevices[i].deviceId) {
+    //         isnotExist = false
+    //       }
+    //     }
+
+    //     if (isnotExist) {
+    //       self.bleDevices.push(devices.devices[0]);
+    //       self.setData({
+    //         foundDevices: self.bleDevices
+    //       });
+    //     }
+    //   }
+    //   else if (devices[0]) {
+    //     for (var i = 0; i < self.bleDevices.length; i++) {
+    //       if (devices[0].deviceId == self.bleDevices[i].deviceId) {
+    //         isnotExist = false
+    //       }
+    //     }
+
+    //     if (isnotExist) {
+    //       self.bleDevices.push(devices[0]);
+    //       self.setData({
+    //         foundDevices: self.bleDevices
+    //       });
+    //     }
+    //   }
+    // });
   },
 
   /**
@@ -120,7 +172,7 @@ Page({
 
   onDeviceSelected: function (e) {
     var self = this;
-    var deviceId = this.data.devices[e.currentTarget.dataset.index].deviceId;
+    var deviceId = this.data.foundDevices[e.currentTarget.dataset.index].deviceId;
     this.setData({
       connectedDeviceId: deviceId
     });
@@ -166,7 +218,11 @@ Page({
                   }
 
                   wx.onBLECharacteristicValueChange(function (characteristic) {
-                    console.log('characteristic value com:', characteristic);
+                    console.log('characteristic value com:', characteristic.value);
+
+                    if (app.onBle) {
+                      app.onBle(characteristic);
+                    }
                   });
 
                   if (theOneReadChar) {
@@ -186,7 +242,7 @@ Page({
                     });
                   }
 
-                  console.log("read char:" + theOneReadChar + " write char:" + theOneWriteChar);
+                  console.log("read char:" , theOneReadChar , " write char:" , theOneWriteChar);
 
                   // send connect command
                   // if (theOneWriteChar) {
@@ -202,11 +258,11 @@ Page({
                   //     characteristicId: theOneWriteChar.uuid,
                   //     value: buffer,
                   //     success: function(res) {
-                  //       console.log("connect ok!" + res);
+                  //       console.log("connect ok!", res);
                   //     },
 
                   //     fail: function(res) {
-                  //       console.log("connect failed!" + res);
+                  //       console.log("connect failed!" ,res);
                   //     }
                   //   })
                   // }
@@ -240,22 +296,22 @@ Page({
         console.log(res.devices);
 
         self.setData({
-          devices: res.devices
+          foundDevices: res.devices
         });
 
-        if (self.data.connectedDeviceId) {
-          wx.readBLECharacteristicValue({
-            deviceId: self.data.connectedDeviceId,
-            serviceId: THEONE_SERVICE_UUID,
-            characteristicId: THEONE_CHAR_UUID,
-            success: function (res) {
-              console.log('readBLECharacteristicValue ok:', res);
-            },
-            fail: function (res) {
-              console.log('readBLECharacteristicValue failed:', res);
-            }
-          })
-        }
+        // if (self.data.connectedDeviceId) {
+        //   wx.readBLECharacteristicValue({
+        //     deviceId: self.data.connectedDeviceId,
+        //     serviceId: THEONE_SERVICE_UUID,
+        //     characteristicId: THEONE_CHAR_UUID,
+        //     success: function (res) {
+        //       console.log('readBLECharacteristicValue ok:', res);
+        //     },
+        //     fail: function (res) {
+        //       console.log('readBLECharacteristicValue failed:', res);
+        //     }
+        //   })
+        // }
       },
     })
   },

@@ -38,5 +38,9 @@ App({
     userInfo: null
   },
 
+  onBle: function(e) {
+    console.log(onBle);
+  },
+
   api: require('utils/api')
 })
