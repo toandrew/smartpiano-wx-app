@@ -33,10 +33,10 @@
 
 .user-info-name {
   display: flex;
-  width: 50%;
+  flex: 1;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 0rpx;
   margin-left: 0rpx;
 }
@@ -80,4 +80,8 @@
   font-size: 30rpx;
   text-align: center;
   padding-left: 40rpx;
+}
+
+.u-logout {
+  font-size: 30rpx;
 }

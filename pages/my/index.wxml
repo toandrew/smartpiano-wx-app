@@ -9,7 +9,7 @@
 
     <view class="user-info-name">
       <open-data type="userNickName" lang="zh_CN"></open-data>
-      <view class="right-arrow"></view>
+      <button class="u-logout" type='warn' bindtap='onLogout'>退出登录</button>
     </view>
   </view>
 

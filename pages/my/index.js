@@ -154,5 +154,16 @@ Page({
     wx.navigateTo({
       url: '/pages/about/about',
     });
+  },
+
+  onLogout: function(e) {
+    wx.setStorageSync('token', '');
+    wx.setStorageSync('mobile', '');
+    wx.setStorageSync('history', ''); // history for search
+
+    wx.navigateTo({
+      url: '/pages/login/login',
+    });
   }
+
 })
