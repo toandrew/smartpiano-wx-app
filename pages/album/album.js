@@ -163,6 +163,10 @@ Page({
 
   onKaraClicked: function (e) {
     console.log("onKaraClicked", e);
+
+    wx.navigateTo({
+      url: '/pages/score/score?showHint=true',
+    });
   },
 
   closeVideo: function (e) {
