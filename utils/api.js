@@ -28,7 +28,7 @@ const COMPOSITE_COURSE_DETAIL_URL = '/smart-piano/v4/tutorial/multiple/{id}'
 const HOT_SEARCH_URL = '/smart-piano/v4/hot-search';
 
 // search by key
-const SEARCY_BY_KEY_URL = '/smart-piano/v4/search/{keyword}?type=1&&offset=0&&limit=10';
+const SEARCY_BY_KEY_URL = '/smart-piano/v4/search/{keyword}?type=1&&offset=0&&limit=100';
 
 // score lib's tag
 const SCORE_LIB_TAG_URL = '/smart-piano/v4/tag';
