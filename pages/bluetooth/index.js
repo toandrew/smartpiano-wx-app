@@ -298,20 +298,6 @@ Page({
         self.setData({
           foundDevices: res.devices
         });
-
-        // if (self.data.connectedDeviceId) {
-        //   wx.readBLECharacteristicValue({
-        //     deviceId: self.data.connectedDeviceId,
-        //     serviceId: THEONE_SERVICE_UUID,
-        //     characteristicId: THEONE_CHAR_UUID,
-        //     success: function (res) {
-        //       console.log('readBLECharacteristicValue ok:', res);
-        //     },
-        //     fail: function (res) {
-        //       console.log('readBLECharacteristicValue failed:', res);
-        //     }
-        //   })
-        // }
       },
     })
   },
