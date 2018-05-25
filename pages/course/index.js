@@ -39,6 +39,13 @@ Page({
   },
 
   /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+    this.closeVideo();
+  },
+
+  /**
    * Get all courses
    */
   getAllCourses() {
@@ -64,6 +71,8 @@ Page({
    * 切换 navbar
    */
   swichNav(e) {
+    this.closeVideo();
+
     this.setData({
       currentNavbar: e.currentTarget.dataset.idx
     });
@@ -86,6 +95,9 @@ Page({
 
   swiperTab(e) {
     console.log("swiperTab");
+
+    this.closeVideo();
+
     this.setData({
       currentNavbar: e.detail.current,
     })
@@ -221,6 +233,10 @@ Page({
   },
 
   closeVideo: function (e) {
+    if (this.data.hiddenVideo) {
+      return;
+    }
+
     this.setData({
       hiddenVideo: true,
       courseVideoUrl: ''
