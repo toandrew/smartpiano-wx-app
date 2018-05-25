@@ -1,5 +1,10 @@
 <!--pages/score/score.wxml-->
 <view class="g-container">
-  <image mode='widthFix' src="{{scoreUrl}}">
+  <image mode='widthFix' src="{{scoreUrl}}" hidden="{{showHint}}">
   </image>
+
+  <view class="m-hint" hidden="{{!showHint}}">
+    <text>该功能需要安装“智能钢琴”应用</text>
+    <text>http://www.1tai.com/download.html</text>
+  </view>
 </view>

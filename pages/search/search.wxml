@@ -20,7 +20,7 @@
       <view class="u-clear" bindtap='clearHistory'>清除记录</view>
     </view>
     <view class="m-hitem" wx:for="{{history}}" wx:for-item="historyItem" wx:key="historyItem" data-keyword="{{historyItem}}">
-      <view class="u-hname" bindtap='searchByHistory'>{{historyItem}}</view>
+      <view class="u-hname" bindtap='searchByHistory' data-keyword="{{historyItem}}">{{historyItem}}</view>
       <image class="u-hdel" data-keyword="{{historyItem}}" src="/images/search/ic_delete_search_history.png" bindtap="deleteHistory"></image>
     </view>
   </view>

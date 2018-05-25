@@ -140,7 +140,7 @@ Page({
     console.log("onGridClicked");
 
     wx.navigateTo({
-      url: '/pages/score/score?scoreId=' + e.currentTarget.dataset.scoreId,
+      url: '/pages/score/score?showHint=true',
     });
   }
 })

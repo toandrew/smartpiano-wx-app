@@ -247,4 +247,26 @@ Page({
       url: '/pages/score/score?scoreId=' + e.currentTarget.dataset.scoreId,
     });
   },
+
+  onRushClicked: function(e) {
+    console.log("onRushClicked", e);
+
+    wx.navigateTo({
+      url: '/pages/score/score?showHint=true',
+    });
+  },
+
+  onKaraClicked: function (e) {
+    console.log("onKaraClicked", e);
+
+    wx.navigateTo({
+      url: '/pages/score/score?showHint=true',
+    });
+  },
+
+  searchByHistory: function(e) {
+    console.log(e);
+
+    this.searchByKeyword(e);
+  }
 })

@@ -1,6 +1,10 @@
 /* pages/score/score.wxss */
 
 .g-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
 }
@@ -8,4 +12,17 @@
 .g-container image {
   width: 100%;
   height: 100%;
+}
+
+.m-hint {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.m-hint text:nth-of-type(2) {
+  color: #00f;
 }
