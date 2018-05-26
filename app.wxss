@@ -64,9 +64,15 @@
   background: #fff;
 }
 
-.album-common-grid text:first-of-type {
+.album-common-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.album-common-item text:first-of-type {
   position: relative;
-  top: 48rpx;
+  top: 39rpx;
   left: 240rpx;
   color: #fff;
   font-size: 28rpx;
@@ -77,18 +83,12 @@
   text-align: center;
 }
 
-.album-common-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .album-common-item image {
   width: 350rpx;
   height: 350rpx;
 }
 
-.album-common-item text {
+.album-common-item text:last-of-type {
   width: 350rpx;
   font-size: 24rpx;
   padding: 0rpx 0rpx 10rpx 0rpx;
