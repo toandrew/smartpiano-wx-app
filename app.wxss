@@ -64,6 +64,19 @@
   background: #fff;
 }
 
+.album-common-grid text:first-of-type {
+  position: relative;
+  top: 48rpx;
+  left: 240rpx;
+  color: #fff;
+  font-size: 28rpx;
+  width: 100rpx;
+  white-space: nowrap;
+  background: rgba(138, 74, 255, 0.8);
+  border-radius: 0 0 15rpx 15rpx;
+  text-align: center;
+}
+
 .album-common-item {
   display: flex;
   flex-direction: column;

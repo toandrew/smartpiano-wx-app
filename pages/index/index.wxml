@@ -51,6 +51,7 @@
           <view class="album-grid">
             <block wx:for="{{item.list}}" wx:key="id">
               <view class="albums" data-album-id="{{item.id}}" bindtap='onAlbumClicked'>
+                <text>{{item.level == 1 ? "新手" : item.level == 2 ? "初级" : item.level == 3 ? "中级" : item.level == 4 ? "高级" : item.level == 5 ? "挑战" : ""}}</text>
                 <image src="{{item.cover_image_url.length != 0 ? item.cover_image_url : '/images/cover/ph_album_cover.png'}}"></image>
                 <text>"{{item.name}}"</text>
               </view>

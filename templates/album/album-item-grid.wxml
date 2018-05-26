@@ -3,6 +3,7 @@
   <view class="album-common-grid">
     <block wx:for="{{list}}" wx:key="id">
       <view class="album-common-item" data-album-id="{{item.id}}" data-iscourse="{{isCourse}}" catchtap='onAlbumClicked'>
+        <text>{{item.level == 1 ? "新手" : item.level == 2 ? "初级" : item.level == 3 ? "中级" : item.level == 4 ? "高级" : item.level == 5 ? "挑战" : ""}}</text>
         <image src="{{item.cover_image_url.length != 0 ? item.cover_image_url : '/images/cover/ph_album_cover.png'}}"></image>
         <text>"{{item.name}}"</text>
       </view>
