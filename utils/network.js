@@ -53,6 +53,14 @@ function request(method, requestHandler) {
   var params = requestHandler.params;
   var url = requestHandler.url;
   var token = wx.getStorageSync('token');
+  if (token.length == 0) {
+    wx.redirectTo({
+      url: '/pages/login/login',
+    });
+
+    return null;
+  }
+
   return wx.request({
     url: API_HOST + url,
     data:params,

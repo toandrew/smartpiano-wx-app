@@ -161,7 +161,7 @@ Page({
     wx.setStorageSync('mobile', '');
     wx.setStorageSync('history', ''); // history for search
 
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/login/login',
     });
   }
