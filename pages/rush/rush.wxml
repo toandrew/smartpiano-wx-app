@@ -5,7 +5,7 @@
 
 <view class="g-container">
   <template is="level" data="{{levelTags : levelTags, currentLevel : currentRushLevel}}"></template>
-  <scroll-view class="item-container" scroll-y="true" bindscrolltolower="pullUpLoadLatest" hidden='{{isRushNull}}'>
+  <scroll-view class="item-container" scroll-y="true" scroll-y="false" bindscrolltolower="pullUpLoadLatest" hidden='{{isRushNull}}'>
     <template is="gridItem" data="{{list: rush}}" />
   </scroll-view>
 
