@@ -1,2 +1,7 @@
-<!--components/level/level.wxml-->
-<text>components/level/level.wxml</text>
+<scroll-view class="m-level" scroll-x="true">
+  <block wx:for="{{levelTags}}" wx:key="id">
+    <view class="u-level {{item == currentLevel ? 'active' : ''}}" data-item="{{item}}" bindtap="onLevelClicked">
+      {{item}}
+    </view>
+  </block>
+</scroll-view>

@@ -118,10 +118,10 @@ Page({
   },
 
   onLevelClicked: function (e) {
-    console.log(e);
+    console.log("onLevelClicked!!!!", e);
 
     this.setData({
-      currentKaraLevel: e.currentTarget.dataset.item
+      currentKaraLevel: e.detail
     });
 
     this.resetPages();

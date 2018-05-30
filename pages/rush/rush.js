@@ -122,7 +122,7 @@ Page({
     console.log(e);
 
     this.setData({
-      currentRushLevel: e.currentTarget.dataset.item
+      currentRushLevel: e.detail
     });
 
     this.loadRush();

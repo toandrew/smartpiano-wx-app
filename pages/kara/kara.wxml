@@ -3,7 +3,7 @@
 <import src="/templates/nulltip/nulltip.wxml" />
 
 <view class="g-container">
-  <template is="level" data="{{levelTags : levelTags, currentLevel : currentKaraLevel}}"></template>
+  <levels levelTags="{{levelTags}}" currentLevel="{{currentKaraLevel}}" bind:onLevelClicked="onLevelClicked"/>
   <scroll-view class="item-container" scroll-y="true" scroll-x="false" bindscrolltolower="pullUpLoadLatest" hidden='{{isKaraNull}}'>
     <gridItems bind:onGridClicked="onGridClicked" list="{{karas}}" />
   </scroll-view>

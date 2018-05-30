@@ -2,6 +2,7 @@
   "enablePullDownRefresh": true,
 
   "usingComponents": {
-    "gridItems" : "/components/grid-item-list/grid-item-list"
+    "gridItems" : "/components/grid-item-list/grid-item-list",
+    "levels": "/components/level/level"
   }
 }

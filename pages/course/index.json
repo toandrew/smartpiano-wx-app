@@ -1,3 +1,7 @@
 {
-    "navigationBarTitleText": "智能钢琴"
+    "navigationBarTitleText": "智能钢琴",
+
+    "usingComponents": {
+      "levels": "/components/level/level"
+    }
 }
