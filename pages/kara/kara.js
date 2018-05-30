@@ -138,7 +138,7 @@ Page({
   },
 
   onGridClicked: function(e) {
-    console.log("onGridClicked");
+    console.log("onGridClicked", e);
 
     wx.navigateTo({
       url: '/pages/score/score?showHint=true',

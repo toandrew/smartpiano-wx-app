@@ -23,6 +23,8 @@ Component({
   methods: {
     onGridClicked: function(e) {
       console.log(e);
+
+      this.triggerEvent('onGridClicked', e)
     }
   }
 })
