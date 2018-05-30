@@ -1,12 +1,11 @@
 <!--pages/kara/kara.wxml-->
-<import src="/templates/grid/grid-item.wxml" />
 <import src="/templates/level/level.wxml" />
 <import src="/templates/nulltip/nulltip.wxml" />
 
 <view class="g-container">
   <template is="level" data="{{levelTags : levelTags, currentLevel : currentKaraLevel}}"></template>
   <scroll-view class="item-container" scroll-y="true" scroll-x="false" bindscrolltolower="pullUpLoadLatest" hidden='{{isKaraNull}}'>
-    <template is="gridItem" data="{{list: karas}}" />
+    <gridItems list="{{karas}}" />
   </scroll-view>
 
   <view class="m-empty" hidden='{{!isKaraNull}}'>
