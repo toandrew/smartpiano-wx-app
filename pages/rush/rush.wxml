@@ -1,5 +1,4 @@
 <!--pages/kara/kara.wxml-->
-<import src="/templates/level/level.wxml" />
 <import src="/templates/nulltip/nulltip.wxml" />
 
 <view class="g-container">

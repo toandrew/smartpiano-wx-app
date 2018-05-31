@@ -1,1 +1,113 @@
-/* components/score-item-list/scor-item-list.wxss */
+.m-score-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30rpx;
+  background: #fff;
+}
+
+.m-score-list .u-allitem {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #eee;
+  padding: 20rpx 0rpx;
+}
+
+.m-score-list .u-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70vw;
+}
+
+.m-score-list .u-item .u-item-name {
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+}
+
+.m-score-list .u-item .u-item-name text:nth-of-type(1) {
+  color: #000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 60vw;
+}
+
+.m-score-list .u-item .u-item-name text.u-roundrect {
+  color: #7a5df3;
+  border-radius: 20rpx;
+  border: 1rpx solid #7a5df3;
+  padding: 0rpx 10rpx;
+  white-space: nowrap;
+  font-size: 25rpx;
+  margin-left: 10rpx;
+}
+
+.m-score-list .u-item .u-item-name text:nth-of-type(3) {
+  color: #959595;
+  border: 1rpx solid #959595;
+}
+
+.m-score-list .u-item .u-item-artist {
+  display: flex;
+  flex-direction: column;
+  font-size: 25rpx;
+  color: #959595;
+  padding-top: 10rpx;
+}
+
+.m-score-list .u-item-btn {
+  display: flex;
+  flex-direction: row;
+  width: 20vw;
+  justify-content: flex-end;
+}
+
+.m-score-list .u-item-btn image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.m-score-list .u-item-btn .u-item-btn-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 23rpx;
+  color: #7a5df3;
+  padding-left: 15rpx;
+}
+
+.video-layer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  z-index: 100;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+video {
+  width: 100vw;
+  margin: 25% 0 10% 0;
+  overflow: hidden;
+  border-radius: 10rpx;
+}
+
+.u-closebtn {
+  width: 100rpx;
+  color: #fff;
+  text-align: center;
+  padding: 10rpx;
+  border: 1rpx solid #fff;
+  border-radius: 5px;
+}

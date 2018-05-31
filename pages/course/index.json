@@ -2,6 +2,8 @@
     "navigationBarTitleText": "智能钢琴",
 
     "usingComponents": {
-      "levels": "/components/level/level"
+      "levels": "/components/level/level",
+      "albumGrids": "/components/album-grid-item-list/album-grid-item-list",
+      "scoreList": "/components/score-item-list/score-item-list"
     }
 }

@@ -115,17 +115,18 @@ Page({
   },
 
   onLevelClicked: function (e) {
+    console.log(e)
     switch (this.data.currentNavbar) {
       case 1:
         this.setData({
-          currentSingleLevel: e.currentTarget.dataset.item
+          currentSingleLevel: e.detail
         });
 
         this.loadSingleCourse();
         break;
       case 2:
         this.setData({
-          currentCompositeLevel: e.currentTarget.dataset.item
+          currentCompositeLevel: e.detail
         });
 
         this.loadCompositeCourse();

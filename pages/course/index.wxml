@@ -1,7 +1,3 @@
-<import src="/templates/score/score-item-list.wxml" />
-<import src="/templates/album/album-item-grid.wxml" />
-<import src="/templates/level/level.wxml" />
-
 <import src="/templates/nulltip/nulltip.wxml" />
 
 <view class="navbar">
@@ -41,7 +37,7 @@
     <levels levelTags="{{levelTags}}" currentLevel="{{currentSingleLevel}}" bind:onLevelClicked="onLevelClicked" />
 
     <scroll-view class="single-item-container" scroll-y="true" hidden='{{isSingleNull}}'>
-      <template is="scoreItemList" data="{{...singleCourses, hiddenVideo: hiddenVideo, courseVideoUrl: courseVideoUrl}}" />
+      <scoreList list="{{singleCourses.list}}" hiddenVideo="{{hiddenVideo}}" courseVideoUrl="{{courseVideoUrl}}" />
     </scroll-view>
 
     <view class="m-empty" hidden='{{!isSingleNull}}'>
@@ -53,7 +49,7 @@
   <swiper-item>
     <levels levelTags="{{levelTags}}" currentLevel="{{currentCompositeLevel}}" bind:onLevelClicked="onLevelClicked" />
     <scroll-view class="item-container" scroll-y="true" hidden='{{isCompositeNull}}'>
-      <template is="albumItemGrid" data="{{...compositeCourses}}" />
+      <albumGrids list="{{compositeCourses.list}}" />
     </scroll-view>
 
     <view class="m-empty" hidden='{{!isCompositeNull}}'>
