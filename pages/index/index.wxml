@@ -58,7 +58,7 @@
         </block>
 
         <block wx:elif="{{item.type == 1}}">
-           <scoreList list="{{item.list}}" hiddenVideo="{{hiddenVideo}}" courseVideoUrl="{{courseVideoUrl}}" bind:onScoreClicked="onScoreClicked"/> 
+          <scoreList list="{{item.list}}" hiddenVideo="{{hiddenVideo}}" courseVideoUrl="{{courseVideoUrl}}" bind:onScoreClicked="onScoreClicked" bind:onVideoClicked="onVideoClicked" bind:closeVideo="closeVideo" />
         </block>
       </view>
 

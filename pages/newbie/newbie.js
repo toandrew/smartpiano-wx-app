@@ -106,7 +106,7 @@ Page({
 
   onVideoClicked: function (e) {
     console.log("onVideoClicked", e);
-    let url = e.currentTarget.dataset.url;
+    let url = e.detail;
     if (url) {
       this.setData({
         hiddenVideo: false,
@@ -119,7 +119,7 @@ Page({
     console.log("onScoreClicked", e);
 
     wx.navigateTo({
-      url: '/pages/score/score?scoreId=' + e.currentTarget.dataset.scoreId,
+      url: '/pages/score/score?scoreId=' + e.detail,
     });
   },
 

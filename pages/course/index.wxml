@@ -37,7 +37,7 @@
     <levels levelTags="{{levelTags}}" currentLevel="{{currentSingleLevel}}" bind:onLevelClicked="onLevelClicked" />
 
     <scroll-view class="single-item-container" scroll-y="true" hidden='{{isSingleNull}}'>
-      <scoreList list="{{singleCourses.list}}" hiddenVideo="{{hiddenVideo}}" courseVideoUrl="{{courseVideoUrl}}" bind:onScoreClicked="onScoreClicked"/>
+      <scoreList list="{{singleCourses.list}}" hiddenVideo="{{hiddenVideo}}" courseVideoUrl="{{courseVideoUrl}}" bind:onScoreClicked="onScoreClicked" bind:onVideoClicked="onVideoClicked" bind:closeVideo="closeVideo"/>
     </scroll-view>
 
     <view class="m-empty" hidden='{{!isSingleNull}}'>

@@ -12,6 +12,6 @@
     </view>
   </view>
   <view class="m-items">
-    <scoreList list="{{courses.list}}" hiddenVideo="{{hiddenVideo}}" courseVideoUrl="{{courseVideoUrl}}" bind:onScoreClicked="onScoreClicked"/>
+    <scoreList list="{{courses.list}}" hiddenVideo="{{hiddenVideo}}" courseVideoUrl="{{courseVideoUrl}}" bind:onScoreClicked="onScoreClicked" bind:onVideoClicked="onVideoClicked" bind:closeVideo="closeVideo"/>
   </view>
 </view>

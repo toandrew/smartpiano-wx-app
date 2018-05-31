@@ -36,6 +36,16 @@ Component({
       console.log(e);
 
       this.triggerEvent("onScoreClicked", e.currentTarget.dataset.scoreId);
+    },
+
+    onVideoClicked: function(e) {
+      console.log(e);
+
+      this.triggerEvent("onVideoClicked", e.currentTarget.dataset.url);
+    },
+
+    closeVideo: function(e) {
+      this.triggerEvent("closeVideo", e.currentTarget.dataset.url);
     }
   }
 })

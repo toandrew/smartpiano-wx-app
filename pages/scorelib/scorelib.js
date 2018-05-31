@@ -273,10 +273,10 @@ Page({
   },
 
   onScoreClicked: function (e) {
-    console.log("onScoreClicked", e);
+    console.log("onScoreClicked!!!", e);
 
     wx.navigateTo({
-      url: '/pages/score/score?scoreId=' + e.currentTarget.dataset.scoreId,
+      url: '/pages/score/score?scoreId=' + e.detail,
     });
   },
 

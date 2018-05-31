@@ -24,7 +24,7 @@
   </view>
 
   <view class="m-result" hidden='{{!showResult||isNull}}'>
-    <scoreList list="{{searchResults.list}}" hiddenVideo="{{hiddenVideo}}" courseVideoUrl="{{courseVideoUrl}}" bind:onScoreClicked="onScoreClicked"/>
+    <scoreList list="{{searchResults.list}}" hiddenVideo="{{hiddenVideo}}" courseVideoUrl="{{courseVideoUrl}}" bind:onScoreClicked="onScoreClicked" bind:onVideoClicked="onVideoClicked" bind:closeVideo="closeVideo" />
   </view>
 
   <view hidden='{{!isNull}}'>

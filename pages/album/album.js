@@ -144,7 +144,7 @@ Page({
 
   onVideoClicked: function (e) {
     console.log("onVideoClicked", e);
-    let url = e.currentTarget.dataset.url;
+    let url = e.detail;
     if (url) {
       this.setData({
         hiddenVideo: false,

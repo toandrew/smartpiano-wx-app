@@ -57,7 +57,7 @@
     <view class="m-mask" hidden="{{!tagShown}}" bindtap='onEmptyClicked'></view>
     <block wx:if="{{currentType == 1}}">
       <scroll-view class="u-icontainer" scroll-y="true" bindscrolltolower="onMoreScore" hidden='{{isNull}}'>
-        <scoreList list="{{scores}}" hiddenVideo="{{hiddenVideo}}" courseVideoUrl="{{courseVideoUrl}}" bind:onScoreClicked="onScoreClicked"/>
+        <scoreList list="{{scores}}" hiddenVideo="{{hiddenVideo}}" courseVideoUrl="{{courseVideoUrl}}" bind:onScoreClicked="onScoreClicked" bind:onVideoClicked="onVideoClicked" bind:closeVideo="closeVideo"/>
       </scroll-view>
     </block>
     <block wx:else>
