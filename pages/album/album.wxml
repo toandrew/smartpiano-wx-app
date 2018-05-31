@@ -1,6 +1,4 @@
 <!--pages/album/album.wxml-->
-<import src="/templates/score/score-item-list.wxml" />
-
 <view class="g-container">
   <view class="m-header">
     <image class="u-bg" mode='widthfix' src="{{logoUrl}}"></image>
@@ -14,6 +12,6 @@
     </view>
   </view>
   <view class="m-items">
-    <template is="scoreItemList" data="{{...scores, hiddenVideo: hiddenVideo, courseVideoUrl: courseVideoUrl}}" />
+    <scoreList list="{{scores.list}}" hiddenVideo="{{hiddenVideo}}" courseVideoUrl="{{courseVideoUrl}}" bind:onScoreClicked="onScoreClicked" />
   </view>
 </view>

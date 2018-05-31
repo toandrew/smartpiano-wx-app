@@ -1,6 +1,7 @@
 {
   "enablePullDownRefresh": true,
   "usingComponents" : {
-    "album-grids": "/components/album-grid-item-list/album-grid-item-list"
+    "album-grids": "/components/album-grid-item-list/album-grid-item-list",
+    "scoreList": "/components/score-item-list/score-item-list"
   }
 }

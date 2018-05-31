@@ -1,6 +1,4 @@
 /* pages/album/album.wxss */
-@import "/templates/score/score-item-list.wxss";
-
 .g-container {
   display: flex;
   flex-direction: column;

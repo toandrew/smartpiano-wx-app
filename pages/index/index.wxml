@@ -1,6 +1,4 @@
 <!--index.wxml-->
-<import src="/templates/score/score-item-list.wxml" />
-
 <view class="header">
   <swiper class="swiper" indicator-dots='true' interval='10000' autoplay='true' indicator-color='rgba(255, 255, 255, .2)' indicator-active-color='rgba(255, 255, 255, .8)'>
     <block wx:for="{{banners}}" wx:key="id">
@@ -60,7 +58,7 @@
         </block>
 
         <block wx:elif="{{item.type == 1}}">
-          <template is="scoreItemList" data="{{...item, hiddenVideo: hiddenVideo, courseVideoUrl: courseVideoUrl}}" />
+           <scoreList list="{{item.list}}" hiddenVideo="{{hiddenVideo}}" courseVideoUrl="{{courseVideoUrl}}" bind:onScoreClicked="onScoreClicked"/> 
         </block>
       </view>
 

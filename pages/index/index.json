@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "智能钢琴",
+    "usingComponents": {
+      "scoreList": "/components/score-item-list/score-item-list"
+    }
+}

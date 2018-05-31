@@ -7,6 +7,16 @@ Component({
     list: {
       type: Array,
       value: []
+    },
+
+    hiddenVideo: {
+      type: Boolean,
+      value: true
+    },
+
+    courseVideoUrl: {
+      type: String,
+      value: ''
     }
 
   },
@@ -22,6 +32,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    onScoreClicked: function(e) {
+      console.log(e);
 
+      this.triggerEvent("onScoreClicked", e.currentTarget.dataset.scoreId);
+    }
   }
 })

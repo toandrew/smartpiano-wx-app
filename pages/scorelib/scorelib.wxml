@@ -1,5 +1,3 @@
-<import src="/templates/score/score-item-list.wxml" />
-
 <import src="/templates/nulltip/nulltip.wxml" />
 
 <view class="g-container">
@@ -59,7 +57,7 @@
     <view class="m-mask" hidden="{{!tagShown}}" bindtap='onEmptyClicked'></view>
     <block wx:if="{{currentType == 1}}">
       <scroll-view class="u-icontainer" scroll-y="true" bindscrolltolower="onMoreScore" hidden='{{isNull}}'>
-        <template is="scoreItemList" data="{{list: scores, hiddenVideo: hiddenVideo, courseVideoUrl: courseVideoUrl}}" />
+        <scoreList list="{{scores}}" hiddenVideo="{{hiddenVideo}}" courseVideoUrl="{{courseVideoUrl}}" bind:onScoreClicked="onScoreClicked"/>
       </scroll-view>
     </block>
     <block wx:else>

@@ -1,6 +1,4 @@
 <!--pages/search/search.wxml-->
-
-<import src="/templates/score/score-item-list.wxml" />
 <import src="/templates/nulltip/nulltip.wxml" />
 
 <view class="g-hd">
@@ -26,7 +24,7 @@
   </view>
 
   <view class="m-result" hidden='{{!showResult||isNull}}'>
-    <template is="scoreItemList" data="{{...searchResults, hiddenVideo: hiddenVideo, courseVideoUrl: courseVideoUrl}}" />
+    <scoreList list="{{searchResults.list}}" hiddenVideo="{{hiddenVideo}}" courseVideoUrl="{{courseVideoUrl}}" bind:onScoreClicked="onScoreClicked"/>
   </view>
 
   <view hidden='{{!isNull}}'>
